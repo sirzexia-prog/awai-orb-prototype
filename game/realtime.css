@@ -12,3 +12,7 @@
 .capture-banner{flex:none;padding:5px 8px;background:#283f55;color:#fff;text-align:center;font-size:12px;font-weight:700;letter-spacing:.05em}.capture-shell .rt-header [hidden]{display:none}.capture-shell .rt-header>div:not(.header-actions){gap:8px}.capture-entry{display:block;margin:12px 0;color:#45667c;font-size:12px}
 
 [hidden]{display:none!important}.gauge-note{margin:0 0 7px;font-size:10px;color:#3a6570;line-height:1.4}.rt-overlay #rt-result-message{font-size:14px;color:#244e59;margin:0;padding:6px 12px;background:#f7ffffd9;border-radius:8px}.rt-overlay strong{font-size:32px}.energy-line{font-size:11px}.energy-line progress{height:8px}
+
+/* Selective morning integration: only battle information panels; the bright arena stays unchanged. */
+.boss-hud{background:linear-gradient(120deg,#0c2130ed,#143b45e8);border:1px solid #a0d9df65;box-shadow:0 8px 24px #07192245;color:#f8e6c1;border-radius:14px}.boss-hud>div{font-weight:700;letter-spacing:.03em}.boss-hud small{color:#d5bfa3}.boss-hud progress::-webkit-progress-bar{background:#3a4646}.boss-hud progress::-webkit-progress-value{background:linear-gradient(90deg,#cd8259,#ffe0a1)}#rt-signal{color:#e1cfb0;margin-top:3px}#rt-hit-note{color:#b5e7ff}
+.rt-bottom .hero-hud{background:#0a2530;border-color:#8fc9cb38;color:#e6f8f5;border-radius:10px}.hero-hud span{color:#b7d7d5}.hero-hud progress::-webkit-progress-bar{background:#25424a}.hero-hud progress::-webkit-progress-value{background:linear-gradient(90deg,#389d8e,#9df1ce)}

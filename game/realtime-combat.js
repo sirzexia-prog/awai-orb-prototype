@@ -5,7 +5,7 @@
   function create(stats={power:2,guard:2,focus:2},id='water-'+Date.now(),policy){
     const s={power:clamp(stats.power,-1,11),guard:clamp(stats.guard,0,10),focus:clamp(stats.focus,0,12)},hp=62+s.guard*3;
     policy=Object.hasOwn(targets,policy)?policy:s.focus>s.power+2?'magic':'melee';
-    return {version:2,id,policy,decision:'近づく',stats:s,time:0,hp,maxHp:hp,bossHp:300,bossMaxHp:300,energy:60,player:{...home},destination:{...targets[policy]},attackCd:.2,dodgeCd:0,hold:0,shield:0,opening:0,phase:{kind:'wait',left:2.6},cycle:0,paused:false,pauseReason:'',outcome:null,effects:[],history:[],sequence:0,metrics:{attacks:0,casts:0,bursts:0,blocks:0,dodges:0,interrupts:0,taken:0,orders:0}};
+    return {version:2,id,policy,decision:'近づく',stats:s,time:0,hp,maxHp:hp,bossHp:240,bossMaxHp:240,energy:60,player:{...home},destination:{...targets[policy]},attackCd:.2,dodgeCd:0,hold:0,shield:0,opening:0,phase:{kind:'wait',left:2.6},cycle:0,paused:false,pauseReason:'',outcome:null,effects:[],history:[],sequence:0,metrics:{attacks:0,casts:0,bursts:0,blocks:0,dodges:0,interrupts:0,taken:0,orders:0}};
   }
   function event(s,kind,data={}){s.effects.push({id:++s.sequence,kind,start:s.time,duration:['burst','cleave'].includes(kind)?1.1:kind==='impact'?.9:.65,...data});s.effects=s.effects.slice(-12);}
   function finish(s){if(s.bossHp<=0){s.bossHp=0;s.outcome='win';}else if(s.hp<=0||s.time>=90){s.hp=Math.max(0,s.hp);s.outcome='loss';}if(s.outcome)s.paused=true;}
@@ -43,7 +43,7 @@
     s.effects=s.effects.filter(e=>s.time-e.start<e.duration);finish(s);
   }
   function hydrate(raw){if(!raw||![1,2].includes(raw.version)||typeof raw.id!=='string'||raw.id.length>80||!raw.stats||!['wait','slam','sweep','bite','tail','charge','recover'].includes(raw.phase?.kind))return null;
-    const s=create(raw.stats,raw.id,raw.policy);s.time=clamp(raw.time,0,90);s.hp=clamp(raw.hp,0,s.maxHp);s.bossHp=clamp(raw.bossHp,0,300);s.energy=clamp(raw.energy,0,100);for(const k of ['attackCd','dodgeCd','hold','shield','opening'])s[k]=clamp(raw[k],0,10);for(const k of ['player','destination'])s[k]={x:clamp(raw[k]?.x,.1,.84),y:clamp(raw[k]?.y,.25,.84)};s.cycle=clamp(raw.cycle,0,100);s.phase={kind:raw.phase.kind,left:clamp(raw.phase.left,.05,4)};
+    const s=create(raw.stats,raw.id,raw.policy);s.bossMaxHp=raw.bossMaxHp===240?240:300;s.time=clamp(raw.time,0,90);s.hp=clamp(raw.hp,0,s.maxHp);s.bossHp=clamp(raw.bossHp,0,s.bossMaxHp);s.energy=clamp(raw.energy,0,100);for(const k of ['attackCd','dodgeCd','hold','shield','opening'])s[k]=clamp(raw[k],0,10);for(const k of ['player','destination'])s[k]={x:clamp(raw[k]?.x,.1,.84),y:clamp(raw[k]?.y,.25,.84)};s.cycle=clamp(raw.cycle,0,100);s.phase={kind:raw.phase.kind,left:clamp(raw.phase.left,.05,4)};
     s.phase.kind=s.phase.kind==='slam'?'bite':s.phase.kind==='sweep'?'tail':s.phase.kind;
     if(moves[s.phase.kind]){const z=raw.phase.zone,m=moves[s.phase.kind];if(!z||!Number.isFinite(z.x)||!Number.isFinite(z.y))return null;s.phase.full=m.duration;s.phase.left=Math.min(s.phase.left,m.duration);s.phase.zone={x:clamp(z.x,.1,.84),y:clamp(z.y,.25,.84),rx:m.rx,ry:m.ry};}
     for(const k of Object.keys(s.metrics))s.metrics[k]=clamp(raw.metrics?.[k],0,10000);s.history=Array.isArray(raw.history)?raw.history.filter(x=>x&&['burst','shield','dodge'].includes(x.action)).slice(-24).map(x=>({time:clamp(x.time,0,90),action:x.action})):[];s.sequence=clamp(raw.sequence,0,10000);s.paused=true;s.pauseReason='続きから';finish(s);return s;
