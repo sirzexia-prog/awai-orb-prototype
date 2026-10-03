@@ -1,29 +1,28 @@
 <!doctype html>
-<html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>あわい · 本人用の入口設定</title>
-<style>body{font:16px system-ui;max-width:520px;padding:24px;margin:0 auto;color:#283b41;background:#eef5f0}label{display:block;margin-top:20px}input,button{box-sizing:border-box;display:block;width:100%;font:inherit;min-height:48px;border-radius:8px;padding:12px}button{margin-top:24px;background:#375c50;color:white;border:0}p{line-height:1.7}.note{font-size:13px}</style>
-<h1>入口のパスワード設定</h1>
-<p>本人がここで入力してください。入力はこのブラウザー内で処理し、外へ送信しません。入力したパスワードは送信されず、この端末内で設定ファイルを作ります。</p>
-<form id="setup"><label for="password">新しいパスワード</label><input id="password" type="password" autocomplete="new-password" maxlength="128" required><label for="confirm">もう一度入力</label><input id="confirm" type="password" autocomplete="new-password" maxlength="128" required><button>設定ファイルを保存</button></form>
-<p id="status" role="status" aria-live="polite"></p>
-<p class="note">保存されるJSONには公開用の検証値が入ります。パスワードそのものは入りません。公開コードと検証値を解析すれば入口は回避できるため、強いアクセス制限としては使えません。ほかのサービスで使っているパスワードは使わないでください。</p>
-<script>
-'use strict';
-const form=document.getElementById('setup'),passwordInput=document.getElementById('password'),confirmation=document.getElementById('confirm'),status=document.getElementById('status'),button=form.querySelector('button');
-form.addEventListener('submit',async event=>{
- event.preventDefault();let password=passwordInput.value;
- if(!password||password!==confirmation.value){status.textContent='2つの入力を合わせてください。';return;}
- passwordInput.value='';confirmation.value='';button.disabled=true;status.textContent='この端末内で設定を作っています。';
- try{
-  if(!crypto.subtle)throw Error('secure context required');
-  const salt=crypto.getRandomValues(new Uint8Array(16)),iterations=210000;
-  const key=await crypto.subtle.importKey('raw',new TextEncoder().encode(password),'PBKDF2',false,['deriveBits']);password='';
-  const bits=await crypto.subtle.deriveBits({name:'PBKDF2',hash:'SHA-256',salt,iterations},key,256);
-  const encode=bytes=>btoa(String.fromCharCode(...bytes));
-  const config={configured:true,algorithm:'PBKDF2-SHA256',iterations,salt:encode(salt),verifier:encode(new Uint8Array(bits))};
-  const url=URL.createObjectURL(new Blob([JSON.stringify(config,null,2)+'\n'],{type:'application/json'})),link=document.createElement('a');link.href=url;link.download='password-config.json';link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
-  status.textContent='ダウンロードを開始しました。ファイルが保存されたことを確認してください。';
- }catch{status.textContent='設定できませんでした。このファイルをChromeで開いてお試しください。';}
- finally{password='';passwordInput.value='';confirmation.value='';button.disabled=false;}
-});
-</script></html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>あわい · 入口</title>
+  <link rel="stylesheet" href="gate.css">
+  <script src="gate.js" defer></script>
+</head>
+<body>
+  <main class="gate-card">
+    <div class="orb" aria-hidden="true"><span>· ·</span></div>
+    <p class="eyebrow">小さなデジタル相棒</p>
+    <h1>あわい</h1>
+    <p class="intro">ちょっと話して、いっしょに育つ。</p>
+    <form id="gate-form">
+      <label for="password">パスワード</label>
+      <input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required disabled>
+      <button id="enter" type="submit" disabled>相棒に会う</button>
+    </form>
+    <p id="status" class="status" role="status" aria-live="polite">入口を準備しています…</p>
+    <p class="notice">簡易の入口です。公開された画像やコードへの直接アクセスは防げません。</p>
+    <p class="version">試作 v0.3.18 · 会話はデモです</p>
+    <noscript>この試作にはJavaScriptが必要です。</noscript>
+  </main>
+</body>
+</html>

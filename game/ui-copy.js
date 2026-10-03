@@ -1,0 +1,10 @@
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.AwaiUiCopy=factory();})(globalThis,function(){
+ 'use strict';
+ function system(text){return String(text||'').replace(/部位/g,'装備').replace(/外見/g,'姿').replace(/姫系/g,'プリンセス').replace(/クラウン/g,'光冠').replace(/対戦/g,'戦闘');}
+ function appearance(entry,parts){const raw=String(entry.reason||''),reason=raw.split(' · ')[0];if(entry.id==='birth'||/はじめての姿/.test(reason))return 'はじめての姿';for(const part of Object.values(parts)){if(reason===part.name+'を装着')return part.name+'を付けた姿';if(reason===part.name+'を外した')return part.name+'を外した姿';}if(/に勝った$/.test(reason))return reason+'ときの姿';if(/に挑んだ$/.test(reason))return reason+'ときの姿';if(/を練習した$/.test(reason))return reason+'ときの姿';return {'探る時間':'いっしょに探したときの姿','寄りそう時間':'おやつを分けたときの姿','くつろぐ時間':'ひと息ついたときの姿','今の育ちを反映':'今の育ちを反映した姿','持っている目標部位へ着替えた':'目標の装備を付けた姿','歩行の脚を選んだ':'脚を付けて歩く姿','脚なしの浮遊を選んだ':'浮かんで過ごす姿'}[reason]||'そのときの姿';}
+ function companion(text){let line=String(text||'');const result=line.match(/^(見えた！ .*?きみの指示、覚えたよ。|一度も当たらなかった！ ちゃんと受けて、返せたね。|すぐ決まった！ .*?上手になった。|勝った…！ .*?一緒だったね。|うう、負けた。.*?もう一回、教えて。)/);if(result)line=result[1];return line.replace(/見えた！ \d+回も飛びこめた。/,'見えた！ 何度も飛びこめた。').replace(/すぐ決まった！ \d+手だ。/,'すぐ決まった！').replace(/勝った…！ \d+受けたけど、/,'勝った…！ ちょっと痛かったけど、');}
+ function statDetail(C,g,base,k){const label=C.DRILLS[k].stat,drill=C.DRILLS[g.condition],stance=drill?(drill.plus===k?2:drill.minus===k?-1:0):0,equipment=g.equipped.reduce((n,id)=>n+(C.PARTS[id].bonus[k]||0),0),signed=n=>(n>0?'+':'−')+Math.abs(n),details=[];if(equipment)details.push('装備で '+signed(equipment));if(stance)details.push('構えで '+signed(stance));return '基本の'+label+' '+C.displayStat(base,k)+(details.length?'（'+details.join('、')+'）':'');}
+ function battleLog(text){return system(text).replace(/(\d+)与え \/ (\d+)受け/g,'与えた $1 / 受けた $2');}
+ const moves={heavy:'大技',quick:'突進',feint:'フェイント',charge:'ためる動き',shell:'殻の守り',recover:'息切れ'};
+ return {system,appearance,companion,statDetail,battleLog,statEffect:text=>system(text).replace(/威力/g,'打撃'),moveNoun:m=>moves[m.key]||'この攻撃',version:'0.3.18'};
+});

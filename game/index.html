@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101a2b">
+  <meta name="description" content="鍛えて、合図を読んで戦う。小さな相棒と挑む、端末内保存の育成戦闘ゲーム。">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>あわい · 鍛えて、いっしょに挑む</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101a2b'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23ffc56b'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="engine.js" defer></script>
+  <script src="combat.js" defer></script>
+  <script src="providers.js" defer></script>
+  <script src="creature.js" defer></script>
+  <script src="ui-copy.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar"><div class="wordmark">あわい</div><button id="settings-open" class="icon-button" aria-label="保存と設定を開く">設定</button></header>
+    <p id="trial-banner" class="trial-banner" hidden>試遊枠です。普段の相棒とは別に保存します。<a href="?">普段の枠に戻る</a></p>
+    <nav class="tabs" aria-label="相棒との時間">
+      <button class="tab active" data-view="home" aria-current="page">育成</button>
+      <button class="tab" data-view="battle">戦闘</button>
+      <button class="tab" data-view="memories">記録 <span id="memory-count">0</span></button>
+      <button class="tab" data-view="growth">姿</button>
+    </nav>
+
+    <section id="home-view" class="view" aria-label="相棒と過ごす">
+      <div class="habitat">
+        <div class="habitat-label"><span id="creature-name">相棒</span><span id="appearance-mode" class="small-label">経験とともに育つ</span></div>
+        <canvas id="creature" width="640" height="410" role="img" aria-label="丸い体と細長い目の相棒"></canvas>
+        <div class="habitat-bottom"><span id="growth-label">まだ、芽のような姿</span><span id="visit-label">いっしょの経験 0</span></div><div class="size-line"><span>装着装備</span><progress id="size-progress" max="3" value="0" aria-label="獲得装備の装着数"></progress><span id="size-label">丸い核</span></div>
+      </div>
+
+      <section id="customizer" class="card customizer" aria-labelledby="customize-heading">
+        <div class="section-intro"><h1 id="customize-heading">最初はひとつの丸い玉。</h1><p>色と目と口をえらぼう。ここから、いっしょに育っていく。</p></div>
+        <fieldset><legend>色</legend><div class="palette" id="color-options">
+          <button data-color="34" class="swatch amber selected" aria-label="こはく色" aria-pressed="true"></button><button data-color="170" class="swatch mint" aria-label="みずみどり" aria-pressed="false"></button><button data-color="205" class="swatch blue" aria-label="そら色" aria-pressed="false"></button><button data-color="270" class="swatch violet" aria-label="すみれ色" aria-pressed="false"></button><button data-color="335" class="swatch pink" aria-label="もも色" aria-pressed="false"></button><button data-color="8" class="swatch red" aria-label="あかね色" aria-pressed="false"></button>
+        </div></fieldset>
+        <div class="parts"><fieldset><legend>目 <span>瞳なし</span></legend><div class="part-options eye-options" id="eye-options"><button data-eyes="hollow" aria-pressed="true" class="selected">縦長</button><button data-eyes="oval" aria-pressed="false">まる</button><button data-eyes="line" aria-pressed="false">すっと</button><button data-eyes="arc" aria-pressed="false">にこ</button></div></fieldset><fieldset><legend>口</legend><div class="part-options mouth-options" id="mouth-options"><button data-mouth="none" aria-pressed="true" class="selected">なし</button><button data-mouth="smile" aria-pressed="false">にこ</button><button data-mouth="flat" aria-pressed="false">すっと</button><button data-mouth="dot" aria-pressed="false">ぽつ</button><button data-mouth="teeth" aria-pressed="false">ギザ歯</button><button data-mouth="fang" aria-pressed="false">きば</button></div></fieldset></div>
+        <button id="begin" class="primary full">この姿ではじめる</button>
+      </section>
+
+      <div id="play-controls" hidden>
+        <section class="card target-studio" aria-labelledby="target-heading"><div class="section-line"><h1 id="target-heading">育てたい姿</h1><span id="target-mode-label" class="small-label">今の姿</span></div><div class="target-presets"><button data-goal="princess">プリンセス</button><button data-goal="machine">機械</button><button data-goal="armor">鎧</button></div><div class="look-toggle" aria-label="現在と目標の姿"><button data-look="current" class="selected" aria-pressed="true">現在</button><button data-look="target" aria-pressed="false">目標</button></div><canvas id="target-avatar" width="720" height="520" role="img" aria-label="同じ丸い核から育てる目標姿"></canvas><p id="target-description" class="small-label"></p><div class="target-progress"><span id="target-progress-text"></span><progress id="target-progress" max="2" value="0" aria-label="目標装備の獲得状況"></progress></div><details class="target-custom"><summary>例から装備を組み替える</summary><div id="target-parts" class="target-parts"></div><p class="small-label">自由な組合せです。目標を変えても、元の個体と持っている装備は残ります。</p></details><button id="target-equip" class="secondary full">持っている目標装備へ着替える</button><div class="goal-card"><span class="eyebrow">次に近づく一歩</span><h2 id="goal-heading"></h2><p id="partner-line" class="partner-line"></p><button id="go-battle" class="primary full">戦闘へ</button></div></section>
+        <section class="card training" aria-labelledby="training-heading"><div class="section-line"><h2 id="training-heading">次の一戦に備える</h2><span id="training-budget" class="small-label"></span></div><div id="stats" class="stats"></div><p id="condition" class="condition"></p><div id="training-options" class="training-options"></div><p class="small-label training-rule">最後の訓練が、一戦だけの構えになります。基礎は同じ訓練3回で+1（上限6）。訓練せずに挑んでもOK。戦闘が終わると3回に戻ります。</p><button id="scout" class="secondary full">相手の癖を調べる</button><p id="scout-note" class="small-label"></p></section>
+        <details id="equipment-details" class="secondary-play"><summary id="gear-heading">取得した装備を組み替える</summary><p class="small-label">核と顔は共通。光冠・ドレス・鎧・腕も組合せ可。過去の初勝も獲得条件に数えます。</p><div id="gear-list" class="gear-list"></div><fieldset><legend>移動の姿 <span>能力は同じ・いつでも変更</span></legend><div class="part-options"><button data-locomotion="hover">脚なし・浮遊</button><button data-locomotion="legs">脚あり・歩行</button></div></fieldset></details>
+        <div class="growth-strip"><div><span id="milestone-label">姿の変化を感じるまで</span><strong id="milestone-count">あと6回</strong></div><progress id="milestone-progress" max="6" value="0" aria-label="経験による育ち"></progress></div>
+        <details id="small-talk" class="secondary-play"><summary>休憩・ひとこと <span class="small-label">デモ会話</span></summary>
+        <section class="conversation card" aria-labelledby="conversation-heading">
+          <div class="section-line"><h1 id="conversation-heading">きょうのひとこと</h1><span class="demo-label">デモ会話</span></div>
+          <div id="dialogue" class="dialogue" role="log" aria-live="polite"></div>
+          <form id="talk-form"><label class="sr-only" for="message">相棒に話しかける</label><div class="input-row"><input id="message" maxlength="180" autocomplete="off" placeholder="次は、どうする？"><button class="send-button" id="send" type="submit">話す</button></div></form>
+          <div class="quick-messages"><button data-message="次は戦闘しよう">戦闘しよう</button><button data-message="何か探検したい">探検しよう</button><button data-message="何を覚えてる？">覚えてる？</button></div>
+          <p class="demo-explanation">相棒の返答は、あらかじめ用意された内容です。</p>
+        </section>
+        <section id="event-card" class="event-card" hidden aria-labelledby="event-heading"><span class="eyebrow">小さな出来事</span><h2 id="event-heading"></h2><div id="event-choices" class="actions"></div></section>
+        <section class="care-section" aria-labelledby="care-heading"><div class="section-line"><h2 id="care-heading">少しだけ、いっしょに</h2><span class="small-label">1回、数秒</span></div><div class="actions" id="care-actions"><button data-care="explore"><span class="action-symbol">✧</span>いっしょに探す</button><button data-care="care"><span class="action-symbol">◒</span>おやつを分ける</button><button data-care="calm"><span class="action-symbol">≈</span>ひと息つく</button></div></section>
+        </details>
+      </div>
+      <p class="gentle-note">離れていた時間で、相棒が弱ることはありません。</p>
+    </section>
+
+    <section id="battle-view" class="view" hidden aria-labelledby="battle-heading">
+      <a id="scene-entry" class="scene-entry" href="realtime.html"><strong>光の水庭で戦う</strong><small>今の相棒と装備で、一戦。育成の記録はそのまま。経験・報酬は増えません。</small></a>
+      <div class="view-intro battle-intro"><span class="eyebrow">きみが指示する、小さな勝負</span><h1 id="battle-heading">合図を読んで挑む。</h1><p>相手の次の動きを見て、1手ずつ指示。防御で息が2戻ります。</p></div>
+      <section id="battle-prep" class="card battle-prep" aria-labelledby="prep-heading"><div class="section-line"><h2 id="prep-heading">ここで構えを決める</h2><span id="prep-budget" class="small-label"></span></div><div id="prep-stats" class="prep-stats"></div><p id="prep-condition" class="small-label"></p><div id="prep-training" class="training-options"></div><details id="prep-loadout"><summary>装備を組み替える</summary><div id="prep-parts" class="prep-parts"></div></details><button id="reward-review" class="text-button full" hidden>前の獲得装備を見直す</button></section>
+      <div id="foe-list" class="foe-list"></div>
+      <section id="fight" class="fight" hidden aria-label="進行中の戦闘">
+        <div class="fight-top"><strong id="fight-name"></strong><span id="fight-turn" class="small-label"></span></div>
+        <div class="battle-stage"><canvas id="battle-ground" width="960" height="420" aria-hidden="true"></canvas><div class="arena"><div><canvas id="fighter" width="320" height="220" role="img" aria-label="あなたの相棒"></canvas><div class="hp-title"><span id="fighter-name"></span><strong id="player-hp"></strong></div><progress id="player-hp-bar" aria-label="相棒の体力"></progress></div><span class="vs">VS</span><div><canvas id="enemy" width="320" height="220" role="img" aria-label="戦闘相手"></canvas><div class="hp-title"><span id="enemy-name"></span><strong id="enemy-hp"></strong></div><progress id="enemy-hp-bar" aria-label="相手の体力"></progress></div></div></div>
+        <div id="telegraph" class="telegraph" aria-live="polite"><span class="eyebrow">相手の合図</span><h2 id="move-name"></h2><p id="move-hint"></p><p id="move-facts" class="small-label"></p><p id="phase-notice" class="phase-notice" hidden></p></div>
+        <div class="battle-status"><span id="breath"></span><span id="fight-stats" class="small-label"></span></div>
+        <div id="battle-actions" class="battle-actions"></div><p id="battle-feedback" class="battle-feedback" role="status"></p><ol id="battle-log" class="battle-log"></ol><details class="battle-rules"><summary>指示と相手の性質を確認</summary><p>攻撃は威力+2、息を2消費。防御は衝撃を4+守り×2だけ減らし、息を2回復。見切りは必要な集中に届けば無傷で集中+3の反撃、息を1消費。フェイントは防御だけを崩し、息切れは攻撃2倍、殻への攻撃は1です。</p><p id="readiness-rule">ためる・殻の手に防御すると、動きを見据えます。次の打撃に限り、見切りの判定に集中+2。反撃の威力は元の集中+3。重ねて増えず、次の打撃が終わると消えます。</p><p id="rebound-rule">巻き岩の次からは、打撃を防御で完全に受け止めると「返し」が残ります。次の攻撃に守りの半分（切捨て）を加算。重ねて増えません。</p></details>
+      </section>
+      <section id="battle-result" class="card result-card" hidden aria-live="polite"><span id="result-tag" class="eyebrow"></span><h2 id="result-title"></h2><p id="result-line" class="partner-line"></p><section id="reward-preview" class="reward-preview" hidden aria-label="獲得装備の装着前後"><div id="reward-options" class="reward-options"></div><div class="reward-pair"><figure><figcaption>装着前</figcaption><canvas id="reward-before" width="360" height="260" role="img" aria-label="新しい装備を付ける前の相棒"></canvas></figure><figure class="reward-after"><figcaption>装着すると</figcaption><canvas id="reward-after" width="360" height="260" role="img" aria-label="新しい装備を付けた相棒のプレビュー"></canvas></figure></div><p id="reward-location"></p><div id="reward-stats" class="reward-stats"></div><p id="reward-choice" class="small-label"></p><div class="reward-actions"><button id="reward-equip" class="primary">この姿を装着する</button><button id="reward-later">今は付けずに進む</button></div></section><p id="result-reason"></p><p id="result-numbers" class="small-label"></p><p id="result-record" class="result-record" hidden></p><div class="result-actions"><button id="retrain" class="primary">鍛え直す</button><button id="retry">すぐ再挑戦</button></div><p class="small-label">体力と息は毎戦全回復。経験と姿は失いません。</p></section>
+      <p class="gentle-note">訓練・戦闘とも、実時間の待機はありません。勝敗は指示と能力で決まります。</p>
+    </section>
+
+    <section id="memories-view" class="view" hidden aria-labelledby="memories-heading"><div class="view-intro"><span class="eyebrow">ふたりの記録</span><h1 id="memories-heading">小さなことを覚えている。</h1><p>この端末に最大60件。いつでも消せます。</p></div><div id="memory-list"></div></section>
+    <section id="growth-view" class="view" hidden aria-labelledby="growth-heading"><div class="view-intro"><span class="eyebrow">同じ核から、違う姿へ</span><h1 id="growth-heading">勝ち取った装備で育つ。</h1><p>丸い核の寸法と選んだ顔を残して、鎧・魔環・機械腕を組み合わせます。脚ありも脚なしも、能力は同じです。</p></div>
+      <div class="card growth-summary"><h2 id="tendency"></h2><div id="trait-bars"></div><p id="morph-description"></p><label class="toggle"><input type="checkbox" id="auto-grow" checked><span>経験で、見た目も育てる</span></label><p class="small-label">オフにすると今の姿を保ちます。オンで今の育ちを反映。</p></div>
+      <div class="section-line history-heading"><h2>姿の履歴</h2><span class="small-label">最初の姿＋最近29件</span></div><div id="appearance-list" class="appearance-list"></div>
+    </section>
+    <footer><span id="save-status" role="status">この端末だけに保存</span></footer>
+  </main>
+  <div id="toast" class="toast" role="status" hidden></div>
+  <dialog id="settings-dialog" aria-labelledby="settings-heading"><div class="dialog-top"><h2 id="settings-heading">保存と設定</h2><button id="settings-close" class="icon-button" aria-label="設定を閉じる">閉じる</button></div><label class="name-label" for="name-input">呼び名 <span>あとから変えられます</span></label><form id="name-form" class="input-row"><input id="name-input" maxlength="20" placeholder="相棒"><button class="send-button">保存</button></form><p>会話・思い出・姿の履歴はこのブラウザーに保存します。別の端末には引き継がれません。ブラウザーのデータを消すと失われます。</p><button id="trial-new" class="primary full">新しい試遊を作る</button><p class="small-label">このタブで新しい枠を開きます。普段の相棒と以前の試遊は消しません。同じURLで続きに戻れます。</p><a id="trial-open" class="button-link full" href="?trial=1" target="_blank" rel="noopener">これまでの試遊枠を開く</a><p class="small-label">以前の固定の試遊枠を、新しいタブで再開します。</p><button id="clear-memories" class="secondary full">思い出と会話の記録を消す</button><p class="small-label">育ちと姿はそのままです。</p><button id="reset-open" class="danger full">最初からはじめる</button><p class="small-label settings-version">バージョン 0.3.18</p></dialog>
+  <dialog id="confirm-dialog" aria-labelledby="confirm-heading"><h2 id="confirm-heading"></h2><p id="confirm-description"></p><div class="confirm-actions"><button id="confirm-cancel" class="secondary">やめておく</button><button id="confirm-accept" class="danger">消す</button></div></dialog>
+</body>
+</html>

@@ -1,0 +1,15 @@
+(function(root,factory){if(typeof module==='object'&&module.exports)module.exports=factory();else root.AwaiRealtimeDirector=factory();})(globalThis,function(){
+  'use strict';const clamp=(v,a,b)=>Math.max(a,Math.min(b,Number.isFinite(v)?v:a)),priority={burst:5,cleave:4,impact:3,strike:2,cast:1};
+  function create(s){return {clock:0,seen:s.sequence||0,shown:{hp:s.hp,bossHp:s.bossHp},action:null,contacts:0};}
+  function commit(d,a,index){if(index<=a.hitIndex)return;const from=a.hitIndex;a.hitIndex=index;const fraction=index/a.hitCount;d.shown={hp:a.before.hp+(a.after.hp-a.before.hp)*fraction,bossHp:a.before.bossHp+(a.after.bossHp-a.before.bossHp)*fraction};a.committed=index===a.hitCount;d.contacts+=index-from;}
+  function capture(d,s,reduced=false,{style}={}){const events=s.effects.filter(e=>e.id>d.seen);d.seen=s.sequence;const chosen=events.filter(e=>priority[e.kind]).sort((a,b)=>priority[b.kind]-priority[a.kind])[0];if(!chosen){if(!d.action)d.shown={hp:s.hp,bossHp:s.bossHp};return;}
+    // An engine action is one transaction; visible HP is split across its contact beats only.
+    const strong=['burst','cleave'].includes(chosen.kind),windup=reduced?0:chosen.kind==='impact'?0:style==='thunder'?(strong?.58:.30):strong?.30:chosen.kind==='cast'?.24:.19,hitstop=reduced?0:strong?.085:.06,hitCount=reduced?1:clamp(chosen.hits||1,1,3),gap=strong?.12:.11,beat=hitstop+gap,lastContact=windup+(hitCount-1)*beat;
+    d.action={...chosen,elapsed:0,windup,hitstop,hitCount,hitIndex:0,beat,lastContact,ruleResume:lastContact+hitstop+(strong?.32:0),total:reduced?.26:lastContact+hitstop+(strong?.60:.45),before:{...d.shown},after:{hp:s.hp,bossHp:s.bossHp},committed:false,reduced};if(!windup)commit(d,d.action,1);}
+  function advance(d,dt,{paused=false,reduced=false}={}){if(paused)return false;dt=clamp(dt,0,.08);const a=d.action;if(reduced&&a&&!a.reduced){d.shown={...a.after};a.reduced=true;a.windup=a.hitstop=a.lastContact=0;a.hitCount=1;a.hitIndex=1;a.elapsed=0;a.total=.26;a.committed=true;}
+    const offset=a?a.elapsed-a.windup:0,beatIndex=a?Math.floor(Math.max(0,offset)/a.beat):0,stopped=a&&!a.reduced&&offset>=0&&beatIndex<a.hitCount&&offset-beatIndex*a.beat<a.hitstop;if(!stopped)d.clock+=dt;if(a){a.elapsed+=dt;const index=a.elapsed<a.windup?0:Math.min(a.hitCount,1+Math.floor((a.elapsed-a.windup)/a.beat));commit(d,a,index);if(a.elapsed>=a.total)d.action=null;}
+    return !d.action||d.action.reduced||d.action.elapsed>=(d.action.ruleResume??d.action.lastContact+d.action.hitstop);}
+  function flush(d,s){d.shown={hp:s.hp,bossHp:s.bossHp};d.action=null;d.seen=s.sequence;}
+  function frame(d){const a=d.action;if(!a)return null;const index=Math.max(0,a.hitIndex-1),since=a.elapsed-(a.windup+index*a.beat),age=a.elapsed<a.windup?a.elapsed:Math.max(a.windup,a.elapsed-a.hitstop*Math.max(1,a.hitIndex));const stage=a.reduced?'impact':a.elapsed<a.windup?'windup':since<a.hitstop?'contact':a.hitIndex<a.hitCount||since<a.hitstop+.14?'impact':since<a.hitstop+.36?'recoil':'settle';return {...a,age,contactAge:Math.max(0,since-a.hitstop),stage};}
+  return {create,capture,advance,flush,frame};
+});
