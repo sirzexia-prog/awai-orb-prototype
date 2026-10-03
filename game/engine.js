@@ -21,7 +21,7 @@
     const shares = total ? [traits.explore, traits.care, traits.calm].map(x => x / total) : [0, 0, 0];
     return {
       seed, hue: baseStyle.color + scale * (shares[0] * 12 - shares[1] * 8 + shares[2] * 5),
-      eyes:baseStyle.eyes, mouth:baseStyle.mouth, size:sizeFor(count),
+      eyes:baseStyle.eyes, mouth:baseStyle.mouth, tone:baseStyle.tone||'pastel', eyeColor:baseStyle.eyeColor||'#fffbe8', weapon:baseStyle.weapon||'sword', size:sizeFor(count),
       width: 1, height: 1,
       fins: .15 + scale * (shares[1] * .6 + shares[0] * .28),
       antenna: .08 + scale * shares[0] * .48,
@@ -54,11 +54,11 @@
     state.energy = clamp(Number(raw.energy) || 72,0,100);
     state.name = clean(raw.name,20) || '相棒';
     const base=raw.baseStyle || {};
-    state.baseStyle={color:[34,170,205,270,335,8].includes(base.color)?base.color:34,eyes:['hollow','oval','line','arc'].includes(base.eyes)?base.eyes:'hollow',mouth:['none','smile','flat','dot','teeth','fang'].includes(base.mouth)?base.mouth:'none'};
+    state.baseStyle={color:Number.isFinite(base.color)?clamp(base.color,0,359):34,eyes:['hollow','oval','line','arc'].includes(base.eyes)?base.eyes:'hollow',mouth:['none','smile','flat','dot','teeth','fang'].includes(base.mouth)?base.mouth:'none',tone:['pastel','vivid','dark','black','white'].includes(base.tone)?base.tone:'pastel',eyeColor:/^#[0-9a-f]{6}$/i.test(base.eyeColor||'')?base.eyeColor:'#fffbe8',weapon:['sword','machinegun','thunder'].includes(base.weapon)?base.weapon:'sword',weaponChosen:base.weaponChosen===true||(base.weaponChosen===undefined&&['sword','machinegun','thunder'].includes(base.weapon)),weaponRevision:Number.isFinite(base.weaponRevision)?clamp(Math.floor(base.weaponRevision),0,1000000):0};
     state.customized=raw.customized===true;
     state.autoGrow = raw.autoGrow !== false;
-    const withSize=(a,count)=>a?{...a,size:a.size===undefined?sizeFor(count):a.size}:a;
-    const validAppearance = a => a && a.seed === state.seed && a.eyes===state.baseStyle.eyes && a.mouth===state.baseStyle.mouth && ['hue','width','height','fins','antenna','markings','glow','pace','growth','size'].every(k => Number.isFinite(a[k])) && a.size>=.48 && a.size<=1 && Math.abs(a.hue-state.baseStyle.color)<=12 && a.width >= 1 && a.width <= 1.3 && a.height >= 1 && a.height <= 1.3 && a.pace >= .5 && a.pace <= 1.5 && a.markings >= 0 && a.markings <= 8 && a.fins >= .1 && a.fins <= .8 && a.antenna >= 0 && a.antenna <= .6 && a.glow >= .2 && a.glow <= 1 && a.growth >= 0 && a.growth <= 1;
+    const withSize=(a,count)=>a?{...a,tone:a.tone||'pastel',eyeColor:a.eyeColor||'#fffbe8',weapon:a.weapon||'sword',size:a.size===undefined?sizeFor(count):a.size}:a;
+    const validAppearance = a => a && a.seed === state.seed && ['hollow','oval','line','arc'].includes(a.eyes) && ['none','smile','flat','dot','teeth','fang'].includes(a.mouth) && ['hue','width','height','fins','antenna','markings','glow','pace','growth','size'].every(k => Number.isFinite(a[k])) && a.size>=.48 && a.size<=1 && a.hue>=-12 && a.hue<=371 && a.width >= 1 && a.width <= 1.3 && a.height >= 1 && a.height <= 1.3 && a.pace >= .5 && a.pace <= 1.5 && a.markings >= 0 && a.markings <= 8 && a.fins >= .1 && a.fins <= .8 && a.antenna >= 0 && a.antenna <= .6 && a.glow >= .2 && a.glow <= 1 && a.growth >= 0 && a.growth <= 1;
     const current=withSize(raw.appearance,state.actions);
     state.appearance = validAppearance(current) ? copy(current) : appearanceFor(state.seed,state.traits,state.actions,state.baseStyle);
     state.appearances = Array.isArray(raw.appearances) ? raw.appearances.filter(x=>x).map(x=>({...x,appearance:withSize(x.appearance,x.id==='birth'?0:Number(clean(x.reason,80).match(/(\d+)回目/)?.[1])||Math.round((x.appearance?.growth||0)**2*24))})).filter(x=>validAppearance(x.appearance)).slice(-30).map(x=>({id:clean(x.id,80),time:Number(x.time)||state.createdAt,reason:clean(x.reason,80),appearance:copy(x.appearance)})) : [];
@@ -142,11 +142,12 @@
     state.appearance=copy(entry.appearance); state.autoGrow=false;
     return true;
   }
-  function customize(state, baseStyle) {
-    if(state.customized || state.actions>0) return false;
-    const checked=hydrate({...state,baseStyle}).baseStyle;
-    state.baseStyle=checked; state.appearance=appearanceFor(state.seed,state.traits,0,checked);
-    state.appearances=[{id:'birth',time:state.createdAt,reason:'選んだ、はじめての姿',appearance:copy(state.appearance)}];
+  function customize(state, baseStyle, now=Date.now()) {
+    const checked=hydrate({...state,baseStyle}).baseStyle;if(JSON.stringify(checked)===JSON.stringify(state.baseStyle))return false;
+    const previousAppearance=JSON.stringify(state.appearance);state.baseStyle=checked; state.appearance={...state.appearance,...appearanceFor(state.seed,state.traits,state.actions,checked)};
+    state.updatedAt=now;if(state.customized&&JSON.stringify(state.appearance)===previousAppearance)return true;
+    if(!state.customized&&state.actions===0)state.appearances=[{id:'birth',time:state.createdAt,reason:'選んだ、はじめての姿',appearance:copy(state.appearance)}];
+    else {state.appearances.push({id:'custom-'+now,time:now,reason:'カスタムした姿',appearance:copy(state.appearance)});if(state.appearances.length>30)state.appearances.splice(1,state.appearances.length-30);}
     return true;
   }
   return {STORAGE_KEY,ACTIONS,createState,hydrate,load,save,appearanceFor,sizeFor,growthLabel,startConversation,act,forget,setAutoGrow,restoreAppearance,customize,clean};

@@ -19,10 +19,19 @@
   const date=time=>new Intl.DateTimeFormat('ja-JP',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(time);
   const token=()=>state.id+'-'+Date.now()+'-'+(++sequence);
   const element=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;};
+  function warrior(fresh=false){E.customize(state,{...state.baseStyle,color:270,tone:'black',eyeColor:'#ff415b',weapon:'sword',weaponChosen:true,weaponRevision:(state.baseStyle.weaponRevision||0)+1,eyes:'hollow',mouth:'none'});if(fresh){state.gameplay.trialStarterParts=['armor','arms'];C.ensure(state);}state.gameplay.equipped=['armor','arms'].filter(id=>state.gameplay.parts.includes(id));state.gameplay.locomotion='hover';state.customized=true;}
+  if(trial&&!loaded.restored){warrior(true);persist();}
+  $('custom-settings').append($('customizer'),$('equipment-details'));
+  $('equipment-details').open=true;
+  $('customizer').hidden=false;
+  const studio=document.querySelector('.target-studio'),details=element('details','secondary-play'),summary=element('summary','','獲得したいパーツを確認');details.append(summary,studio);$('custom-settings').append(details);
+  for(const id of ['custom-fight','home-fight'])$(id).href=sceneLink.href;
+  if(!state.customized)view='custom';
+  if(['home','custom','battle','growth'].includes(params.get('view')))view=params.get('view');
   function persist(){const ok=E.save(storage,state);$('save-status').textContent=ok?'保存しました':'保存できません。この画面を閉じると記録が失われます';$('save-status').classList.toggle('warning',!ok);return ok;}
   function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,3000);}
   function closeReward(){reviewingReward=false;const r=state.gameplay.result;if(r?.reward&&!r.rewardDismissed){r.rewardDismissed=true;persist();}}
-  function switchView(next){if(view==='battle'&&next!=='battle')closeReward();view=next;for(const name of ['home','battle','memories','growth'])$(name+'-view').hidden=name!==view;document.querySelectorAll('.tab').forEach(b=>{const active=b.dataset.view===view;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});render();}
+  function switchView(next){if(view==='battle'&&next!=='battle')closeReward();view=next;for(const name of ['home','battle','memories','growth','custom'])$(name+'-view').hidden=name!==view;document.querySelectorAll('.tab').forEach(b=>{const active=b.dataset.view===view;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});render();}
   function render(){
     $('creature-name').textContent=state.name;
     $('growth-label').textContent=E.growthLabel(state);
@@ -30,7 +39,7 @@
     $('size-progress').max=C.availableParts(state.gameplay).length;$('size-progress').value=state.gameplay.equipped.length;
     $('size-label').textContent=state.gameplay.equipped.length+'装備 · '+(state.gameplay.locomotion==='legs'?'歩行':'浮遊');
     $('appearance-mode').textContent=state.autoGrow?'経験とともに育つ':'この姿を保つ';
-    $('customizer').hidden=state.customized;
+    $('customizer').hidden=false;$('begin').hidden=state.customized;
     $('play-controls').hidden=!state.customized;
     document.body.classList.toggle('playing',state.customized);
     $('memory-count').textContent=state.memories.length;
@@ -54,10 +63,10 @@
     $('message').placeholder=event?'先に、出来事をひとつ選んでね':'次は、どうする？';
     document.querySelectorAll('[data-message]').forEach(b=>b.disabled=$('message').disabled);
     document.querySelectorAll('[data-care]').forEach(b=>b.disabled=busy||actionLock||!!event||!!state.gameplay.battle);
-    for(const [attr,key] of [['color','color'],['eyes','eyes'],['mouth','mouth']])document.querySelectorAll('[data-'+attr+']').forEach(b=>{const active=String(state.baseStyle[key])===b.dataset[attr];b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});
+    for(const [attr,key] of [['color','color'],['eyes','eyes'],['mouth','mouth'],['tone','tone'],['eye-color','eyeColor'],['weapon','weapon']])document.querySelectorAll('[data-'+attr+']').forEach(b=>{const active=String(state.baseStyle[key])===b.getAttribute('data-'+attr);b.classList.toggle('selected',active);b.setAttribute('aria-pressed',String(active));});
     if(view==='memories')renderMemories();
     if(view==='growth')renderGrowth();
-    renderGameplay();
+    renderGameplay();drawCompanion(0,true);
   }
   async function talk(message){
     message=E.clean(message);
@@ -103,7 +112,7 @@
     $('training-budget').textContent=b?'戦闘中': '訓練 残り'+g.slots+'回';
     const statBox=$('stats');statBox.replaceChildren();
     for(const k of Object.keys(C.DRILLS)){const n=element('div','stat');n.append(element('span','',C.DRILLS[k].stat),element('strong','',C.displayStat(s,k)),element('small','',U.statDetail(C,g,base,k)));statBox.append(n);}
-    $('condition').textContent=g.condition?'一戦の構え：'+U.statEffect(C.DRILLS[g.condition].effect):'一戦の構え：標準。訓練で得意と苦手が変わる。';
+    $('condition').textContent=g.condition?'今回の訓練効果：'+U.statEffect(C.DRILLS[g.condition].effect):'訓練は任意。能力を整えたら、そのまま戦闘へ。';
     renderTraining($('training-options'),g,base);
     $('scout').disabled=actionLock||!!b||g.scouted;$('scout-note').textContent=g.scouted?'巻き岩：ためた後は大技、その次は息切れ。殻の間は息を戻そう。':'相手の癖を調べられるのは各戦闘の前に1回。訓練回数は使いません。';
     const gear=$('gear-list');gear.replaceChildren();
@@ -112,20 +121,20 @@
     const foes=$('foe-list');foes.replaceChildren();foes.hidden=!!b;
     for(const f of C.FOES){const allowed=C.unlocked(g,f.id),card=element('article','foe-card'+(f.id===plan.foe&&!plan.variant?' goal-foe':'')),cv=element('canvas');cv.width=320;cv.height=220;cv.setAttribute('role','img');cv.setAttribute('aria-label',f.name);drawEnemy(cv,f);const text=element('div','foe-info');text.append(element('span','eyebrow',f.id===plan.foe&&!plan.variant?'目標への次の相手':f.tag),element('h2','',f.name),element('p','',U.system(f.description)),element('small','small-label','体力 '+f.hp+' · '+f.limit+'手以内'+(g.wins[f.id]?' · 勝利 '+g.wins[f.id]+'回':'')),renderEnemyNotes(g,f.id));const button=element('button',allowed?'primary':'',allowed?'挑む':f.id==='spark'?'巻き岩に勝つと解放':'はね火に勝つと解放');button.dataset.foe=f.id;button.disabled=!allowed||!state.customized||actionLock;button.addEventListener('click',()=>startFight(f.id));text.append(button);card.append(cv,text);foes.append(card);}
     $('fight').hidden=!b;
-    $('battle-prep').hidden=!!b||showReward;
+    $('battle-prep').hidden=!!b;
     $('reward-review').hidden=!!b||!g.result?.reward||showReward;
     $('prep-budget').textContent='訓練 残り'+g.slots+'回';
     $('prep-stats').textContent='打撃 '+C.displayStat(s,'power')+'　守り '+s.guard+'　集中 '+s.focus;
-    $('prep-condition').textContent=g.condition?'今の構え：'+C.DRILLS[g.condition].name:'標準の構え。相手を見て、得意と苦手を選ぼう。';
+    $('prep-condition').textContent=g.condition?'最後の訓練の効果：'+C.DRILLS[g.condition].name:'訓練は任意です。選ぶと今回の得意な能力が変わります。';
     renderTraining($('prep-training'),g,base);
     const prepParts=$('prep-parts');prepParts.replaceChildren();$('prep-loadout').hidden=!g.parts.length;
     for(const id of g.parts){const p=C.PARTS[id],on=g.equipped.includes(id),button=element('button',on?'selected':'',p.name+(on?' · 装着中':'')+' / '+U.statEffect(p.effect));button.dataset.prepEquip=id;button.disabled=!!b||actionLock;button.setAttribute('aria-pressed',String(on));button.addEventListener('click',()=>{if(C.equip(state,id)){recordOutfit(p.name+(g.equipped.includes(id)?'を装着':'を外した'));persist();render();}});prepParts.append(button);}
     if(g.wins.echo){const f=C.REMATCH,card=element('article','foe-card rematch-card'),cv=element('canvas');cv.width=320;cv.height=220;cv.setAttribute('role','img');cv.setAttribute('aria-label',f.name);drawEnemy(cv,f);const info=element('div','foe-info');info.append(element('span','eyebrow',U.system(f.tag)),element('h2','',f.name),element('p','',U.system(f.description)),element('small','small-label','体力 '+f.hp+' · '+f.limit+'手以内'+(g.rematchWins?' · 再戦勝利 '+g.rematchWins+'回':'')),renderEnemyNotes(g,'rock','rematch'));const choices=element('div','challenge-choices');for(const [key,goal] of Object.entries(C.CHALLENGE_GOALS)){const pick=element('button',g.challengeGoal===key?'selected':'',goal.name+(g.challengeMarks.includes(key)?' · 達成':''));pick.dataset.challengeGoal=key;pick.disabled=!!b;pick.setAttribute('aria-pressed',String(g.challengeGoal===key));pick.addEventListener('click',()=>{if(C.setChallengeGoal(state,key)){persist();render();}});choices.append(pick);}info.append(element('p','small-label','選択は今回の目安。勝利で満たした条件の印を、すべて記録します。'),choices);const button=element('button','primary','この目安で、再戦');button.dataset.rematch='rock';button.disabled=!!b||actionLock;button.addEventListener('click',()=>startFight('rock','rematch'));info.append(button);card.append(cv,info);if(plan.variant==='rematch')card.classList.add('goal-foe');foes.prepend(card);}
     if(C.chapterUnlocked(g))renderChapterCard(foes,g,plan);
-    $('battle-result').hidden=!!b||!g.result||!!g.result.reward&&!showReward;
-    document.querySelector('.battle-intro').hidden=!b&&showReward;
+    $('battle-result').hidden=!!b||!g.result;
+    document.querySelector('.battle-intro').hidden=!!b;
     $('battle-view').insertBefore($('battle-result'),$('battle-prep'));
-    if(g.result){const r=g.result,f=C.encounterFor(r);$('result-tag').textContent=r.outcome==='win'?(r.foe==='gate'?'勝利 · 境界の庭をクリア':r.variant==='rematch'?'勝利 · '+r.achievedMarks.length+'条件達成':'勝利 · 挑戦クリア'):'敗北 · 次の作戦';$('result-title').textContent=r.reward?C.PARTS[r.reward].name+'を獲得！':f.name+'に'+(r.outcome==='win'?'勝った！':'届かなかった。');$('result-line').textContent=U.companion(r.line);$('result-reason').textContent=U.system(r.reason);$('result-numbers').textContent=r.turns+'手 · 与えた '+r.dealt+' / 受けた '+r.taken+' · 姿の経験 +1';$('retrain').textContent=r.outcome==='win'?'構えを変えて試す':'鍛え直す';$('retrain').parentElement.hidden=!!r.reward;renderReward(r);}
+    if(g.result){const r=g.result,f=C.encounterFor(r);$('result-tag').textContent=r.outcome==='win'?(r.foe==='gate'?'勝利 · 境界の庭をクリア':r.variant==='rematch'?'勝利 · '+r.achievedMarks.length+'条件達成':'勝利 · 挑戦クリア'):'敗北 · 次の作戦';$('result-title').textContent=r.reward?C.PARTS[r.reward].name+'を獲得！':f.name+'に'+(r.outcome==='win'?'勝った！':'届かなかった。');$('result-line').textContent=U.companion(r.line);$('result-reason').textContent=U.system(r.reason);$('result-numbers').textContent=r.turns+'手 · 与えた '+r.dealt+' / 受けた '+r.taken+' · 姿の経験 +1';$('retrain').textContent=r.outcome==='win'?'構えを変えて試す':'鍛え直す';$('retrain').parentElement.hidden=false;renderReward(r);}
     if(g.result){const r=g.result,record=g.records[r.variant||r.foe],names=keys=>keys.map(k=>C.CHALLENGE_GOALS[k].name).join(' / ');let earned='';if(r.variant==='rematch'&&r.outcome==='win'){earned=r.earnedMarks.length?'達成印を獲得！ '+names(r.earnedMarks)+'。 ':r.achievedMarks.length?'今回も達成：'+names(r.achievedMarks)+'（印は記録済み）。 ':'今回の条件達成はありません。 ';if(r.goal&&!r.achievedMarks.includes(r.goal))earned+='選んだ目安は未達：'+C.CHALLENGE_GOALS[r.goal].name+'。 ';}$('result-record').hidden=!record;$('result-record').textContent=record?earned+(r.recordTurns?'手数の自己ベスト更新！ ':r.recordTaken?'被害の自己ベスト更新！ ':r.recordFirst?'この勝利からベストを記録。 ':'')+'自己ベスト：最短 '+record.turns+'手 / 最少被害 '+record.taken+'（別々の記録）':'';}
     if(!b)return;
     const f=C.encounterFor(b),m=C.moveFor(b);
@@ -230,12 +239,15 @@
   function askConfirm(title,description,action){
     confirmAction=action;$('confirm-heading').textContent=title;$('confirm-description').textContent=description;$('confirm-dialog').showModal();$('confirm-cancel').focus();
   }
+  document.querySelectorAll('[data-view-link]').forEach(b=>b.addEventListener('click',()=>{switchView(b.dataset.viewLink);window.scrollTo({top:0,behavior:'instant'});}));
+  $('dark-warrior').addEventListener('click',()=>{warrior();persist();render();});
   document.querySelectorAll('.tab').forEach(b=>b.addEventListener('click',()=>switchView(b.dataset.view)));
-  document.querySelectorAll('[data-color],[data-eyes],[data-mouth]').forEach(b=>b.addEventListener('click',()=>{
-    const style={...state.baseStyle};for(const key of ['color','eyes','mouth'])if(b.dataset[key]!==undefined)style[key]=key==='color'?Number(b.dataset[key]):b.dataset[key];
-    E.customize(state,style);render();
+  document.querySelectorAll('[data-color],[data-eyes],[data-mouth],[data-tone],[data-eye-color],[data-weapon]').forEach(b=>b.addEventListener('click',()=>{
+    const style={...state.baseStyle};for(const key of ['color','eyes','mouth','tone','eyeColor','weapon'])if(b.dataset[key]!==undefined)style[key]=key==='color'?Number(b.dataset[key]):b.dataset[key];
+    if(b.dataset.weapon!==undefined){style.weaponChosen=true;style.weaponRevision=(state.baseStyle.weaponRevision||0)+1;}
+    E.customize(state,style);persist();render();
   }));
-  $('begin').addEventListener('click',()=>{if(state.customized)return;state.customized=true;persist();render();});
+  $('begin').addEventListener('click',()=>{if(state.customized)return;state.customized=true;persist();switchView('home');});
   document.querySelectorAll('[data-goal]').forEach(button=>button.addEventListener('click',()=>{C.setGoal(state,button.dataset.goal);lookMode='target';persist();render();}));
   document.querySelectorAll('[data-look]').forEach(button=>button.addEventListener('click',()=>{lookMode=button.dataset.look;render();}));
   $('target-equip').addEventListener('click',()=>{if(C.wearGoal(state)){recordOutfit('持っている目標部位へ着替えた');lookMode='current';persist();render();}});
@@ -269,7 +281,8 @@
   $('confirm-dialog').addEventListener('cancel',()=>confirmAction=null);
   $('confirm-accept').addEventListener('click',()=>{const action=confirmAction;confirmAction=null;$('confirm-dialog').close();if(action)action();});
   function drawFight(time,still){const b=state.gameplay.battle;if(!b)return;const look={...state.appearance,parts:state.gameplay.equipped,locomotion:state.gameplay.locomotion},f=C.encounterFor(b),m=C.moveFor(b);if(battleEffect&&time-battleEffect.started>360)battleEffect=null;const active=!still&&battleEffect&&time>=battleEffect.started,step=active?Math.round(Math.sin((time-battleEffect.started)/360*Math.PI)*2):0;AwaiCreature.drawBattleGround($('battle-ground'),look,f,m,time,still,battleEffect);AwaiCreature.draw($('fighter'),look,time,still,{shift:active&&battleEffect.action!=='defend'?step:0});AwaiCreature.drawEnemy($('enemy'),f,m,time,still,{shift:active&&battleEffect.action!=='defend'?-step:0});}
-  function animate(time){if(!document.hidden&&time-lastPaint>=80){lastPaint=time;if(view==='home'){AwaiCreature.draw($('creature'),{...state.appearance,parts:state.gameplay.equipped,locomotion:state.gameplay.locomotion},time,reduced.matches);if(state.customized)drawTarget(time,reduced.matches);}else if(view==='battle')drawFight(time,reduced.matches);}requestAnimationFrame(animate);}
+  function drawCompanion(time,still){const look={...state.appearance,parts:state.gameplay.equipped,locomotion:state.gameplay.locomotion};AwaiCreature.draw($('creature'),look,time,still);AwaiCreature.draw($('custom-avatar'),look,time,still);}
+  function animate(time){if(!document.hidden&&time-lastPaint>=80){lastPaint=time;if(view==='home'||view==='custom'){drawCompanion(time,reduced.matches);if(state.customized)drawTarget(time,reduced.matches);}else if(view==='battle')drawFight(time,reduced.matches);}requestAnimationFrame(animate);}
   switchView(view);requestAnimationFrame(animate);
   $('trial-banner').hidden=!trial;
   if(trial){const banner=$('trial-banner');banner.firstChild.textContent=trialName+'です。この枠だけに保存します。普段の相棒と、ほかの試遊枠はそのままです。 ';$('save-status').textContent='普段とは別の保存';}

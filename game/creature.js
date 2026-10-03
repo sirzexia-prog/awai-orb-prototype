@@ -145,5 +145,33 @@
     if(pose==='charge'){line(-34,9,-26,17,'#c2c9a5');line(-29,13,-21,20,'#c2c9a5');}
     present(canvas,c);
   }
-  root.AwaiCreature={draw,drawEnemy,drawDinosaur,drawBattleGround,pixelArt:true,pixelGrid:GRID};
+  // Independent floating modules around a small, constant-sized orb core.
+  function drawAssembly(canvas,a,time=0,reduced=false,pose={}){
+    const c=frame(canvas),t=reduced?0:time*.001*(a.pace||1),bob=reduced?0:Math.round(Math.sin(t*1.6)),y=Math.round(c.height*.52)+bob;
+    const {ctx,dot,rect,line,poly,ellipse,ring,star}=tools(c,50+(pose.shift||0),y),parts=a.parts||[],tone=a.tone||'pastel';
+    const black=tone==='black',white=tone==='white',dark=tone==='dark'||black,hue=a.hue||0;
+    const ink=white?'#738491':dark?'#0b101e':H(hue-9,58,28),main=black?'#242936':white?'#ecf5fa':H(hue,tone==='vivid'?95:76,dark?27:58),shade=black?'#151a26':white?'#b8cbd6':H(hue-5,73,dark?16:40),shine=white?'#ffffff':dark?H(hue,48,62):H(hue+4,89,82);
+    const plate=dark?'#212636':white?'#e0ebf0':H(hue,34,37),edge=dark?'#080d19':'#283647',metal=dark?'#545d76':white?'#ffffff':H(hue,29,66),accent=a.eyeColor||'#fffbe8';
+    function module(id,paint){if(!parts.includes(id))return;ctx.save();if((a.lockedParts||[]).includes(id))ctx.globalAlpha=.27;paint();ctx.restore();}
+    module('trail',()=>{for(const side of [-1,1]){line(side*15,10,side*25,20,accent);line(side*25,20,side*34,16,accent);star(side*34,16,accent);}});
+    module('magic',()=>{ring(0,0,22,16,'#367fbb');ring(0,0,21,15,'#9febff');for(const [px,py] of [[-22,0],[22,0],[0,-16],[0,16]])star(px,py,accent,'#3b6896');});
+    module('dress',()=>{for(const side of [-1,1]){const q=p=>p.map(([x,y])=>[x*side,y]);poly(q([[17,8],[24,11],[32,24],[23,27],[16,20]]),H(hue+15,56,dark?24:63),edge);line(side*21,13,side*26,23,metal);}});
+    module('armor',()=>{for(const side of [-1,1]){const q=p=>p.map(([x,y])=>[x*side,y]);poly(q([[16,-13],[22,-25],[29,-20],[32,-10],[25,-5],[19,-6]]),plate,edge);poly(q([[21,-18],[23,-23],[27,-18],[28,-10],[23,-9]]),metal,edge);line(side*23,-16,side*27,-14,accent);poly(q([[14,14],[23,16],[27,24],[20,28],[13,22]]),plate,edge);line(side*17,19,side*23,22,metal);}});
+    module('arms',()=>{for(const side of [-1,1]){const q=p=>p.map(([x,y])=>[x*side,y]);poly(q([[25,-15],[33,-20],[40,-14],[41,-5],[35,0],[27,-3]]),plate,edge);poly(q([[29,-13],[34,-17],[37,-12],[37,-5],[31,-4]]),metal,edge);ellipse(side*31,3,5,5,edge,metal);ellipse(side*31,3,2,2,accent);poly(q([[27,9],[36,6],[43,14],[41,25],[32,28],[25,21]]),plate,edge);poly(q([[29,11],[35,10],[39,16],[37,23],[31,24]]),metal,edge);rect(side<0?-38:31,17,7,2,accent);poly(q([[30,27],[39,27],[43,32],[41,36],[37,33],[34,37],[29,34]]),plate,edge);line(side*31,30,side*38,30,metal);}});
+    module('crown',()=>{poly([[-10,-20],[-12,-29],[-6,-25],[0,-33],[6,-25],[12,-29],[10,-20]],plate,edge);line(-8,-24,0,-28,metal);line(0,-28,8,-24,metal);star(0,-24,accent);});
+    if(a.locomotion==='legs')for(const side of [-1,1]){poly([[side*7,15],[side*12,17],[side*13,28],[side*5,29]],plate,edge);line(side*8,19,side*10,25,metal);}
+    // Open space separates every satellite from the 22-pixel core; there is no human torso.
+    ellipse(0,0,11,11,main,ink);ellipse(1,4,8,6,shade);line(-7,-7,-4,-8,shine);rect(-8,-5,2,3,shine);
+    for(let i=0;i<(a.markings||0);i++){const dx=Math.round(Math.cos((a.seed%97)*.1+i*2.399)*7),dy=Math.round(Math.sin((a.seed%97)*.1+i*2.399)*7);if(Math.abs(dx)>6||dy>5)dot(dx,dy,shine);}
+    const blink=!reduced&&Math.sin(t*.7)>.996;
+    for(const side of [-1,1]){const ex=side*4+(pose.facing||0);if(a.eyes==='line'||blink)rect(ex-2,-3,5,1,accent);else if(a.eyes==='arc'){line(ex-2,-2,ex-1,-4,accent);line(ex-1,-4,ex+1,-4,accent);line(ex+1,-4,ex+2,-2,accent);}else if(a.eyes==='hollow'){rect(ex-1,-8,3,11,accent);rect(ex-2,-6,5,7,accent);}else {rect(ex-1,-5,3,5,accent);rect(ex-2,-4,5,3,accent);}}
+    if(a.mouth==='teeth'||a.mouth==='fang'){rect(-4,4,9,3,ink);if(a.mouth==='teeth'){for(let i=-3;i<=3;i+=2)rect(i,4,1,2,accent);for(let i=-2;i<=2;i+=2)dot(i,6,accent);}else{rect(-3,4,2,2,accent);rect(2,4,2,2,accent);}}else if(a.mouth==='flat')rect(-2,5,5,1,ink);else if(a.mouth==='dot')rect(0,5,1,2,ink);else if(a.mouth!=='none'){line(-2,4,-1,5,ink);line(-1,5,1,5,ink);dot(2,4,ink);}
+    if(parts.includes('arms')&&a.weapon!=='none'){
+      if(a.weapon==='thunder'){line(37,29,40,2,'#617dc1');star(40,0,'#b8efff','#446cd9');}
+      else if(a.weapon==='machinegun'){rect(25,29,23,5,plate);rect(34,29,14,2,metal);rect(25,31,6,6,edge);}
+      else {poly([[32,28],[28,22],[28,-8],[33,-26],[43,-5],[38,23]],'#151923','#080b13');poly([[32,19],[32,-7],[34,-20],[39,-4],[36,20]],'#465069','#101728');line(34,-16,34,17,'#9e547a');poly([[24,23],[40,21],[43,25],[25,27]],metal,edge);rect(31,27,4,9,plate);rect(30,35,6,2,accent);}
+    }
+    present(canvas,c);
+  }
+  root.AwaiCreature={draw:drawAssembly,drawEnemy,drawDinosaur,drawBattleGround,pixelArt:true,pixelGrid:GRID};
 })(globalThis);

@@ -44,7 +44,7 @@
   const partCondition=id=>PARTS[id].chapter?'境界の庭の初クリア':FOES.find(f=>f.id===PARTS[id].foe).name+'の初勝';
   const encounterFor=b=>b.variant==='rematch'?REMATCH:b.foe==='gate'?routeFor(b.variant):FOES.find(f=>f.id===b.foe);
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,Number.isFinite(v)?Math.floor(v):a));
-  const fresh=()=>({xp:{power:0,guard:0,focus:0},slots:3,condition:null,wins:{rock:0,spark:0,echo:0},rematchWins:0,chapterWins:{shield:0,wind:0},chapterRoute:'shield',challengeGoal:'speed',challengeMarks:[],records:{},notes:{},attempts:0,battle:null,result:null,scouted:false,parts:[],equipped:[],locomotion:'hover',goal:'armor',goalParts:['armor','crown']});
+  const fresh=()=>({trialStarterParts:[],xp:{power:0,guard:0,focus:0},slots:3,condition:null,wins:{rock:0,spark:0,echo:0},rematchWins:0,chapterWins:{shield:0,wind:0},chapterRoute:'shield',challengeGoal:'speed',challengeMarks:[],records:{},notes:{},attempts:0,battle:null,result:null,scouted:false,parts:[],equipped:[],locomotion:'hover',goal:'armor',goalParts:['armor','crown']});
   const stats=g=>Object.fromEntries(Object.keys(DRILLS).map(k=>[k,Math.min(6,2+Math.floor(g.xp[k]/3))]));
   // Every implemented penalty remains effective. Raw power -1 is displayed as actual strike 1.
   function effective(g){const out=stats(g),d=DRILLS[g.condition];if(d){out[d.plus]+=2;out[d.minus]-=1;}for(const id of g.equipped)for(const [k,v] of Object.entries(PARTS[id].bonus))out[k]+=v;return out;}
@@ -102,8 +102,10 @@
       g.challengeGoal=Object.hasOwn(CHALLENGE_GOALS,raw.challengeGoal)?raw.challengeGoal:'speed';g.challengeMarks=Array.isArray(raw.challengeMarks)?[...new Set(raw.challengeMarks)].filter(k=>Object.hasOwn(CHALLENGE_GOALS,k)):[];
       for(const key of ['rock','spark','echo','rematch','gate-shield','gate-wind']){const record=raw.records?.[key];if(record&&Number.isInteger(record.turns)&&record.turns>=1&&record.turns<=16&&Number.isInteger(record.taken)&&record.taken>=0&&record.taken<=1000)g.records[key]={turns:record.turns,taken:record.taken};}
       if(raw.notes&&typeof raw.notes==='object')for(const [key,note] of Object.entries(raw.notes)){const f=key==='rematch'?REMATCH:routeFor(key)||foeFor(key);if(!f||!note||typeof note!=='object')continue;g.notes[key]={moves:Array.isArray(note.moves)?[...new Set(note.moves)].filter(k=>(f.pattern.includes(k)||f.id==='gate'&&k==='quick')&&MOVES[k]?.damage>0):[],opening:(key==='rematch'||f.id==='gate')&&note.opening===true};}
+      g.trialStarterParts=Array.isArray(raw.trialStarterParts)?[...new Set(raw.trialStarterParts)].filter(id=>['armor','arms'].includes(id)):[];
+      // Trial starter modules are explicit loaned equipment; they never fabricate victories.
       // Wins are the source of truth for ownership, including older v0.3 draft saves.
-      g.parts=Object.keys(PARTS).filter(id=>PARTS[id].chapter?Object.values(g.chapterWins).some(n=>n>0):g.wins[PARTS[id].foe]>0);
+      g.parts=Object.keys(PARTS).filter(id=>g.trialStarterParts.includes(id)||(PARTS[id].chapter?Object.values(g.chapterWins).some(n=>n>0):g.wins[PARTS[id].foe]>0));
       g.equipped=Array.isArray(raw.equipped)?[...new Set(raw.equipped)].filter(id=>g.parts.includes(id)):[];
       g.locomotion=raw.locomotion==='legs'?'legs':'hover';
       g.goal=Object.hasOwn(GOALS,raw.goal)||raw.goal==='custom'?raw.goal:'armor';
