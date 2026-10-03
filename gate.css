@@ -20,3 +20,5 @@ button:disabled{background:#8ca59b;cursor:default}
 .version{margin-top:10px}
 @keyframes breathe{50%{transform:translateY(-4px) scale(1.03)}}
 @media(prefers-reduced-motion:reduce){.orb{animation:none}}
+
+[hidden]{display:none!important}.remember-note{font-size:12px;line-height:1.7;color:#586e69;margin:12px 0}.forget-entry{background:#eef4f0;color:#375c50;border:1px solid #a5bcb1;font-size:13px}.entry-settings{display:block;min-height:44px;padding:14px 0;color:#375c50;font-size:12px}.notice{margin-top:12px}
