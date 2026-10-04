@@ -1,0 +1,404 @@
+{
+  "adoptedSourceId": "1lnkyyUmWXBQnDHdsz5J4VTDyWr5q-zdc",
+  "sourceSha256": "9d2e7162cca3fc11daefe1266030d7fe2567f617e4b140cb16b7b0038abfa91f",
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "pipeline": "adopted high quality source -> visible-pixel RGBA extraction -> uniform 2:1 nearest pixel conversion",
+  "status": "intake only; full swing blocked on clean separated and angle art",
+  "parts": [
+    {
+      "name": "core-front",
+      "sourceBounds": [
+        195,
+        175,
+        254,
+        231
+      ],
+      "sourcePolygon": [
+        [
+          207,
+          178
+        ],
+        [
+          232,
+          175
+        ],
+        [
+          247,
+          183
+        ],
+        [
+          253,
+          200
+        ],
+        [
+          249,
+          219
+        ],
+        [
+          236,
+          230
+        ],
+        [
+          215,
+          230
+        ],
+        [
+          200,
+          220
+        ],
+        [
+          195,
+          201
+        ],
+        [
+          198,
+          187
+        ]
+      ],
+      "source": "assets/adopted-intake/core-front-source.png",
+      "pixel": "assets/adopted-intake/core-front-pixel.png",
+      "uniformSourcePixelsPerScenePixel": 2,
+      "completeness": "complete visible core",
+      "usableForFinalSwing": true,
+      "sha256": "dcea74f3171e2bcd1bbc31695ca4aaaeb29807c8f3b290cada05091d658254be"
+    },
+    {
+      "name": "core-back",
+      "sourceBounds": [
+        566,
+        193,
+        613,
+        241
+      ],
+      "sourcePolygon": [
+        [
+          578,
+          195
+        ],
+        [
+          594,
+          193
+        ],
+        [
+          607,
+          199
+        ],
+        [
+          612,
+          212
+        ],
+        [
+          609,
+          229
+        ],
+        [
+          599,
+          240
+        ],
+        [
+          582,
+          240
+        ],
+        [
+          570,
+          230
+        ],
+        [
+          566,
+          216
+        ],
+        [
+          570,
+          201
+        ]
+      ],
+      "source": "assets/adopted-intake/core-back-source.png",
+      "pixel": "assets/adopted-intake/core-back-pixel.png",
+      "uniformSourcePixelsPerScenePixel": 2,
+      "completeness": "complete visible core",
+      "usableForFinalSwing": true,
+      "sha256": "e61b919f7206ce7c32898e89911d42c8332f5ef5b194703ce493dc7bbd7e0f51"
+    },
+    {
+      "name": "back-shoulder-left-visible",
+      "sourceBounds": [
+        438,
+        113,
+        536,
+        215
+      ],
+      "sourcePolygon": [
+        [
+          438,
+          175
+        ],
+        [
+          449,
+          146
+        ],
+        [
+          474,
+          125
+        ],
+        [
+          485,
+          125
+        ],
+        [
+          492,
+          113
+        ],
+        [
+          500,
+          127
+        ],
+        [
+          517,
+          147
+        ],
+        [
+          535,
+          169
+        ],
+        [
+          531,
+          190
+        ],
+        [
+          518,
+          203
+        ],
+        [
+          508,
+          206
+        ],
+        [
+          502,
+          211
+        ],
+        [
+          481,
+          214
+        ],
+        [
+          469,
+          205
+        ],
+        [
+          445,
+          199
+        ]
+      ],
+      "source": "assets/adopted-intake/back-shoulder-left-visible-source.png",
+      "pixel": "assets/adopted-intake/back-shoulder-left-visible-pixel.png",
+      "uniformSourcePixelsPerScenePixel": 2,
+      "completeness": "visible original pixels only; occluded surfaces missing",
+      "usableForFinalSwing": false,
+      "sha256": "3aed6706df05eefff06377210117569e5b029e3f087d9b77eee8850d11acc4b0"
+    },
+    {
+      "name": "back-support-fist-visible",
+      "sourceBounds": [
+        636,
+        208,
+        696,
+        286
+      ],
+      "sourcePolygon": [
+        [
+          640,
+          227
+        ],
+        [
+          650,
+          210
+        ],
+        [
+          668,
+          208
+        ],
+        [
+          685,
+          218
+        ],
+        [
+          695,
+          244
+        ],
+        [
+          693,
+          268
+        ],
+        [
+          684,
+          279
+        ],
+        [
+          674,
+          285
+        ],
+        [
+          656,
+          280
+        ],
+        [
+          645,
+          263
+        ],
+        [
+          636,
+          246
+        ]
+      ],
+      "source": "assets/adopted-intake/back-support-fist-visible-source.png",
+      "pixel": "assets/adopted-intake/back-support-fist-visible-pixel.png",
+      "uniformSourcePixelsPerScenePixel": 2,
+      "completeness": "visible original pixels only; occluded surfaces missing",
+      "usableForFinalSwing": false,
+      "sha256": "347ebcf1665dddc00377e327d73b7e5313a6e74ed7c5ce81cc421e5a50b264d9"
+    },
+    {
+      "name": "back-attack-fist-visible",
+      "sourceBounds": [
+        431,
+        214,
+        492,
+        280
+      ],
+      "sourcePolygon": [
+        [
+          438,
+          230
+        ],
+        [
+          449,
+          216
+        ],
+        [
+          464,
+          214
+        ],
+        [
+          480,
+          220
+        ],
+        [
+          491,
+          233
+        ],
+        [
+          490,
+          252
+        ],
+        [
+          480,
+          267
+        ],
+        [
+          465,
+          279
+        ],
+        [
+          452,
+          277
+        ],
+        [
+          440,
+          269
+        ],
+        [
+          431,
+          254
+        ]
+      ],
+      "source": "assets/adopted-intake/back-attack-fist-visible-source.png",
+      "pixel": "assets/adopted-intake/back-attack-fist-visible-pixel.png",
+      "uniformSourcePixelsPerScenePixel": 2,
+      "completeness": "visible original pixels only; occluded surfaces missing",
+      "usableForFinalSwing": false,
+      "sha256": "77e4bafe7a01c3061e5fa4e9511b6b8be15c34c3df053925b2383facf592f5ca"
+    },
+    {
+      "name": "back-blade-visible-only",
+      "sourceBounds": [
+        427,
+        281,
+        500,
+        358
+      ],
+      "sourcePolygon": [
+        [
+          427,
+          357
+        ],
+        [
+          446,
+          330
+        ],
+        [
+          461,
+          312
+        ],
+        [
+          482,
+          289
+        ],
+        [
+          499,
+          281
+        ],
+        [
+          499,
+          296
+        ],
+        [
+          487,
+          313
+        ],
+        [
+          471,
+          327
+        ],
+        [
+          453,
+          340
+        ]
+      ],
+      "source": "assets/adopted-intake/back-blade-visible-only-source.png",
+      "pixel": "assets/adopted-intake/back-blade-visible-only-pixel.png",
+      "uniformSourcePixelsPerScenePixel": 2,
+      "completeness": "visible original pixels only; occluded surfaces missing",
+      "usableForFinalSwing": false,
+      "sha256": "bfad66a0c7e6b57dc128b939bdbf02e36cdaa6e22372fd3ab84f513be70e742e"
+    }
+  ],
+  "noSynthesizedSurfaces": true,
+  "noOldV6UsedInIntake": true,
+  "noGrippingJointInBackSource": "cloth occludes sword root; hand/handle coupling is not visible",
+  "requiredCommonRig": {
+    "origin": "core center",
+    "D": "designer supplied shared core diameter; front/back setting-sheet views currently use different projection scales",
+    "anchors": [
+      "shoulder socket",
+      "elbow",
+      "wrist",
+      "grip center",
+      "blade tip",
+      "blade contact segment",
+      "enemy hit region"
+    ],
+    "sameOriginAndPitchForAllLayers": true
+  },
+  "requiredKeys": [
+    "stance",
+    "charge",
+    "backswing",
+    "contact",
+    "follow-through",
+    "recoil",
+    "return"
+  ]
+}

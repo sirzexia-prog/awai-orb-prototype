@@ -1,0 +1,401 @@
+{
+  "sourceId": "1_GqmQY3uOaOSQYV3-KG_hJu32mYxu3F9",
+  "sourceSha256": "e7191c6f30a3b72bce33c96521ca9a2573611ff600e8eb4a1ab70944bd639a2a",
+  "status": "attack-side preparation only; not an approved sword swing",
+  "masterCanvas": [
+    2048,
+    2048
+  ],
+  "pixelCanvas": [
+    1024,
+    1024
+  ],
+  "sourcePixelsPerScenePixel": 2,
+  "oneGridForAllParts": true,
+  "conversion": "compose and translate onto common master first; then nearest 2048->1024 once for each aligned layer",
+  "noIndependentCeilResize": true,
+  "views": [
+    {
+      "angle": 1,
+      "sourcePrincipalComponentBounds": [
+        966,
+        13,
+        1448,
+        394
+      ],
+      "sourceTranslation": [
+        -76,
+        768
+      ],
+      "registration": {
+        "shoulder": [
+          964,
+          918
+        ],
+        "wrist": [
+          996,
+          998
+        ],
+        "grip": [
+          1024,
+          1024
+        ],
+        "tip": [
+          1366,
+          1152
+        ]
+      },
+      "pixelRegistration": {
+        "shoulder": [
+          482.0,
+          459.0
+        ],
+        "wrist": [
+          498.0,
+          499.0
+        ],
+        "grip": [
+          512.0,
+          512.0
+        ],
+        "tip": [
+          683.0,
+          576.0
+        ]
+      },
+      "pivotApproval": "provisional visible-source registration; designer key-pose anchors pending",
+      "referenceSource": "assets/attack-r6/angle-1-reference-source.png",
+      "referencePixel": "assets/attack-r6/angle-1-reference-pixel.png",
+      "parts": [
+        {
+          "name": "hand-hilt",
+          "source": "assets/attack-r6/angle-1-hand-hilt-source.png",
+          "pixel": "assets/attack-r6/angle-1-hand-hilt-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        },
+        {
+          "name": "blade-visible",
+          "source": "assets/attack-r6/angle-1-blade-visible-source.png",
+          "pixel": "assets/attack-r6/angle-1-blade-visible-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        },
+        {
+          "name": "arm-shoulder-cloth-visible",
+          "source": "assets/attack-r6/angle-1-arm-shoulder-cloth-visible-source.png",
+          "pixel": "assets/attack-r6/angle-1-arm-shoulder-cloth-visible-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        }
+      ],
+      "recompositionSourceRgbaExact": true,
+      "recompositionPixelRgbaExact": true,
+      "gripHiltCommonOriginError": 0
+    },
+    {
+      "angle": 2,
+      "sourcePrincipalComponentBounds": [
+        958,
+        374,
+        1448,
+        733
+      ],
+      "sourceTranslation": [
+        -120,
+        422
+      ],
+      "registration": {
+        "shoulder": [
+          922,
+          934
+        ],
+        "wrist": [
+          984,
+          997
+        ],
+        "grip": [
+          1024,
+          1024
+        ],
+        "tip": [
+          1322,
+          1148
+        ]
+      },
+      "pixelRegistration": {
+        "shoulder": [
+          461.0,
+          467.0
+        ],
+        "wrist": [
+          492.0,
+          498.5
+        ],
+        "grip": [
+          512.0,
+          512.0
+        ],
+        "tip": [
+          661.0,
+          574.0
+        ]
+      },
+      "pivotApproval": "provisional visible-source registration; designer key-pose anchors pending",
+      "referenceSource": "assets/attack-r6/angle-2-reference-source.png",
+      "referencePixel": "assets/attack-r6/angle-2-reference-pixel.png",
+      "parts": [
+        {
+          "name": "hand-hilt",
+          "source": "assets/attack-r6/angle-2-hand-hilt-source.png",
+          "pixel": "assets/attack-r6/angle-2-hand-hilt-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        },
+        {
+          "name": "blade-visible",
+          "source": "assets/attack-r6/angle-2-blade-visible-source.png",
+          "pixel": "assets/attack-r6/angle-2-blade-visible-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        },
+        {
+          "name": "arm-shoulder-cloth-visible",
+          "source": "assets/attack-r6/angle-2-arm-shoulder-cloth-visible-source.png",
+          "pixel": "assets/attack-r6/angle-2-arm-shoulder-cloth-visible-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        }
+      ],
+      "recompositionSourceRgbaExact": true,
+      "recompositionPixelRgbaExact": true,
+      "gripHiltCommonOriginError": 0
+    },
+    {
+      "angle": 3,
+      "sourcePrincipalComponentBounds": [
+        960,
+        712,
+        1448,
+        1086
+      ],
+      "sourceTranslation": [
+        -128,
+        72
+      ],
+      "registration": {
+        "shoulder": [
+          912,
+          932
+        ],
+        "wrist": [
+          984,
+          994
+        ],
+        "grip": [
+          1024,
+          1024
+        ],
+        "tip": [
+          1314,
+          1150
+        ]
+      },
+      "pixelRegistration": {
+        "shoulder": [
+          456.0,
+          466.0
+        ],
+        "wrist": [
+          492.0,
+          497.0
+        ],
+        "grip": [
+          512.0,
+          512.0
+        ],
+        "tip": [
+          657.0,
+          575.0
+        ]
+      },
+      "pivotApproval": "provisional visible-source registration; designer key-pose anchors pending",
+      "referenceSource": "assets/attack-r6/angle-3-reference-source.png",
+      "referencePixel": "assets/attack-r6/angle-3-reference-pixel.png",
+      "parts": [
+        {
+          "name": "hand-hilt",
+          "source": "assets/attack-r6/angle-3-hand-hilt-source.png",
+          "pixel": "assets/attack-r6/angle-3-hand-hilt-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        },
+        {
+          "name": "blade-visible",
+          "source": "assets/attack-r6/angle-3-blade-visible-source.png",
+          "pixel": "assets/attack-r6/angle-3-blade-visible-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        },
+        {
+          "name": "arm-shoulder-cloth-visible",
+          "source": "assets/attack-r6/angle-3-arm-shoulder-cloth-visible-source.png",
+          "pixel": "assets/attack-r6/angle-3-arm-shoulder-cloth-visible-pixel.png",
+          "sourceSize": [
+            2048,
+            2048
+          ],
+          "pixelSize": [
+            1024,
+            1024
+          ],
+          "origin": [
+            1024,
+            1024
+          ],
+          "pixelOrigin": [
+            512,
+            512
+          ],
+          "sourcePixelsPerScenePixel": 2
+        }
+      ],
+      "recompositionSourceRgbaExact": true,
+      "recompositionPixelRgbaExact": true,
+      "gripHiltCommonOriginError": 0
+    }
+  ],
+  "notReady": [
+    "clean support-side RGBA",
+    "front/back red cloth and detached shards RGBA",
+    "corrected and approved seven key poses",
+    "common core origin/D and approved elbow/shoulder registration",
+    "new dinosaur true-alpha and hit region"
+  ],
+  "limits": [
+    "main connected assembly preserved; detached floating fragments remain in untouched source sheet",
+    "arm and shoulder and cloth remain together; hidden joint surface not invented",
+    "blade/hand seam is provisional and is not animated before key-pose approval",
+    "three setting-sheet angles are not seven motion frames"
+  ]
+}
