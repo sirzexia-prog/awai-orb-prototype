@@ -40,3 +40,9 @@
 body.playing #custom-view .habitat{display:block}body.playing #home-view>.habitat{display:block}#custom-view .custom-preview{margin:12px 0}#custom-view .custom-preview canvas{margin:0}
 
 #custom-view .custom-preview{position:sticky;top:0;z-index:2;box-shadow:0 4px 18px #397f9230}body.playing #custom-view .custom-preview canvas{height:220px;max-height:220px;object-fit:contain}#custom-view .view-intro{margin:16px 0}
+
+body.playing #home-view .habitat canvas,body.playing #custom-view .custom-preview canvas,#target-avatar{height:300px;min-height:300px;max-height:none!important}#result-look{display:block;width:100%;height:300px;image-rendering:pixelated}#result-detail figure{margin:12px 0}#home-view>.goal-card{margin:12px 0;padding:14px;border:1px solid #e3c18b;border-radius:18px;background:#fff9ef}
+
+.habitat canvas,#target-avatar,#result-look{object-fit:fill}
+
+

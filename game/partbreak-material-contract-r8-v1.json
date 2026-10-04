@@ -1,0 +1,66 @@
+{
+  "version": "partbreak-material-contract-r8-1",
+  "status": "awaiting transparent independent destruction/guard/extraction art; reference sheets never fill missing slots",
+  "ruleVersion": "partbreak-core-1",
+  "priority": "one shared scene, five states, before additional enemy/weapon artwork",
+  "sourcePipeline": "full image original -> whole family common registration -> common pixel conversion; never begin by drawing pixel sprites",
+  "actorFamilies": {
+    "player": {
+      "canvas": [512,512],
+      "coreOrigin": [256,256],
+      "coreDiameter": 24,
+      "groups": {
+        "dedicated-defense": ["support-shoulder", "support-arm"],
+        "weapon-defense": ["attack-shoulder", "attack-upper-arm", "attack-forearm", "attack-hand-hilt", "attack-blade"]
+      },
+      "cosmeticsDefault": [],
+      "excludedAutomaticCosmetics": ["red-hat", "red-cloth"],
+      "eyes": "existing black/white front-face specification; no new face or enlarged core"
+    },
+    "machine": {
+      "canvas": [512,512],
+      "groups": {
+        "dedicated-defense": ["back-shoulder", "back-upper-arm", "back-forearm-fist"],
+        "weapon-defense": ["front-shoulder", "front-upper-arm", "front-forearm-fist"]
+      },
+      "core": "independent blue chest core, separate torso/empty socket/interior surfaces",
+      "punchReference": "character-right small-shoulder arm, image-left, throughout R0-R6; no additional fist",
+      "referenceOnlyDriveId": "1P8Z3HFxhXacsTWtrJnnJ7q2Q2dcEFpjh"
+    }
+  },
+  "requiredFiveStates": ["intact", "damaged", "broken-separated-with-inner-surface", "core-interception", "core-pull-empty-socket"],
+  "requirements": {
+    "format": "RGBA PNG with actual zero alpha, not baked checkerboard/RGB reference",
+    "commonPoseCanvasAndOrigin": true,
+    "commonPixelPitchAndCoreDiameter": true,
+    "noFitToPoseBoundingBox": true,
+    "noOpaqueWholeBodyUnderDetachedArm": true,
+    "noParticlesOnlyDamage": true,
+    "coreHasNoHp": true,
+    "surfaceCollision": "drawn image plus identical rigid matrix, alpha threshold 128, actual surface ahead of nucleus",
+    "coreDefeat": "only real unblocked core contact, followed by short visible pull/collapse",
+    "missingMaterials": "stop new battle readiness explicitly; never silently load the old HP battle"
+  },
+  "layerRecord": {
+    "id": "unique within actor family",
+    "url": "relative versioned PNG path",
+    "sourceDriveId": "original source file ID",
+    "sourceSha256": "SHA256 of source original",
+    "sha256": "SHA256 of registered PNG",
+    "groupId": "exact structural group, or null for core/torso/dependent cosmetic",
+    "role": "structure/core/torso/inner-surface/empty-socket/cosmetic",
+    "pivot": [0,0],
+    "variants": "intact/damaged, identical canvas, origin, pixel pitch; broken structure omitted",
+    "rig": "joint parent, rest pivot, grip and blade tip or fist contact surface coordinates"
+  },
+  "magic": {
+    "authoring": [1024,1024],
+    "delivery": [512,512],
+    "rgba": true,
+    "proposedFrames": 48,
+    "proposedFps": 24,
+    "ground": [256,430],
+    "layers": ["back-circle", "front-rise-and-hit"],
+    "status": "accept provided art only; code lines do not count as completed magic material"
+  }
+}

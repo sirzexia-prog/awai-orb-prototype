@@ -37,3 +37,5 @@
 
 /* Reserve a HUD strip so windup tips and the enemy face remain visible. */
 .rt-stage{height:clamp(480px,58dvh,620px);min-height:480px}.rt-stage canvas{height:calc(100% - 84px);margin-top:84px}.boss-hud{top:8px}
+
+.rt-continuation-note{margin:0;padding:8px 12px;font-size:12px;line-height:1.5;background:#f1faf9;color:#315b64}

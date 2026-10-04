@@ -1,0 +1,17 @@
+{
+  "version": "partbreak-materials-r8-1",
+  "status": "pending-art",
+  "contract": "partbreak-material-contract-r8-v1.json",
+  "missing": [
+    "player independent intact/damaged structures without automatic red ornaments",
+    "machine independent shoulders/arms/fists and independent blue chest core",
+    "player/machine revealed inner surfaces and empty core sockets",
+    "same scene five-state guard/extraction materials with registered pivots and motion keys"
+  ],
+  "referenceOnly": {
+    "machineSevenKeysDriveId": "1P8Z3HFxhXacsTWtrJnnJ7q2Q2dcEFpjh",
+    "sha256": "2d4594bcc369460a494e3a8310478e737d94d52c22e304e5bde4ef0aa6c41341"
+  },
+  "ready": false,
+  "oldHpBattleFallback": false
+}
