@@ -14,7 +14,7 @@
   <script src="providers.js" defer></script>
   <script src="creature.js" defer></script>
   <script src="ui-copy.js" defer></script>
-  <script src="app.js" defer></script>
+  <script src="app.js" defer></script><link rel="stylesheet" href="preview.css">
 </head>
 <body>
   <main class="shell">
@@ -24,7 +24,7 @@
       <button class="tab active" data-view="home" aria-current="page">育成</button>
       <button class="tab" data-view="battle">戦闘</button>
       <button class="tab" data-view="memories">記録 <span id="memory-count">0</span></button>
-      <button class="tab" data-view="custom">カスタム</button>
+      <button class="tab" data-view="custom">カスタム</button><a id="all-equipment-tab" class="tab" href="preview.html">全装備プレビュー</a>
     </nav>
 
     <section id="home-view" class="view" aria-label="相棒と過ごす">
@@ -81,7 +81,7 @@
       <p class="gentle-note">訓練・戦闘とも、実時間の待機はありません。勝敗は指示と能力で決まります。</p>
     </section>
 
-    <section id="custom-view" class="view" hidden aria-labelledby="custom-heading"><div class="view-intro"><h1 id="custom-heading">相棒をカスタム</h1><p>小さな核のまわりに、独立した浮遊パーツ。色・目・武器を選ぶとすぐ反映され、戦場にも同じ姿で向かいます。</p></div><div class="habitat custom-preview"><canvas id="custom-avatar" width="640" height="540" role="img" aria-label="選んだ色と浮遊パーツの相棒"></canvas></div><div class="custom-links"><a id="custom-fight" class="button-link" href="realtime.html">この姿で水庭へ</a><button data-view-link="home">育成へ戻る</button><button data-view-link="growth">姿の履歴</button></div><div id="custom-settings"></div></section>
+    <section id="custom-view" class="view" hidden aria-labelledby="custom-heading"><div class="view-intro"><h1 id="custom-heading">相棒をカスタム</h1><p>小さな核のまわりに、独立した浮遊パーツ。色・目・武器を選ぶとすぐ反映され、戦場にも同じ姿で向かいます。</p></div><div class="habitat custom-preview"><canvas id="custom-avatar" width="640" height="540" role="img" aria-label="選んだ色と浮遊パーツの相棒"></canvas></div><div class="custom-links"><a id="all-equipment-custom" class="button-link preview-entry" href="preview.html">全装備プレビュー · 開発用</a><a id="custom-fight" class="button-link" href="realtime.html">この姿で水庭へ</a><button data-view-link="home">育成へ戻る</button><button data-view-link="growth">姿の履歴</button></div><div id="custom-settings"></div></section>
     <section id="memories-view" class="view" hidden aria-labelledby="memories-heading"><div class="view-intro"><span class="eyebrow">ふたりの記録</span><h1 id="memories-heading">小さなことを覚えている。</h1><p>この端末に最大60件。いつでも消せます。</p></div><div id="memory-list"></div></section>
     <section id="growth-view" class="view" hidden aria-labelledby="growth-heading"><div class="view-intro"><span class="eyebrow">同じ核から、違う姿へ</span><h1 id="growth-heading">勝ち取った装備で育つ。</h1><p>丸い核の寸法と選んだ顔を残して、鎧・魔環・機械腕を組み合わせます。脚ありも脚なしも、能力は同じです。</p></div>
       <div class="card growth-summary"><h2 id="tendency"></h2><div id="trait-bars"></div><p id="morph-description"></p><label class="toggle"><input type="checkbox" id="auto-grow" checked><span>経験で、見た目も育てる</span></label><p class="small-label">オフにすると今の姿を保ちます。オンで今の育ちを反映。</p></div>

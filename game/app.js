@@ -9,6 +9,7 @@
   try {const disk=window.localStorage;storage={getItem:k=>disk.getItem(k+storageSuffix),setItem:(k,v)=>disk.setItem(k+storageSuffix,v)};} catch {storage={getItem(){throw Error('storage-unavailable');},setItem(){throw Error('storage-unavailable');}};}
   const loaded=E.load(storage);
   const sceneLink=new URL('realtime.html',location.href);if(trial){sceneLink.searchParams.set('trial','1');if(trialSlot)sceneLink.searchParams.set('slot',trialSlot);}$('scene-entry').href=sceneLink.href;
+  const previewLink=new URL('preview.html',location.href);if(trial){previewLink.searchParams.set('trial','1');if(trialSlot)previewLink.searchParams.set('slot',trialSlot);}for(const id of ['all-equipment-tab','all-equipment-custom'])if($(id))$(id).href=previewLink.href;
   let state=loaded.state, view='home', busy=false, actionLock=false, toastTimer, confirmAction=null, sequence=0;
   let lookMode='current',reviewingReward=false,battleEffect=null,lastPaint=0;
   const openEnemyNotes=new Set();
