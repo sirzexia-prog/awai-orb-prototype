@@ -1,0 +1,580 @@
+{
+  "version": "machine-joint-review-r8-visible-pixels-1",
+  "status": "connection study, unapproved cuts/rig; not completed five-state materials",
+  "sourceSha256": "431b6c259766a65febb231aa565daa86fd66aa47de7e7f7747ce2b772f3f6a13",
+  "sourceDriveId": "1yFcTXcRgJNOXo_xFrHjcIhe2VPw9KpNK",
+  "sourceSize": [
+    1254,
+    1254
+  ],
+  "commonMaster": [
+    1024,
+    1024
+  ],
+  "commonFrame": [
+    512,
+    512
+  ],
+  "sourceToMaster": 0.6,
+  "offset": [
+    122,
+    125
+  ],
+  "ground": [
+    256,
+    430
+  ],
+  "pixelPitch": 1,
+  "semanticMapping": {
+    "D": "group A: screen-right large shoulder/arm, dedicated defense first",
+    "W": "group B: screen-left small shoulder/arm, same arm as R0-R6 punch, weapon defense last",
+    "basis": "explicit implementation mapping for connection study; not a user-fixed numeric/layout decision"
+  },
+  "groupAReference": {
+    "driveId": "1Fu9-VxzkiotbSsWeTMRS9uDpV8lA6Ihn",
+    "sha256": "035c9c3af8af21d509815048eb613650a5c032e8d3187e4f0520551b0e1655cb",
+    "referenceOnly": true,
+    "independentRig": false
+  },
+  "missing": [
+    "approved clean independent D/W layers and damaged variants",
+    "W/D boundary registration approval",
+    "guard angle and occluded surfaces",
+    "player damaged/inner/core-seat materials"
+  ],
+  "parts": {
+    "machine-torso-intact": {
+      "url": "assets/machine-connection-r8/machine-torso-intact.png",
+      "sha256": "e00845c2d9590cd39136be4c1581eff2be5f47106dfe42ea69f60f091081ad80",
+      "alphaBounds": [
+        83,
+        77,
+        413,
+        432
+      ]
+    },
+    "machine-torso-D-separated-reference": {
+      "url": "assets/machine-connection-r8/machine-torso-D-separated-reference.png",
+      "sha256": "69600fb471e15f3814210fb24645998adc870b816f902a78d7fcd5adb032db06",
+      "alphaBounds": [
+        66,
+        74,
+        430,
+        433
+      ]
+    },
+    "machine-D-shoulder-visible": {
+      "url": "assets/machine-connection-r8/machine-D-shoulder-visible.png",
+      "sha256": "a24bc020f7543e14a1fedc35008a4e23fa97689d00148d0d193ebe89b16edfde",
+      "alphaBounds": [
+        266,
+        74,
+        412,
+        188
+      ]
+    },
+    "machine-D-arm-fist-visible": {
+      "url": "assets/machine-connection-r8/machine-D-arm-fist-visible.png",
+      "sha256": "00cfd62e0ff5cdea05fab960efa950e6c7e33ba7b0687256a002e77c18157aa9",
+      "alphaBounds": [
+        316,
+        188,
+        423,
+        317
+      ]
+    },
+    "machine-W-shoulder-visible": {
+      "url": "assets/machine-connection-r8/machine-W-shoulder-visible.png",
+      "sha256": "36e7fe8fe0c82210c2a34fdbf1f8f8392575144c35f08e066ac0740dd94a4f70",
+      "alphaBounds": [
+        136,
+        112,
+        218,
+        179
+      ]
+    },
+    "machine-W-upper-visible": {
+      "url": "assets/machine-connection-r8/machine-W-upper-visible.png",
+      "sha256": "6ae7bae69698d784a24be4237bcca0c3965fa4028defa2475ba57faaaf993353",
+      "alphaBounds": [
+        128,
+        179,
+        201,
+        206
+      ]
+    },
+    "machine-W-fore-fist-visible": {
+      "url": "assets/machine-connection-r8/machine-W-fore-fist-visible.png",
+      "sha256": "47403f12e2cc5c7c2bacfc24dc0b23e410f191098937f49838a9a6dc87bdb321",
+      "alphaBounds": [
+        82,
+        206,
+        195,
+        275
+      ]
+    },
+    "machine-core-visible": {
+      "url": "assets/machine-connection-r8/machine-core-visible.png",
+      "sha256": "d99f5520d1f578477cbf816ac314eb0d3f0dcffadbe9c3e7262dcb31ef35c576",
+      "alphaBounds": [
+        204,
+        169,
+        215,
+        183
+      ]
+    },
+    "machine-D-inner-reference-visible": {
+      "url": "assets/machine-connection-r8/machine-D-inner-reference-visible.png",
+      "sha256": "882c3448708cd00183f2fbf72806205be0e718a8d7a821b481b22933fadd9f27",
+      "alphaBounds": [
+        271,
+        131,
+        302,
+        184
+      ]
+    },
+    "machine-core-extracted-visible": {
+      "url": "assets/machine-connection-r8/machine-core-extracted-visible.png",
+      "sha256": "f262b4608ab884deeb410bee4324ad43639a32456befbf1edc811efdf393798c",
+      "alphaBounds": [
+        201,
+        163,
+        227,
+        188
+      ],
+      "patch": {
+        "ellipse": [
+          251,
+          354,
+          342,
+          437
+        ],
+        "shift": [
+          215,
+          -18
+        ],
+        "role": "independent-core",
+        "origin": "fifth outside blue core, fixed original glow center"
+      },
+      "status": "provisional local visible cut; boundary and registration need live scene check"
+    },
+    "machine-core-socket-empty-visible": {
+      "url": "assets/machine-connection-r8/machine-core-socket-empty-visible.png",
+      "sha256": "ffec3b0d89658644e628f18097a90346dc7a765bb9da49bd1143b1620225be3f",
+      "alphaBounds": [
+        193,
+        159,
+        226,
+        192
+      ],
+      "patch": {
+        "ellipse": [
+          504,
+          348,
+          612,
+          458
+        ],
+        "shift": [
+          -62,
+          -25
+        ],
+        "role": "empty-core-socket",
+        "origin": "fifth empty chest socket, translation to original chest center"
+      },
+      "status": "provisional local visible cut; boundary and registration need live scene check"
+    },
+    "machine-W-inner-reference-visible": {
+      "url": "assets/machine-connection-r8/machine-W-inner-reference-visible.png",
+      "sha256": "cdb9a8d33b795a7947a9373dc2f8c5d6b37ad336737ea59d0e1de9763f023699",
+      "alphaBounds": [
+        142,
+        149,
+        172,
+        185
+      ],
+      "patch": {
+        "ellipse": [
+          389,
+          280,
+          489,
+          401
+        ],
+        "shift": [
+          -118,
+          9
+        ],
+        "role": "weapon-group-break-interior",
+        "origin": "fifth missing-arm socket, translation to original W shoulder joint"
+      },
+      "status": "provisional local visible cut; boundary and registration need live scene check"
+    },
+    "machine-W-guard-shoulder-upper-visible": {
+      "url": "assets/machine-connection-r8/machine-W-guard-shoulder-upper-visible.png",
+      "sha256": "62d97985342a410eee2736a379b1d377c7de49f19f4abc960984381e5f6b3fb2",
+      "alphaBounds": [
+        133,
+        114,
+        212,
+        209
+      ],
+      "sourceSha256": "85853150301e772f0b24a6132e95af2a25d2ad43a901369b2c351fb9813995f0",
+      "status": "provisional independent visible guard cut; no inferred hidden core"
+    },
+    "machine-W-guard-fist-visible": {
+      "url": "assets/machine-connection-r8/machine-W-guard-fist-visible.png",
+      "sha256": "24f3653dc9cb57a911978b0003a066bc0403f24e51de0936ee0662e3e63a429e",
+      "alphaBounds": [
+        195,
+        156,
+        241,
+        205
+      ],
+      "sourceSha256": "85853150301e772f0b24a6132e95af2a25d2ad43a901369b2c351fb9813995f0",
+      "status": "provisional independent visible guard cut; no inferred hidden core"
+    },
+    "machine-W-guard-fore-visible": {
+      "url": "assets/machine-connection-r8/machine-W-guard-fore-visible.png",
+      "sha256": "5bc767d70afe6cf04eac9c0fb2eb7432256f83bc19ca3e8ccc28260b7d3a6c6f",
+      "alphaBounds": [
+        133,
+        190,
+        221,
+        241
+      ],
+      "sourceSha256": "85853150301e772f0b24a6132e95af2a25d2ad43a901369b2c351fb9813995f0",
+      "status": "provisional independent visible guard cut; no inferred hidden core"
+    },
+    "machine-D-upper-visible": {
+      "url": "assets/machine-connection-r8/machine-D-upper-visible.png",
+      "sha256": "c5265eab2b6e833253d97e79f178f24ea47ee8cd8f5a249efd49edf2e2507e39",
+      "alphaBounds": [
+        316,
+        188,
+        417,
+        228
+      ],
+      "status": "same source visible D arm split for rigid two-joint connection, hidden surfaces unapproved"
+    },
+    "machine-D-fore-fist-visible": {
+      "url": "assets/machine-connection-r8/machine-D-fore-fist-visible.png",
+      "sha256": "f62df08c69aabf4afc30199f16e03b840073d83ccc3677809755edb5b32762ac",
+      "alphaBounds": [
+        319,
+        228,
+        423,
+        317
+      ],
+      "status": "same source visible D arm split for rigid two-joint connection, hidden surfaces unapproved"
+    },
+    "machine-D-shoulder-damaged-reference": {
+      "url": "assets/machine-joint-review-r8/machine-D-shoulder-damaged-reference.png",
+      "sha256": "2313b2cad6a77b7ce1f96a65e267d22d1d872e2a7884e48d6ee2ab54f3f13d56",
+      "alphaBounds": [
+        266,
+        74,
+        393,
+        188
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received state2",
+      "overlap": "intentional adjacent joint overlap, all in D; no separate durability"
+    },
+    "machine-D-upper-damaged-reference": {
+      "url": "assets/machine-joint-review-r8/machine-D-upper-damaged-reference.png",
+      "sha256": "6d048d084df2de49f648a2f63da93dcff9914d1f5d313298dc09a0f7c2238364",
+      "alphaBounds": [
+        275,
+        176,
+        417,
+        228
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received state2",
+      "overlap": "intentional adjacent joint overlap, all in D; no separate durability"
+    },
+    "machine-D-fore-fist-damaged-reference": {
+      "url": "assets/machine-joint-review-r8/machine-D-fore-fist-damaged-reference.png",
+      "sha256": "7ead412e0295131909ac171225db1d464fdb024c32636fb2650fc024e1e70026",
+      "alphaBounds": [
+        341,
+        209,
+        424,
+        309
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received state2",
+      "overlap": "intentional adjacent joint overlap, all in D; no separate durability"
+    },
+    "machine-D-shoulder-bearing-visible": {
+      "url": "assets/machine-joint-review-r8/machine-D-shoulder-bearing-visible.png",
+      "sha256": "33d8656e4ecfbba942340af73cb1a640130c6bb8b78730c3521ee4836897378a",
+      "alphaBounds": [
+        274,
+        132,
+        319,
+        175
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received intact visible bearing face",
+      "sourceEllipse": [
+        711,
+        233,
+        859,
+        375
+      ],
+      "group": "D",
+      "damagedLifetime": "bearing remains structural until D broken; outer armor remains state2 cracked source"
+    },
+    "machine-D-shoulder-bearing-damaged-reference": {
+      "url": "assets/machine-joint-review-r8/machine-D-shoulder-bearing-visible.png",
+      "sha256": "33d8656e4ecfbba942340af73cb1a640130c6bb8b78730c3521ee4836897378a",
+      "alphaBounds": [
+        274,
+        132,
+        319,
+        175
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received intact visible bearing face",
+      "sourceEllipse": [
+        711,
+        233,
+        859,
+        375
+      ],
+      "group": "D",
+      "damagedLifetime": "bearing remains structural until D broken; outer armor remains state2 cracked source"
+    },
+    "machine-D-elbow-bearing-visible": {
+      "url": "assets/machine-joint-review-r8/machine-D-elbow-bearing-visible.png",
+      "sha256": "b5d3875e1911b8d295962a4a04b0e70c8a07d5306cde6855d3fd3b2f6469dd4f",
+      "alphaBounds": [
+        343,
+        181,
+        380,
+        218
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received intact visible bearing face",
+      "sourceEllipse": [
+        941,
+        397,
+        1064,
+        518
+      ],
+      "group": "D",
+      "damagedLifetime": "bearing remains structural until D broken; outer armor remains state2 cracked source"
+    },
+    "machine-D-elbow-bearing-damaged-reference": {
+      "url": "assets/machine-joint-review-r8/machine-D-elbow-bearing-visible.png",
+      "sha256": "b5d3875e1911b8d295962a4a04b0e70c8a07d5306cde6855d3fd3b2f6469dd4f",
+      "alphaBounds": [
+        343,
+        181,
+        380,
+        218
+      ],
+      "status": "received visible pixels; joint overlap registration refinement, not newly painted hidden art",
+      "source": "received intact visible bearing face",
+      "sourceEllipse": [
+        941,
+        397,
+        1064,
+        518
+      ],
+      "group": "D",
+      "damagedLifetime": "bearing remains structural until D broken; outer armor remains state2 cracked source"
+    },
+    "machine-D-upper-shoulder-underface-r8-damaged": {
+      "url": "assets/machine-joint-review-r8/machine-D-upper-shoulder-underface-r8-damaged.png",
+      "role": "joint-underface",
+      "defenseSurface": false,
+      "groupId": "D",
+      "state": "damaged",
+      "underfaceFor": "machine-D-upper-visible",
+      "sha256": "15db1aae0410cfaee1a00a7781a8bb95fe0d055862f78f6713d138d160693b6d",
+      "pivot": [
+        296.5,
+        153.4
+      ]
+    },
+    "machine-D-upper-shoulder-underface-r8-broken": {
+      "url": "assets/machine-joint-review-r8/machine-D-upper-shoulder-underface-r8-broken.png",
+      "role": "joint-underface",
+      "defenseSurface": false,
+      "groupId": "D",
+      "state": "broken",
+      "underfaceFor": "machine-D-upper-visible",
+      "sha256": "1da398319bf34ce542b1b7ee913afb36a54d239814d7ed34e60ee8c1b851b710",
+      "pivot": [
+        296.5,
+        153.4
+      ]
+    },
+    "machine-D-fore-elbow-underface-r8-damaged": {
+      "url": "assets/machine-joint-review-r8/machine-D-fore-elbow-underface-r8-damaged.png",
+      "role": "joint-underface",
+      "defenseSurface": false,
+      "groupId": "D",
+      "state": "damaged",
+      "underfaceFor": "machine-D-fore-fist-visible",
+      "sha256": "17f43671fe1621ba4dc1923382d28357dc3d6f0de6329d9fb2f71b38d3968eaf",
+      "pivot": [
+        361,
+        199
+      ]
+    },
+    "machine-D-fore-elbow-underface-r8-broken": {
+      "url": "assets/machine-joint-review-r8/machine-D-fore-elbow-underface-r8-broken.png",
+      "role": "joint-underface",
+      "defenseSurface": false,
+      "groupId": "D",
+      "state": "broken",
+      "underfaceFor": "machine-D-fore-fist-visible",
+      "sha256": "7b07fe782f6a998c25e841f9c8c50419627a479d84abe053d8a3a5d0ff95cfe7",
+      "pivot": [
+        361,
+        199
+      ]
+    }
+  },
+  "registration": {
+    "core": [
+      209.79999999999998,
+      176.05
+    ],
+    "DShoulder": [
+      296.5,
+      153.39999999999998
+    ],
+    "DElbow": [
+      361.0,
+      199.0
+    ],
+    "DFist": [
+      382.0,
+      277.0
+    ],
+    "WShoulder": [
+      159.39999999999998,
+      167.5
+    ],
+    "WElbow": [
+      166.89999999999998,
+      206.79999999999998
+    ],
+    "WFist": [
+      110.5,
+      247.9
+    ]
+  },
+  "coreOutReference": {
+    "driveId": "1vx8DtphxFQoD1t31oqnmsCD-8xUWl2iu",
+    "sha256": "8a7501dd78c8a75e784a1bc77ed8d41575b81e227d80dee964a5d62781024070",
+    "referenceOnly": true,
+    "wholeRigRegistered": false,
+    "feetDiffer": true,
+    "coreDiameterAndPivot": "fixed to original nucleus; only local patch translations, no per-pose fit"
+  },
+  "effectiveResizeRatio": 0.5996810207336523,
+  "guardReference": {
+    "driveId": "1L9rXHG9jkC52oNsZiw6Qa7vZptvf79hf",
+    "sha256": "85853150301e772f0b24a6132e95af2a25d2ad43a901369b2c351fb9813995f0",
+    "sequenceState": 4,
+    "referenceOnly": true,
+    "acceptedImagePose": true,
+    "gameDefenseValidated": false,
+    "coreSource": "state 3/original independent nucleus registration unchanged; never infer/repaint hidden state-4 core"
+  },
+  "receiptOrder": [
+    "original-intact",
+    "3-group-A-separated",
+    "5-core-extracted",
+    "4-remaining-W-guard",
+    "2-group-A-damaged-found-in-source-folder"
+  ],
+  "stateOrder": [
+    "1-intact",
+    "2-group-A-damaged",
+    "3-group-A-separated",
+    "4-remaining-W-guard",
+    "5-core-extracted"
+  ],
+  "DChain": {
+    "shoulder": "DShoulder",
+    "elbow": "DElbow",
+    "fist": "DFist",
+    "parts": [
+      "machine-D-shoulder-visible",
+      "machine-D-upper-visible",
+      "machine-D-fore-fist-visible"
+    ],
+    "noWholeArmFallback": true,
+    "jointFaceCosmetics": [
+      "machine-D-shoulder-bearing-visible",
+      "machine-D-elbow-bearing-visible"
+    ]
+  },
+  "damagedReference": {
+    "driveId": "1VbAWEbzDnDHa7u-wUZllURBK2TZNwidj",
+    "sha256": "eb55301d0f33edfe05594ee30fed56c1acf3a7be1aa5db98076fad36cba0e1d2",
+    "state": 2,
+    "wholeRigRegistered": false,
+    "group": "A/D"
+  },
+  "survivingShoulderArmor": {
+    "classification": "core-support torso visual layer and exposed attachment/socket trim",
+    "structuralGroup": null,
+    "defenseSurface": false,
+    "durability": null,
+    "attackFunction": false,
+    "defenseFunction": false,
+    "lifetime": "body/outro only, follows core extracted collapse",
+    "assets": [
+      "machine-torso-D-separated-reference",
+      "machine-D-inner-reference-visible",
+      "machine-W-inner-reference-visible"
+    ],
+    "neverReinstatesGroupA": true,
+    "receiptPoseApprovalIsNotCollisionApproval": true
+  },
+  "collisionSurfaces": {
+    "D": [
+      "machine-D-shoulder-visible",
+      "machine-D-upper-visible",
+      "machine-D-fore-fist-visible"
+    ],
+    "W": [
+      "machine-W-shoulder-visible",
+      "machine-W-upper-visible",
+      "machine-W-fore-fist-visible"
+    ],
+    "guardW": [
+      "machine-W-guard-shoulder-upper-visible",
+      "machine-W-guard-fore-visible",
+      "machine-W-guard-fist-visible"
+    ],
+    "core": [
+      "machine-core-visible"
+    ],
+    "brokenD": [],
+    "brokenW": [],
+    "torsoAndInnerSurfaces": [],
+    "detachedFragments": [],
+    "emptySocket": [],
+    "jointFaceCosmetics": []
+  },
+  "reviewFix": {
+    "jointFaces": "original visible bearing discs layered over source2 cracked skin; full source alpha edges retained; group break removes both bearing layers",
+    "noUnknownSurfacePainted": true,
+    "remaining": "occluded underside/back thickness if actual new rig exposes a face absent in supplied originals",
+    "jointFacesDefenseSurface": false,
+    "jointFaceOwner": "D cosmetic subordinate, removed/detached with D; no independent durability/function"
+  },
+  "underfaceIntake": {
+    "driveId": "1bXFm3zSTltmKRF3NFqeGSs6gzL8JIjAb",
+    "sha256": "6ca244496d282f5a6a2cb36f81c7615b44e664e16f8018b16d28b3785da7542d",
+    "defenseSurface": false,
+    "artistManifest": "source/d-underfaces-intake-r8-v1/manifest.json"
+  }
+}

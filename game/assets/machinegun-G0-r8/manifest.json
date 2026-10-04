@@ -1,0 +1,96 @@
+{
+  "version": "machinegun-G0-visible-cuts-r8-1",
+  "status": "received G0 visible cuts; unapproved boundaries/rig, no new G1-G6 artwork",
+  "sourceDriveId": "1KfgioM5_RUS_zYEPKstP6PFUbRUD7R72",
+  "sourceSha256": "2044e20fc2043962e3629c5706782798541d95493422f684034c95446de23081",
+  "canvas": [
+    512,
+    512
+  ],
+  "master": [
+    1024,
+    1024
+  ],
+  "commonUniformResize": [
+    676,
+    451
+  ],
+  "offset": [
+    189,
+    288
+  ],
+  "pixelPitch": 1,
+  "grip": [
+    256.23828125,
+    255.869140625
+  ],
+  "wrist": [
+    221.69010416666669,
+    286.69921875
+  ],
+  "muzzles": [
+    [
+      417.31640625,
+      167.3427734375
+    ],
+    [
+      425.4583333333333,
+      181.21630859375
+    ],
+    [
+      422.3776041666667,
+      194.6494140625
+    ]
+  ],
+  "axis": [
+    425.4583333333333,
+    181.21630859375
+  ],
+  "parts": {
+    "forearm": {
+      "url": "assets/machinegun-G0-r8/forearm-G0.png",
+      "sha256": "59c7e6438ddd8964c517d09dee1a70f0a87105c1099c1394bcc2afe05eaecec4",
+      "alphaBounds": [
+        100,
+        238,
+        261,
+        362
+      ]
+    },
+    "hand": {
+      "url": "assets/machinegun-G0-r8/hand-G0.png",
+      "sha256": "d724bfd4e1c5c05c3356808784ba5fa5a9bf23b38d79907d8949d09cf903c2e1",
+      "alphaBounds": [
+        223,
+        220,
+        315,
+        295
+      ]
+    },
+    "housing": {
+      "url": "assets/machinegun-G0-r8/housing-G0.png",
+      "sha256": "9a8c543e59328171fe8d7188326e7774c6d7cf577c44a6df9adc794ec08ae9ac",
+      "alphaBounds": [
+        115,
+        157,
+        326,
+        336
+      ]
+    },
+    "barrel": {
+      "url": "assets/machinegun-G0-r8/barrel-G0.png",
+      "sha256": "36c71c817e6a398ef242e2f76d89598ba12e89901eecc3de62bd61e3d8e5e64e",
+      "alphaBounds": [
+        310,
+        158,
+        429,
+        240
+      ]
+    }
+  },
+  "compositeDifference": 0,
+  "color": "accepted dark foreground arm / purple emission, no rejected blue stone hand",
+  "recoil": "barrel translation only along its longitudinal axis; fixed hand/housing grip; no whole-image rotation claimed as axial barrel spin",
+  "recoilProposalPixels": 4,
+  "missing": "additional inner chamber / unseen barrel faces / maximum recoil elbow-wrist only if actual connected rig exposes gaps"
+}

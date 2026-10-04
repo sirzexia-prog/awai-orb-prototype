@@ -1,0 +1,124 @@
+{
+  "sources": {
+    "robot": {
+      "libraryId": "libfile_e7c3a15c287c81919c15a9369baa36a9",
+      "driveId": "1yFcTXcRgJNOXo_xFrHjcIhe2VPw9KpNK",
+      "sha256": "431b6c259766a65febb231aa565daa86fd66aa47de7e7f7747ce2b772f3f6a13"
+    },
+    "lightning": {
+      "libraryId": "libfile_755b5321336c8191b2dd66a94f8a155f",
+      "driveId": "1QkPpDWU3aRm16oIltBu1scJrbIR2s0VX",
+      "sha256": "9779b4738589471d36a3413db4cd815ce52b9d6632fbe2e080374edb075b9576"
+    }
+  },
+  "robot": {
+    "anchor": {
+      "x": 256,
+      "y": 430
+    },
+    "frameSize": 512,
+    "pixelGrid": 128,
+    "paletteColors": 96,
+    "frontPivot": [
+      141,
+      182
+    ],
+    "backPivot": [
+      381,
+      190
+    ],
+    "core": [
+      207,
+      152
+    ],
+    "sourceHash": "431b6c259766a65febb231aa565daa86fd66aa47de7e7f7747ce2b772f3f6a13"
+  },
+  "lightning": {
+    "frameSize": 256,
+    "frames": 48,
+    "fps": 24,
+    "atlasColumns": 6,
+    "atlasRows": 8,
+    "anchor": {
+      "x": 256,
+      "y": 430
+    },
+    "contactFrames": [
+      7,
+      10,
+      13
+    ],
+    "phases": {
+      "appear": [
+        0,
+        2
+      ],
+      "rotateGather": [
+        3,
+        4
+      ],
+      "rise": [
+        5,
+        6
+      ],
+      "contact": [
+        7,
+        13
+      ],
+      "afterglow": [
+        14,
+        47
+      ]
+    },
+    "derivedFromFourKeys": true,
+    "notRegenerated": true,
+    "backUnique": 48,
+    "frontUnique": 45,
+    "authoringFrameSize": 512,
+    "runtimeAnchor": {
+      "x": 128,
+      "y": 215
+    },
+    "expandedRotationCanvas": 1024,
+    "floorCompressionX": 0.76,
+    "decodedAtlasBytes": 25165824,
+    "combinedUnique": 48,
+    "repeatedContactMaxima": [
+      7,
+      10,
+      13
+    ]
+  },
+  "assets": [
+    {
+      "name": "lightning-back-48.png",
+      "bytes": 779675,
+      "sha256": "eb3b55e306188f193d12f2d47b798118061548d954546d9559c085dfa268e0da"
+    },
+    {
+      "name": "lightning-front-48.png",
+      "bytes": 2092303,
+      "sha256": "2d1286e0c75c45c094ed768c95b177c023d5f56a7498eff5549dc13adb1b6699"
+    },
+    {
+      "name": "robot-arm-back.png",
+      "bytes": 3760,
+      "sha256": "fa3c38f06b90b6e50cc661f136566b17428522bdd8b93ab5a0c06bb07b74d3e4"
+    },
+    {
+      "name": "robot-arm-front.png",
+      "bytes": 3807,
+      "sha256": "97bddb2796f9941e4a682dde57d3ec276ab36c8f97fb8e760c282fb1d7b886a5"
+    },
+    {
+      "name": "robot-body.png",
+      "bytes": 25359,
+      "sha256": "8a9a71adba33d11808150aff78322902202077a74096cd69bb37cc9c631ff0c7"
+    },
+    {
+      "name": "robot-idle.png",
+      "bytes": 27890,
+      "sha256": "e72c3d688a83fece15d9a1c227577d57bffe9c283d370ecf75210a954dde7f5b"
+    }
+  ]
+}

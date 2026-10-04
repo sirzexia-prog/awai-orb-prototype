@@ -1,0 +1,1406 @@
+{
+  "sourceId": "1iulhAObZUG9c6wCkC5Y7SAks27MdomKv",
+  "sourceSha256": "b7b69efddd54bd30ca2be75ec5d095423a3768ffd97f35a00d5b925069bd7b28",
+  "sourceComparedWithRgbId": "1-DNO7ek2NudXScJc0FC_hXiPk5sMIFDU",
+  "originalRgbPreserved": true,
+  "colourIdenticalToOldRgb": false,
+  "changedRgbPixelsAmongAlpha192Plus": 720027,
+  "alphaExtrema": [
+    0,
+    254
+  ],
+  "zeroAlphaPixels": 722194,
+  "fullyOpaque255Pixels": 0,
+  "sourceSize": [
+    1536,
+    1024
+  ],
+  "masterSize": [
+    2048,
+    2048
+  ],
+  "pixelSize": [
+    1024,
+    1024
+  ],
+  "partCounts": {
+    "shoulders": 4,
+    "supportArms": 6,
+    "cloths": 4,
+    "shards": 26,
+    "unassignedFringeLayers": 1
+  },
+  "splitMethod": "alpha>=192 component seeds, multi-source geodesic ownership of original alpha>0 edge pixels; every original nontransparent RGBA pixel retained once",
+  "sourceRecompositionRgbaExact": true,
+  "pixelRecompositionRgbaExact": true,
+  "noIndependentCeilResize": true,
+  "parts": [
+    {
+      "name": "shoulder-1",
+      "kind": "shoulder",
+      "source": "assets/support-r7/shoulder-1-source.png",
+      "pixel": "assets/support-r7/shoulder-1-pixel.png",
+      "opaqueSeedBounds": [
+        28,
+        19,
+        328,
+        290
+      ],
+      "alphaBounds": [
+        17,
+        16,
+        336,
+        293
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shoulder-2",
+      "kind": "shoulder",
+      "source": "assets/support-r7/shoulder-2-source.png",
+      "pixel": "assets/support-r7/shoulder-2-pixel.png",
+      "opaqueSeedBounds": [
+        358,
+        10,
+        669,
+        300
+      ],
+      "alphaBounds": [
+        351,
+        0,
+        672,
+        307
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shoulder-3",
+      "kind": "shoulder",
+      "source": "assets/support-r7/shoulder-3-source.png",
+      "pixel": "assets/support-r7/shoulder-3-pixel.png",
+      "opaqueSeedBounds": [
+        838,
+        14,
+        1148,
+        324
+      ],
+      "alphaBounds": [
+        833,
+        13,
+        1152,
+        334
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shoulder-4",
+      "kind": "shoulder",
+      "source": "assets/support-r7/shoulder-4-source.png",
+      "pixel": "assets/support-r7/shoulder-4-pixel.png",
+      "opaqueSeedBounds": [
+        1209,
+        24,
+        1513,
+        306
+      ],
+      "alphaBounds": [
+        1201,
+        19,
+        1521,
+        312
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "support-arm-1",
+      "kind": "support-arm",
+      "source": "assets/support-r7/support-arm-1-source.png",
+      "pixel": "assets/support-r7/support-arm-1-pixel.png",
+      "opaqueSeedBounds": [
+        32,
+        308,
+        241,
+        613
+      ],
+      "alphaBounds": [
+        25,
+        298,
+        244,
+        627
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false,
+      "provisionalWristRegistration": [
+        150,
+        363
+      ],
+      "provisionalCoreRelativeSocketInD": [
+        -2.25,
+        0.42
+      ],
+      "jointRegistrationApproved": false
+    },
+    {
+      "name": "support-arm-2",
+      "kind": "support-arm",
+      "source": "assets/support-r7/support-arm-2-source.png",
+      "pixel": "assets/support-r7/support-arm-2-pixel.png",
+      "opaqueSeedBounds": [
+        253,
+        320,
+        493,
+        561
+      ],
+      "alphaBounds": [
+        249,
+        316,
+        496,
+        569
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false,
+      "provisionalWristRegistration": [
+        383,
+        375
+      ],
+      "provisionalCoreRelativeSocketInD": [
+        -2.25,
+        0.42
+      ],
+      "jointRegistrationApproved": false
+    },
+    {
+      "name": "support-arm-3",
+      "kind": "support-arm",
+      "source": "assets/support-r7/support-arm-3-source.png",
+      "pixel": "assets/support-r7/support-arm-3-pixel.png",
+      "opaqueSeedBounds": [
+        530,
+        315,
+        705,
+        617
+      ],
+      "alphaBounds": [
+        527,
+        300,
+        710,
+        630
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false,
+      "provisionalWristRegistration": [
+        625,
+        375
+      ],
+      "provisionalCoreRelativeSocketInD": [
+        -2.25,
+        0.42
+      ],
+      "jointRegistrationApproved": false
+    },
+    {
+      "name": "support-arm-4",
+      "kind": "support-arm",
+      "source": "assets/support-r7/support-arm-4-source.png",
+      "pixel": "assets/support-r7/support-arm-4-pixel.png",
+      "opaqueSeedBounds": [
+        770,
+        323,
+        936,
+        592
+      ],
+      "alphaBounds": [
+        766,
+        314,
+        944,
+        595
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false,
+      "provisionalWristRegistration": [
+        861,
+        386
+      ],
+      "provisionalCoreRelativeSocketInD": [
+        -2.25,
+        0.42
+      ],
+      "jointRegistrationApproved": false
+    },
+    {
+      "name": "support-arm-5",
+      "kind": "support-arm",
+      "source": "assets/support-r7/support-arm-5-source.png",
+      "pixel": "assets/support-r7/support-arm-5-pixel.png",
+      "opaqueSeedBounds": [
+        988,
+        323,
+        1254,
+        601
+      ],
+      "alphaBounds": [
+        977,
+        319,
+        1264,
+        611
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false,
+      "provisionalWristRegistration": [
+        1060,
+        405
+      ],
+      "provisionalCoreRelativeSocketInD": [
+        -2.25,
+        0.42
+      ],
+      "jointRegistrationApproved": false
+    },
+    {
+      "name": "support-arm-6",
+      "kind": "support-arm",
+      "source": "assets/support-r7/support-arm-6-source.png",
+      "pixel": "assets/support-r7/support-arm-6-pixel.png",
+      "opaqueSeedBounds": [
+        1319,
+        316,
+        1503,
+        598
+      ],
+      "alphaBounds": [
+        1312,
+        310,
+        1505,
+        610
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false,
+      "provisionalWristRegistration": [
+        1388,
+        386
+      ],
+      "provisionalCoreRelativeSocketInD": [
+        -2.25,
+        0.42
+      ],
+      "jointRegistrationApproved": false
+    },
+    {
+      "name": "cloth-1",
+      "kind": "cloth",
+      "source": "assets/support-r7/cloth-1-source.png",
+      "pixel": "assets/support-r7/cloth-1-pixel.png",
+      "opaqueSeedBounds": [
+        35,
+        573,
+        550,
+        864
+      ],
+      "alphaBounds": [
+        32,
+        565,
+        558,
+        869
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "cloth-2",
+      "kind": "cloth",
+      "source": "assets/support-r7/cloth-2-source.png",
+      "pixel": "assets/support-r7/cloth-2-pixel.png",
+      "opaqueSeedBounds": [
+        474,
+        627,
+        698,
+        851
+      ],
+      "alphaBounds": [
+        471,
+        622,
+        704,
+        856
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "cloth-3",
+      "kind": "cloth",
+      "source": "assets/support-r7/cloth-3-source.png",
+      "pixel": "assets/support-r7/cloth-3-pixel.png",
+      "opaqueSeedBounds": [
+        728,
+        605,
+        1188,
+        853
+      ],
+      "alphaBounds": [
+        721,
+        595,
+        1197,
+        861
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "cloth-4",
+      "kind": "cloth",
+      "source": "assets/support-r7/cloth-4-source.png",
+      "pixel": "assets/support-r7/cloth-4-pixel.png",
+      "opaqueSeedBounds": [
+        1136,
+        610,
+        1516,
+        824
+      ],
+      "alphaBounds": [
+        1133,
+        604,
+        1520,
+        830
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-1",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-1-source.png",
+      "pixel": "assets/support-r7/shard-1-pixel.png",
+      "opaqueSeedBounds": [
+        20,
+        819,
+        111,
+        982
+      ],
+      "alphaBounds": [
+        16,
+        811,
+        115,
+        987
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-2",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-2-source.png",
+      "pixel": "assets/support-r7/shard-2-pixel.png",
+      "opaqueSeedBounds": [
+        110,
+        941,
+        142,
+        985
+      ],
+      "alphaBounds": [
+        106,
+        937,
+        145,
+        988
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-3",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-3-source.png",
+      "pixel": "assets/support-r7/shard-3-pixel.png",
+      "opaqueSeedBounds": [
+        147,
+        864,
+        190,
+        937
+      ],
+      "alphaBounds": [
+        143,
+        863,
+        192,
+        944
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-4",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-4-source.png",
+      "pixel": "assets/support-r7/shard-4-pixel.png",
+      "opaqueSeedBounds": [
+        205,
+        942,
+        241,
+        992
+      ],
+      "alphaBounds": [
+        195,
+        937,
+        245,
+        995
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-5",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-5-source.png",
+      "pixel": "assets/support-r7/shard-5-pixel.png",
+      "opaqueSeedBounds": [
+        231,
+        843,
+        293,
+        944
+      ],
+      "alphaBounds": [
+        225,
+        836,
+        298,
+        947
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-6",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-6-source.png",
+      "pixel": "assets/support-r7/shard-6-pixel.png",
+      "opaqueSeedBounds": [
+        300,
+        944,
+        336,
+        993
+      ],
+      "alphaBounds": [
+        291,
+        941,
+        340,
+        997
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-7",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-7-source.png",
+      "pixel": "assets/support-r7/shard-7-pixel.png",
+      "opaqueSeedBounds": [
+        341,
+        854,
+        397,
+        954
+      ],
+      "alphaBounds": [
+        336,
+        849,
+        401,
+        963
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-8",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-8-source.png",
+      "pixel": "assets/support-r7/shard-8-pixel.png",
+      "opaqueSeedBounds": [
+        395,
+        950,
+        424,
+        992
+      ],
+      "alphaBounds": [
+        383,
+        945,
+        434,
+        993
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-9",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-9-source.png",
+      "pixel": "assets/support-r7/shard-9-pixel.png",
+      "opaqueSeedBounds": [
+        442,
+        821,
+        553,
+        994
+      ],
+      "alphaBounds": [
+        432,
+        818,
+        561,
+        996
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-10",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-10-source.png",
+      "pixel": "assets/support-r7/shard-10-pixel.png",
+      "opaqueSeedBounds": [
+        566,
+        945,
+        593,
+        991
+      ],
+      "alphaBounds": [
+        562,
+        938,
+        598,
+        993
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-11",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-11-source.png",
+      "pixel": "assets/support-r7/shard-11-pixel.png",
+      "opaqueSeedBounds": [
+        574,
+        865,
+        606,
+        923
+      ],
+      "alphaBounds": [
+        570,
+        862,
+        609,
+        930
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-12",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-12-source.png",
+      "pixel": "assets/support-r7/shard-12-pixel.png",
+      "opaqueSeedBounds": [
+        620,
+        933,
+        656,
+        987
+      ],
+      "alphaBounds": [
+        610,
+        929,
+        659,
+        994
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-13",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-13-source.png",
+      "pixel": "assets/support-r7/shard-13-pixel.png",
+      "opaqueSeedBounds": [
+        651,
+        855,
+        698,
+        936
+      ],
+      "alphaBounds": [
+        641,
+        847,
+        705,
+        944
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-14",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-14-source.png",
+      "pixel": "assets/support-r7/shard-14-pixel.png",
+      "opaqueSeedBounds": [
+        681,
+        960,
+        711,
+        996
+      ],
+      "alphaBounds": [
+        675,
+        958,
+        720,
+        1002
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-15",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-15-source.png",
+      "pixel": "assets/support-r7/shard-15-pixel.png",
+      "opaqueSeedBounds": [
+        739,
+        819,
+        855,
+        995
+      ],
+      "alphaBounds": [
+        735,
+        812,
+        867,
+        1001
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-16",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-16-source.png",
+      "pixel": "assets/support-r7/shard-16-pixel.png",
+      "opaqueSeedBounds": [
+        864,
+        938,
+        897,
+        990
+      ],
+      "alphaBounds": [
+        858,
+        932,
+        900,
+        993
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-17",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-17-source.png",
+      "pixel": "assets/support-r7/shard-17-pixel.png",
+      "opaqueSeedBounds": [
+        913,
+        821,
+        1005,
+        990
+      ],
+      "alphaBounds": [
+        910,
+        817,
+        1010,
+        994
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-18",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-18-source.png",
+      "pixel": "assets/support-r7/shard-18-pixel.png",
+      "opaqueSeedBounds": [
+        1010,
+        924,
+        1048,
+        982
+      ],
+      "alphaBounds": [
+        1006,
+        919,
+        1056,
+        989
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-19",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-19-source.png",
+      "pixel": "assets/support-r7/shard-19-pixel.png",
+      "opaqueSeedBounds": [
+        1056,
+        838,
+        1114,
+        932
+      ],
+      "alphaBounds": [
+        1051,
+        831,
+        1121,
+        938
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-20",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-20-source.png",
+      "pixel": "assets/support-r7/shard-20-pixel.png",
+      "opaqueSeedBounds": [
+        1094,
+        938,
+        1134,
+        992
+      ],
+      "alphaBounds": [
+        1087,
+        931,
+        1137,
+        994
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-21",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-21-source.png",
+      "pixel": "assets/support-r7/shard-21-pixel.png",
+      "opaqueSeedBounds": [
+        1150,
+        821,
+        1253,
+        989
+      ],
+      "alphaBounds": [
+        1141,
+        817,
+        1262,
+        992
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-22",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-22-source.png",
+      "pixel": "assets/support-r7/shard-22-pixel.png",
+      "opaqueSeedBounds": [
+        1263,
+        944,
+        1292,
+        989
+      ],
+      "alphaBounds": [
+        1260,
+        941,
+        1296,
+        992
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-23",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-23-source.png",
+      "pixel": "assets/support-r7/shard-23-pixel.png",
+      "opaqueSeedBounds": [
+        1278,
+        832,
+        1314,
+        902
+      ],
+      "alphaBounds": [
+        1267,
+        829,
+        1321,
+        911
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-24",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-24-source.png",
+      "pixel": "assets/support-r7/shard-24-pixel.png",
+      "opaqueSeedBounds": [
+        1323,
+        822,
+        1419,
+        994
+      ],
+      "alphaBounds": [
+        1311,
+        818,
+        1427,
+        998
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-25",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-25-source.png",
+      "pixel": "assets/support-r7/shard-25-pixel.png",
+      "opaqueSeedBounds": [
+        1438,
+        821,
+        1511,
+        943
+      ],
+      "alphaBounds": [
+        1423,
+        816,
+        1518,
+        949
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "shard-26",
+      "kind": "shard",
+      "source": "assets/support-r7/shard-26-source.png",
+      "pixel": "assets/support-r7/shard-26-pixel.png",
+      "opaqueSeedBounds": [
+        1483,
+        939,
+        1513,
+        988
+      ],
+      "alphaBounds": [
+        1477,
+        933,
+        1520,
+        992
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    },
+    {
+      "name": "unassigned-low-alpha-fringe",
+      "kind": "fringe",
+      "source": "assets/support-r7/unassigned-low-alpha-fringe-source.png",
+      "pixel": "assets/support-r7/unassigned-low-alpha-fringe-pixel.png",
+      "opaqueSeedBounds": [
+        0,
+        0,
+        1536,
+        1024
+      ],
+      "alphaBounds": [
+        17,
+        11,
+        1520,
+        1004
+      ],
+      "sourceSize": [
+        2048,
+        2048
+      ],
+      "pixelSize": [
+        1024,
+        1024
+      ],
+      "sourcePixelsPerScenePixel": 2,
+      "masterOrigin": [
+        0,
+        0
+      ],
+      "sourceColourChangedByThisExtraction": false
+    }
+  ],
+  "status": "support-side preparation; source-coordinate placement, final core D and motion joints pending full character acceptance"
+}

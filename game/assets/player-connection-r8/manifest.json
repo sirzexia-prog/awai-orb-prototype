@@ -1,0 +1,12 @@
+{
+  "status": "visible armor cut for connection study; not cleaned/approved shoulder joint art",
+  "source": "assets/sword-r7/attack-shoulder.png",
+  "sourceSha256": "9c5776531aaf27ab3a843b289ccfa2c8c4218004ff52e5f17d13740f2186ece3",
+  "sha256": "3107da722f6a9ecfd62a9f49b295c397b8a4068777ec8e39521751b502a2c846",
+  "defaultCosmetics": [],
+  "excluded": "embedded upper and right red cloth pixels; no newly drawn hidden surface",
+  "commonFrame": [
+    512,
+    512
+  ]
+}
