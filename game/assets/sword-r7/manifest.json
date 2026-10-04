@@ -1,0 +1,704 @@
+{
+  "version": "sword-r7-candidate",
+  "acceptedSourceSha256": "9d2e7162cca3fc11daefe1266030d7fe2567f617e4b140cb16b7b0038abfa91f",
+  "attackSourceSha256": "e7191c6f30a3b72bce33c96521ca9a2573611ff600e8eb4a1ab70944bd639a2a",
+  "supportSourceSha256": "b7b69efddd54bd30ca2be75ec5d095423a3768ffd97f35a00d5b925069bd7b28",
+  "enemySourceSha256": "1e1d720c59ef299c77ab9e9cfe6d4eb9736abc885441cb889601cbc2d256d52c",
+  "commonMaster": [
+    1024,
+    1024
+  ],
+  "commonPixelFrame": [
+    512,
+    512
+  ],
+  "pixelPitch": 1,
+  "coreOrigin": [
+    256,
+    256
+  ],
+  "coreDiameterScenePixels": 24,
+  "sourceFamilyRegistration": "whole-family similarity registration: attack .9, support .32, core 1, enemy .32. All parts placed on a full common master before identical 2:1 conversion. Camera/ratios provisional for full-scene review. No per-pose fit.",
+  "sourceColourChangedByArtist": true,
+  "attackRegistration": {
+    "shoulder": [
+      299.0,
+      239.0
+    ],
+    "elbow": [
+      301.25,
+      265.09999999999997
+    ],
+    "wrist": [
+      313.4,
+      275.0
+    ],
+    "grip": [
+      326.0,
+      286.7
+    ],
+    "tip": [
+      479.90000000000003,
+      344.29999999999995
+    ]
+  },
+  "enemyHeadRegion": {
+    "sourceCenter": [
+      713,
+      620
+    ],
+    "sourceRadii": [
+      250,
+      240
+    ],
+    "pixelGround": [
+      256,
+      440
+    ],
+    "pixelOffset": [
+      -2.56,
+      -73.28
+    ],
+    "pixelRadii": [
+      40,
+      38.4
+    ]
+  },
+  "parts": {
+    "core-back": {
+      "url": "assets/sword-r7/core-back.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 1,
+      "sourcePivot": [
+        23.5,
+        24.0
+      ],
+      "masterPivot": [
+        512,
+        512
+      ],
+      "pixelPivot": [
+        256.0,
+        256.0
+      ],
+      "alphaBounds": [
+        244,
+        244,
+        267,
+        268
+      ],
+      "bodyAlphaBounds": [
+        244,
+        244,
+        267,
+        268
+      ],
+      "sha256": "ef2ca4f069838847d3ff4336cb9f158e407f80100c3748e871e9668082ea384f"
+    },
+    "core-front": {
+      "url": "assets/sword-r7/core-front.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.8135593220338984,
+      "sourcePivot": [
+        29.5,
+        28.0
+      ],
+      "masterPivot": [
+        512,
+        512
+      ],
+      "pixelPivot": [
+        256.0,
+        256.0
+      ],
+      "alphaBounds": [
+        244,
+        244,
+        268,
+        267
+      ],
+      "bodyAlphaBounds": [
+        244,
+        245,
+        268,
+        267
+      ],
+      "sha256": "ecef06dfca9a47d0941a6a3d30ce798b8f240a7fccb47d5a41583ff212dd3800"
+    },
+    "support-shoulder": {
+      "url": "assets/sword-r7/support-shoulder.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        166,
+        245
+      ],
+      "masterPivot": [
+        424,
+        488
+      ],
+      "pixelPivot": [
+        212.0,
+        244.0
+      ],
+      "alphaBounds": [
+        188,
+        207,
+        239,
+        251
+      ],
+      "bodyAlphaBounds": [
+        190,
+        208,
+        238,
+        251
+      ],
+      "sha256": "5ab826d9ae3f14717ca9f32f83076282d462a69e44bbedf19f850c61a5bb9d92"
+    },
+    "support-arm": {
+      "url": "assets/sword-r7/support-arm.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        150,
+        363
+      ],
+      "masterPivot": [
+        404,
+        532
+      ],
+      "pixelPivot": [
+        202.0,
+        266.0
+      ],
+      "alphaBounds": [
+        183,
+        256,
+        217,
+        307
+      ],
+      "bodyAlphaBounds": [
+        183,
+        257,
+        216,
+        306
+      ],
+      "sha256": "59ed2585909083684be474dd5b1ab406656b9a08be415459d1ebf56395fbf9c6"
+    },
+    "lower-cloth": {
+      "url": "assets/sword-r7/lower-cloth.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        959,
+        634
+      ],
+      "masterPivot": [
+        512,
+        560
+      ],
+      "pixelPivot": [
+        256.0,
+        280.0
+      ],
+      "alphaBounds": [
+        218,
+        274,
+        294,
+        315
+      ],
+      "bodyAlphaBounds": [
+        219,
+        275,
+        293,
+        314
+      ],
+      "sha256": "706a1706446c113892de9088b38f3d4e35e206c279acf9ed5640f1b078627f19"
+    },
+    "shard-1": {
+      "url": "assets/sword-r7/shard-1.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        126.0,
+        963.0
+      ],
+      "masterPivot": [
+        416,
+        524
+      ],
+      "pixelPivot": [
+        208.0,
+        262.0
+      ],
+      "alphaBounds": [
+        205,
+        258,
+        211,
+        265
+      ],
+      "bodyAlphaBounds": [
+        205,
+        258,
+        210,
+        265
+      ],
+      "sha256": "1fab57223077e20681957e01083974caa9ee833429aeeeb885bcfdac2ba55009"
+    },
+    "shard-2": {
+      "url": "assets/sword-r7/shard-2.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        168.5,
+        900.5
+      ],
+      "masterPivot": [
+        458,
+        476
+      ],
+      "pixelPivot": [
+        229.0,
+        238.0
+      ],
+      "alphaBounds": [
+        225,
+        232,
+        232,
+        244
+      ],
+      "bodyAlphaBounds": [
+        225,
+        232,
+        232,
+        244
+      ],
+      "sha256": "118c80047d39f4f9e1a9134efa04a5d53755be7d8afa6cf9f79b80b9438395e5"
+    },
+    "shard-3": {
+      "url": "assets/sword-r7/shard-3.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        223.0,
+        967.0
+      ],
+      "masterPivot": [
+        474,
+        574
+      ],
+      "pixelPivot": [
+        237.0,
+        287.0
+      ],
+      "alphaBounds": [
+        233,
+        283,
+        240,
+        291
+      ],
+      "bodyAlphaBounds": [
+        234,
+        283,
+        240,
+        291
+      ],
+      "sha256": "7a3551d71d30dc5ac02655dc97f78dc23bb342f5b3038728416ab08047715be8"
+    },
+    "shard-4": {
+      "url": "assets/sword-r7/shard-4.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        318.0,
+        968.5
+      ],
+      "masterPivot": [
+        558,
+        484
+      ],
+      "pixelPivot": [
+        279.0,
+        242.0
+      ],
+      "alphaBounds": [
+        275,
+        238,
+        282,
+        246
+      ],
+      "bodyAlphaBounds": [
+        276,
+        238,
+        282,
+        246
+      ],
+      "sha256": "539bfc2a3511c7ff30f3ed18afe39171930e162f3ef79994793d6d1f463872d3"
+    },
+    "shard-5": {
+      "url": "assets/sword-r7/shard-5.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        409.5,
+        971.0
+      ],
+      "masterPivot": [
+        602,
+        546
+      ],
+      "pixelPivot": [
+        301.0,
+        273.0
+      ],
+      "alphaBounds": [
+        297,
+        269,
+        305,
+        276
+      ],
+      "bodyAlphaBounds": [
+        298,
+        269,
+        303,
+        276
+      ],
+      "sha256": "c63ab3d4fbf453e3022487976fe2cee7625dbbd23723ebd83a4bdc5b64e0fba9"
+    },
+    "shard-6": {
+      "url": "assets/sword-r7/shard-6.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        579.5,
+        968.0
+      ],
+      "masterPivot": [
+        562,
+        584
+      ],
+      "pixelPivot": [
+        281.0,
+        292.0
+      ],
+      "alphaBounds": [
+        278,
+        288,
+        284,
+        296
+      ],
+      "bodyAlphaBounds": [
+        278,
+        288,
+        283,
+        295
+      ],
+      "sha256": "6fbbab4074f9a8ff8c96d76574e83c5ae75f2067e6cb169dc06aee0995d2aec9"
+    },
+    "attack-shoulder": {
+      "url": "assets/sword-r7/attack-shoulder.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.9,
+      "sourcePivot": [
+        964,
+        918
+      ],
+      "masterPivot": [
+        598,
+        478
+      ],
+      "pixelPivot": [
+        299.0,
+        239.0
+      ],
+      "alphaBounds": [
+        266,
+        177,
+        367,
+        255
+      ],
+      "bodyAlphaBounds": [
+        271,
+        179,
+        365,
+        255
+      ],
+      "sha256": "9c5776531aaf27ab3a843b289ccfa2c8c4218004ff52e5f17d13740f2186ece3"
+    },
+    "attack-upper-arm": {
+      "url": "assets/sword-r7/attack-upper-arm.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.9,
+      "sourcePivot": [
+        964,
+        918
+      ],
+      "masterPivot": [
+        598,
+        478
+      ],
+      "pixelPivot": [
+        299.0,
+        239.0
+      ],
+      "alphaBounds": [
+        271,
+        255,
+        367,
+        265
+      ],
+      "bodyAlphaBounds": [
+        277,
+        255,
+        365,
+        265
+      ],
+      "sha256": "014ee05aabffe1471ac945adab12906b7d86699f2650376663f29cbaaf2f8563"
+    },
+    "attack-forearm": {
+      "url": "assets/sword-r7/attack-forearm.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.9,
+      "sourcePivot": [
+        964,
+        918
+      ],
+      "masterPivot": [
+        598,
+        478
+      ],
+      "pixelPivot": [
+        299.0,
+        239.0
+      ],
+      "alphaBounds": [
+        273,
+        265,
+        369,
+        316
+      ],
+      "bodyAlphaBounds": [
+        277,
+        265,
+        353,
+        313
+      ],
+      "sha256": "a4e86d0815873a413ae3a77607063adf8fdbda0136ff8f168cd69c117d3570d8"
+    },
+    "attack-hand-hilt": {
+      "url": "assets/sword-r7/attack-hand-hilt.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.9,
+      "sourcePivot": [
+        964,
+        918
+      ],
+      "masterPivot": [
+        598,
+        478
+      ],
+      "pixelPivot": [
+        299.0,
+        239.0
+      ],
+      "alphaBounds": [
+        284,
+        267,
+        354,
+        309
+      ],
+      "bodyAlphaBounds": [
+        286,
+        267,
+        354,
+        308
+      ],
+      "sha256": "79719ffd68a047cc340804bd7ce3e7340c19ea54dd51b2651d706bf157551ec1"
+    },
+    "attack-blade": {
+      "url": "assets/sword-r7/attack-blade.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.9,
+      "sourcePivot": [
+        964,
+        918
+      ],
+      "masterPivot": [
+        598,
+        478
+      ],
+      "pixelPivot": [
+        299.0,
+        239.0
+      ],
+      "alphaBounds": [
+        337,
+        276,
+        482,
+        348
+      ],
+      "bodyAlphaBounds": [
+        337,
+        277,
+        479,
+        345
+      ],
+      "sha256": "b85f2e654861f8cb736fb459d597b1b8a42b9fb0b8345ae5931ae33469144e02"
+    },
+    "orange-dinosaur": {
+      "url": "assets/sword-r7/orange-dinosaur.png",
+      "masterSize": [
+        1024,
+        1024
+      ],
+      "pixelSize": [
+        512,
+        512
+      ],
+      "registrationScale": 0.32,
+      "sourcePivot": [
+        729,
+        1078
+      ],
+      "masterPivot": [
+        512,
+        880
+      ],
+      "pixelPivot": [
+        256.0,
+        440.0
+      ],
+      "alphaBounds": [
+        147,
+        267,
+        366,
+        440
+      ],
+      "bodyAlphaBounds": [
+        147,
+        269,
+        365,
+        439
+      ],
+      "sha256": "1f48f0526aff3321b8f7a907faabfde76023a0f4c710ac59de7b018ad77a4a66"
+    }
+  },
+  "limits": [
+    "Source shoulder/upper/forearm seam division is provisional; concealed joint faces were not painted",
+    "Only attack angle1 is active in first swing study; other received angles retained for later validated swaps",
+    "Core D is fixed at 24 in logical scene; global scene fit varies with viewport",
+    "New candidate preview only; existing normal reward/save path remains inherited r6"
+  ]
+}

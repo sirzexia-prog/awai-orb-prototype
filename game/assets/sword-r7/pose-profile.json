@@ -1,0 +1,71 @@
+{
+  "status": "candidate profile; corrected reference is not an approved atlas",
+  "duration": 1.5,
+  "strongDuration": 1.7,
+  "keys": [
+    {
+      "name": "stance",
+      "t": 0,
+      "upper": 0,
+      "fore": 0,
+      "blade": 0
+    },
+    {
+      "name": "charge",
+      "t": 0.35,
+      "upper": -1.8,
+      "fore": 0.3,
+      "blade": 2.4
+    },
+    {
+      "name": "backswing",
+      "t": 0.68,
+      "upper": -1.5,
+      "fore": -0.2,
+      "blade": 3.4
+    },
+    {
+      "name": "contact",
+      "t": 0.82,
+      "upper": -1.15,
+      "fore": -0.15,
+      "blade": 5.03
+    },
+    {
+      "name": "follow-through",
+      "t": 1,
+      "upper": -0.8,
+      "fore": 0.25,
+      "blade": 5.9
+    },
+    {
+      "name": "recoil",
+      "t": 1.16,
+      "upper": -0.2,
+      "fore": 0.2,
+      "blade": 6.4
+    },
+    {
+      "name": "return",
+      "t": 1.5,
+      "upper": 0,
+      "fore": 0,
+      "blade": 6.283185307179586
+    }
+  ],
+  "camera": {
+    "width": 800,
+    "height": 520,
+    "core": [
+      280,
+      330
+    ],
+    "enemyGround": [
+      480,
+      275
+    ]
+  },
+  "importantBodyAlphaThreshold": 128,
+  "collisionAlphaThreshold": 128,
+  "revision": "r7-profile-4: shared camera moved up 30 logical pixels for complete body contours; provisional source joint cuts preserved"
+}

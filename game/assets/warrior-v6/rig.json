@@ -1,0 +1,29 @@
+{
+  "source": "dark-warrior-pixel-sample-v6.png",
+  "sourceSha256": "9ce33960105908055f1a02d4bf9cc34ac234bad6c24b9d5eaf4dffa1260590a3",
+  "sourceSize": [
+    1672,
+    941
+  ],
+  "frameSize": 512,
+  "placement": [
+    0,
+    112,
+    512,
+    288
+  ],
+  "anchor": [
+    268,
+    215
+  ],
+  "pixelExactReassembly": true,
+  "layers": [
+    "core",
+    "shoulder-left",
+    "shoulder-right",
+    "right-hand",
+    "left-hand",
+    "sword"
+  ],
+  "limits": "2D cutout float/rig motion; no newly painted joint interiors. Sword is inseparable from the original gripping fist."
+}

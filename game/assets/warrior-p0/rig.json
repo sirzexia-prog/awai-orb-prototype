@@ -1,0 +1,30 @@
+{
+  "sourceSha256": "9ce33960105908055f1a02d4bf9cc34ac234bad6c24b9d5eaf4dffa1260590a3",
+  "anchor": [
+    268,
+    215
+  ],
+  "grip": [
+    120,
+    275
+  ],
+  "bladeTip": [
+    504,
+    385
+  ],
+  "shoulder": [
+    184,
+    204
+  ],
+  "elbow": [
+    135,
+    225
+  ],
+  "wrist": [
+    112,
+    261
+  ],
+  "frame": 512,
+  "visiblePixelReassembly": true,
+  "hiddenSurface": "none painted; cutout angles limited; aesthetic acceptance pending"
+}
