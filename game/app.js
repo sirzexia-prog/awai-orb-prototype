@@ -7,9 +7,9 @@
   const trialName='試遊枠';
   let storage;
   try {const disk=window.localStorage;storage={getItem:k=>disk.getItem(k+storageSuffix),setItem:(k,v)=>disk.setItem(k+storageSuffix,v)};} catch {storage={getItem(){throw Error('storage-unavailable');},setItem(){throw Error('storage-unavailable');}};}
-  const loaded=E.load(storage);
+  const G=AwaiSaveGuard,SCOPE=E.STORAGE_KEY+storageSuffix,loaded=G.load(storage);let observed=loaded.stamp,epoch=0,saveChain=Promise.resolve(),pendingSaves=0,lastSaveResult=null,navigationBusy=false;
   const sceneLink=new URL('realtime.html',location.href);if(trial){sceneLink.searchParams.set('trial','1');if(trialSlot)sceneLink.searchParams.set('slot',trialSlot);}$('scene-entry').href=sceneLink.href;
-  const previewLink=new URL('preview.html',location.href);if(trial){previewLink.searchParams.set('trial','1');if(trialSlot)previewLink.searchParams.set('slot',trialSlot);}for(const id of ['all-equipment-tab','all-equipment-custom'])if($(id))$(id).href=previewLink.href;
+  const previewLink=new URL('preview.html',location.href);if(trial){previewLink.searchParams.set('trial','1');if(trialSlot)previewLink.searchParams.set('slot',trialSlot);}for(const id of ['all-equipment-tab','all-equipment-preview','all-equipment-custom'])if($(id))$(id).href=previewLink.href;
   let state=loaded.state, view='home', busy=false, actionLock=false, toastTimer, confirmAction=null, sequence=0;
   let lookMode='current',reviewingReward=false,battleEffect=null,lastPaint=0;
   const openEnemyNotes=new Set();
@@ -20,19 +20,20 @@
   const date=time=>new Intl.DateTimeFormat('ja-JP',{month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit'}).format(time);
   const token=()=>state.id+'-'+Date.now()+'-'+(++sequence);
   const element=(tag,cls,text)=>{const node=document.createElement(tag);if(cls)node.className=cls;if(text!==undefined)node.textContent=text;return node;};
-  function warrior(fresh=false){E.customize(state,{...state.baseStyle,color:270,tone:'black',eyeColor:'#ff415b',weapon:'sword',weaponChosen:true,weaponRevision:(state.baseStyle.weaponRevision||0)+1,eyes:'hollow',mouth:'none'});if(fresh){state.gameplay.trialStarterParts=['armor','arms'];C.ensure(state);}state.gameplay.equipped=['armor','arms'].filter(id=>state.gameplay.parts.includes(id));state.gameplay.locomotion='hover';state.customized=true;}
+  function warrior(fresh=false){E.customize(state,{...state.baseStyle,color:270,tone:'black',eyeColor:'#ffffff',weapon:'sword',weaponChosen:true,weaponRevision:(state.baseStyle.weaponRevision||0)+1,eyes:'hollow',mouth:'none'});if(fresh){state.gameplay.trialStarterParts=['armor','arms'];C.ensure(state);}state.gameplay.equipped=['armor','arms'].filter(id=>state.gameplay.parts.includes(id));state.gameplay.locomotion='hover';state.customized=true;}
   if(trial&&!loaded.restored){warrior(true);persist();}
   $('custom-settings').append($('customizer'),$('equipment-details'));
-  $('equipment-details').open=true;
+  $('equipment-details').open=true;const oldBattleTitle=document.querySelector('.battle-intro h1');if(oldBattleTitle)oldBattleTitle.textContent='保存中の旧戦闘';
   $('customizer').hidden=false;
-  const studio=document.querySelector('.target-studio'),details=element('details','secondary-play'),summary=element('summary','','獲得したいパーツを確認');details.append(summary,studio);$('custom-settings').append(details);
-  for(const id of ['custom-fight','home-fight'])$(id).href=sceneLink.href;
+  const studio=document.querySelector('.target-studio'),details=element('details','secondary-play'),summary=element('summary','','獲得したいパーツを確認');details.append(summary,studio);$('custom-settings').append(details);details.hidden=true;
+  for(const id of ['custom-fight','home-fight','scene-entry']){$(id).href=sceneLink.href;$(id).addEventListener('click',event=>{event.preventDefault();enterScene($(id).href);});}
   if(!state.customized)view='custom';
   if(['home','custom','battle','growth'].includes(params.get('view')))view=params.get('view');
-  function persist(){const ok=E.save(storage,state);$('save-status').textContent=ok?'保存しました':'保存できません。この画面を閉じると記録が失われます';$('save-status').classList.toggle('warning',!ok);return ok;}
+  function persist(options={}){const draft=JSON.parse(JSON.stringify(state)),generation=epoch;pendingSaves++;$('save-status').textContent='保存中…';saveChain=saveChain.then(async()=>{if(generation!==epoch)return {ok:false,reason:'superseded'};let result;try{result=await G.commit(storage,SCOPE,draft,observed,options);}catch{result={ok:false,reason:'lock-unavailable'};}if(generation!==epoch)return result;if(result.ok){observed=result.stamp;state.saveRevision=result.state.saveRevision;$('save-status').textContent='保存しました';}else{if(result.latest){epoch++;state=result.latest.state;observed=result.latest.stamp;C.ensure(state);busy=false;actionLock=false;render();}$('save-status').textContent=result.reason==='stale-source'||result.reason==='target-mismatch'?'別の画面で更新されています。最新の相棒を読み直しました。操作をもう一度選んでください。':result.reason==='lock-unavailable'?'このブラウザでは安全に保存できません。対応ブラウザで再読込してください。':'保存できません。この画面を閉じると記録が失われます';}lastSaveResult=result;$('save-status').classList.toggle('warning',!result.ok);return result;}).finally(()=>pendingSaves--);return saveChain;}
   function toast(text){clearTimeout(toastTimer);$('toast').textContent=text;$('toast').hidden=false;toastTimer=setTimeout(()=>$('toast').hidden=true,3000);}
   function closeReward(){reviewingReward=false;const r=state.gameplay.result;if(r?.reward&&!r.rewardDismissed){r.rewardDismissed=true;persist();}}
-  function switchView(next){if(view==='battle'&&next!=='battle')closeReward();view=next;for(const name of ['home','battle','memories','growth','custom'])$(name+'-view').hidden=name!==view;document.querySelectorAll('.tab').forEach(b=>{const active=b.dataset.view===view;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});render();}
+  async function enterScene(url=sceneLink.href){if(navigationBusy)return;navigationBusy=true;const generation=epoch;try{if(pendingSaves)toast('保存を待って水庭へ移動します…');let waiting;do{waiting=saveChain;await waiting;}while(waiting!==saveChain||pendingSaves>0);const refreshed=lastSaveResult&&['stale-source','target-mismatch'].includes(lastSaveResult.reason)&&lastSaveResult.latest?.restored&&!lastSaveResult.latest.warning;if(generation!==epoch||lastSaveResult&&!lastSaveResult.ok&&!refreshed){toast('保存が完了していません。育成画面で操作を再試行してください。');return;}location.href=url;}catch{toast('保存できません。育成画面で再試行してください。');}finally{navigationBusy=false;}}
+  function switchView(next){if(next==='battle'&&!state.gameplay.battle){enterScene();return;}if(view==='battle'&&next!=='battle')closeReward();view=next;for(const name of ['home','battle','memories','growth','custom'])$(name+'-view').hidden=name!==view;document.querySelectorAll('.tab').forEach(b=>{const active=b.dataset.view===view;b.classList.toggle('active',active);if(active)b.setAttribute('aria-current','page');else b.removeAttribute('aria-current');});render();}
   function render(){
     $('creature-name').textContent=state.name;
     $('growth-label').textContent=E.growthLabel(state);
@@ -72,10 +73,10 @@
   async function talk(message){
     message=E.clean(message);
     if(!message||busy||state.pendingEvent||state.gameplay.battle||!state.customized)return;
-    busy=true;render();
+    const conversationState=state,conversationEpoch=epoch;busy=true;render();
     try {
       const response=await conversationProvider.respond({message,state});
-      E.startConversation(state,message,response,token());$('message').value='';persist();render();
+      if(state!==conversationState||epoch!==conversationEpoch)return;E.startConversation(state,message,response,token());$('message').value='';persist();render();
       $('event-card').scrollIntoView({behavior:reduced.matches?'instant':'smooth',block:'nearest'});
     }catch{toast('返事を用意できませんでした。もう一度話しかけてね。');}
     finally{busy=false;render();}
@@ -106,10 +107,10 @@
   function renderGameplay(){
     const g=state.gameplay,base=C.stats(g),s=C.effective(g),b=g.battle,showReward=!!g.result?.reward&&(!g.result.rewardDismissed||reviewingReward);
     const plan=C.goalPlan(g);
-    $('goal-heading').textContent=U.system(plan.next);
+    $('goal-heading').textContent='水庭で勝って、経験と浮遊パーツを育てよう。';
     renderTarget(plan);
-    $('partner-line').textContent=b?'戦ってる途中だよ。次の指示、待ってる！':U.companion(g.result?.line)||(g.condition?C.DRILLS[g.condition].line:'あの岩、強そう…。ぼくに指示して。隙ができたら、ぶつかる！');
-    $('go-battle').textContent=b?'戦闘の続きを指示する':plan.foe?'目標への相手を選ぶ':'この姿で戦闘へ';
+    $('partner-line').textContent=b?'戦ってる途中だよ。次の指示、待ってる！':U.companion(g.result?.line)||(g.condition?C.DRILLS[g.condition].line:'水庭の大牙と戦って、浮遊パーツを集めよう。動きはぼくにまかせて！');
+    $('go-battle').textContent=b?'保存中の旧戦闘を続ける':'この姿で水庭へ · 勝利で成長';
     $('training-budget').textContent=b?'戦闘中': '訓練 残り'+g.slots+'回';
     const statBox=$('stats');statBox.replaceChildren();
     for(const k of Object.keys(C.DRILLS)){const n=element('div','stat');n.append(element('span','',C.DRILLS[k].stat),element('strong','',C.displayStat(s,k)),element('small','',U.statDetail(C,g,base,k)));statBox.append(n);}
@@ -268,7 +269,7 @@
   $('auto-grow').addEventListener('change',()=>{E.setAutoGrow(state,$('auto-grow').checked);persist();render();});
   $('settings-open').addEventListener('click',()=>{$('name-input').value=state.name;$('settings-dialog').showModal();});
   $('settings-close').addEventListener('click',()=>$('settings-dialog').close());
-  $('name-form').addEventListener('submit',e=>{e.preventDefault();state.name=E.clean($('name-input').value,20)||'相棒';persist();render();toast('呼び名を保存しました。');});
+  $('name-form').addEventListener('submit',async e=>{e.preventDefault();state.name=E.clean($('name-input').value,20)||'相棒';const result=await persist();render();if(result.ok)toast('呼び名を保存しました。');});
   $('clear-memories').addEventListener('click',()=>askConfirm('思い出と会話の記録を消す？','この端末の記録をすべて消します。育ちと姿の履歴は残ります。',()=>{E.forget(state);persist();render();toast('思い出と会話の記録を消しました。');}));
   $('trial-new').addEventListener('click',()=>{
     let slot;for(let i=0;i<5;i++){slot=crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,14);try{if(window.localStorage.getItem(E.STORAGE_KEY+'.trial.'+slot)===null)break;}catch{break;}if(i===4){toast('新しい枠を作れませんでした。もう一度試してください。');return;}}
@@ -276,7 +277,7 @@
   });
   $('reset-open').textContent=trial?'この試遊を最初から':'最初からはじめる';
   $('reset-open').addEventListener('click',()=>askConfirm(trial?trialName+'だけ、最初からはじめる？':'新しい丸い玉からはじめる？',trial?trialName+'の相棒、会話、思い出、育ち、姿の履歴だけを消します。普段の相棒と、ほかの試遊枠は消しません。元には戻せません。':'普段の相棒、会話、思い出、育ち、姿の履歴をすべて消します。試遊枠は消しません。元には戻せません。',()=>{
-    state=E.createState();C.ensure(state);lookMode='current';actionLock=false;busy=false;$('message').value='';$('settings-dialog').close();persist();switchView('home');toast('新しい相棒と、挑もう。');
+    epoch++;state=E.createState();C.ensure(state);lookMode='current';actionLock=false;busy=false;$('message').value='';$('settings-dialog').close();persist({replace:true});switchView('home');toast('新しい相棒と、挑もう。');
   }));
   $('confirm-cancel').addEventListener('click',()=>{confirmAction=null;$('confirm-dialog').close();});
   $('confirm-dialog').addEventListener('cancel',()=>confirmAction=null);
@@ -289,6 +290,7 @@
   if(trial){const banner=$('trial-banner');banner.firstChild.textContent=trialName+'です。この枠だけに保存します。普段の相棒と、ほかの試遊枠はそのままです。 ';$('save-status').textContent='普段とは別の保存';}
   if(loaded.restored&&!loaded.warning)persist();
   if(loaded.warning){$('save-status').textContent=loaded.warning;$('save-status').classList.add('warning');}
+  window.AwaiPersistence={current:()=>JSON.parse(JSON.stringify(state)),settled:()=>saveChain,pending:()=>pendingSaves};
   // Read-only bridge to the proposed browser WebMCP API; no remote MCP or model is connected.
   const context=document.modelContext;
   if(context?.registerTool){

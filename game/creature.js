@@ -173,5 +173,5 @@
     }
     present(canvas,c);
   }
-  root.AwaiCreature={draw:drawAssembly,drawEnemy,drawDinosaur,drawBattleGround,pixelArt:true,pixelGrid:GRID};
+  root.AwaiCreature={draw:function(canvas,look,time=0,reduced=false,pose={}){const M=root.AwaiWarriorMaterial;if(!M||!M.uses(look))return drawAssembly(canvas,look,time,reduced,pose);if(!M.inspect().ready&&!M.inspect().error)M.load().catch(()=>{});M.draw(canvas,look,time,reduced,pose);const extras=(look.parts||[]).filter(p=>p!=="armor"&&p!=="arms");if(extras.length||look.locomotion==="legs"){const overlay=document.createElement("canvas");overlay.width=canvas.width;overlay.height=canvas.height;drawAssembly(overlay,{...look,parts:extras,weapon:"none"},time,reduced,pose);const c=overlay.getContext("2d");c.globalCompositeOperation="destination-out";c.beginPath();c.ellipse(overlay.width*.5,overlay.height*.52,overlay.width*.13,overlay.width*.13,0,0,Math.PI*2);c.fill();canvas.getContext("2d").drawImage(overlay,0,0);}return;},drawEnemy,drawDinosaur,drawBattleGround,pixelArt:true,pixelGrid:GRID};
 })(globalThis);

@@ -9,10 +9,10 @@
   <title>あわい · 鍛えて、いっしょに挑む</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23101a2b'/%3E%3Ccircle cx='16' cy='16' r='9' fill='%23ffc56b'/%3E%3C/svg%3E">
   <link rel="stylesheet" href="style.css">
-  <script src="engine.js" defer></script>
+  <script src="engine.js" defer></script><script src="save-guard.js" defer></script>
   <script src="combat.js" defer></script>
   <script src="providers.js" defer></script>
-  <script src="creature.js" defer></script>
+  <script src="warrior-material.js" defer></script><script src="creature.js" defer></script>
   <script src="ui-copy.js" defer></script>
   <script src="app.js" defer></script><link rel="stylesheet" href="preview.css">
 </head>
@@ -44,7 +44,7 @@
         <button id="begin" class="primary full">この姿ではじめる</button>
       </section>
 
-      <div class="custom-links"><button data-view-link="custom">色・目・装備を変える</button><a id="home-fight" class="button-link" href="realtime.html">光の水庭で戦う</a></div>
+      <div class="custom-links"><a id="all-equipment-preview" class="button-link preview-entry" href="preview.html">全装備プレビュー · 開発用</a><button data-view-link="custom">色・目・装備を変える</button><a id="home-fight" class="button-link" href="realtime.html">光の水庭で戦う · 勝利で成長</a></div>
       <div id="play-controls" hidden>
         <section class="card target-studio" aria-labelledby="target-heading"><div class="section-line"><h1 id="target-heading">育てたい姿</h1><span id="target-mode-label" class="small-label">今の姿</span></div><div class="target-presets"><button data-goal="princess">プリンセス</button><button data-goal="machine">機械</button><button data-goal="armor">鎧</button></div><div class="look-toggle" aria-label="現在と目標の姿"><button data-look="current" class="selected" aria-pressed="true">現在</button><button data-look="target" aria-pressed="false">目標</button></div><canvas id="target-avatar" width="720" height="520" role="img" aria-label="同じ丸い核から育てる目標姿"></canvas><p id="target-description" class="small-label"></p><div class="target-progress"><span id="target-progress-text"></span><progress id="target-progress" max="2" value="0" aria-label="目標装備の獲得状況"></progress></div><details class="target-custom"><summary>例から装備を組み替える</summary><div id="target-parts" class="target-parts"></div><p class="small-label">自由な組合せです。目標を変えても、元の個体と持っている装備は残ります。</p></details><button id="target-equip" class="secondary full">持っている目標装備へ着替える</button><div class="goal-card"><span class="eyebrow">次に近づく一歩</span><h2 id="goal-heading"></h2><p id="partner-line" class="partner-line"></p><button id="go-battle" class="primary full">戦闘へ</button></div></section>
         <section class="card training" aria-labelledby="training-heading"><div class="section-line"><h2 id="training-heading">次の一戦に備える</h2><span id="training-budget" class="small-label"></span></div><div id="stats" class="stats"></div><p id="condition" class="condition"></p><div id="training-options" class="training-options"></div><p class="small-label training-rule">最後の訓練が、一戦だけの構えになります。基礎は同じ訓練3回で+1（上限6）。訓練せずに挑んでもOK。戦闘が終わると3回に戻ります。</p><button id="scout" class="secondary full">相手の癖を調べる</button><p id="scout-note" class="small-label"></p></section>
@@ -66,7 +66,7 @@
     </section>
 
     <section id="battle-view" class="view" hidden aria-labelledby="battle-heading">
-      <a id="scene-entry" class="scene-entry" href="realtime.html"><strong>光の水庭で戦う</strong><small>今の相棒と装備で、一戦。育成の記録はそのまま。経験・報酬は増えません。</small></a>
+      <a id="scene-entry" class="scene-entry" href="realtime.html"><strong>光の水庭で戦う</strong><small>今の相棒と装備で、一戦。勝利で経験と浮遊パーツを獲得。装備はカスタムで付け替えられます。</small></a>
       <div class="view-intro battle-intro"><span class="eyebrow">きみが指示する、小さな勝負</span><h1 id="battle-heading">パーツを獲得する戦闘</h1><p>こちらは1手ずつ指示する戦闘です。勝つと新しい浮遊パーツを獲得できます。自動で戦う「光の水庭」は上のボタンから、すぐに始められます。</p></div>
       <section id="battle-prep" class="card battle-prep" aria-labelledby="prep-heading"><div class="section-line"><h2 id="prep-heading">パーツ獲得戦の準備</h2><span id="prep-budget" class="small-label"></span></div><div id="prep-stats" class="prep-stats"></div><p id="prep-condition" class="small-label"></p><div id="prep-training" class="training-options"></div><details id="prep-loadout"><summary>装備を組み替える</summary><div id="prep-parts" class="prep-parts"></div></details><button id="reward-review" class="text-button full" hidden>前の獲得装備を見直す</button></section>
       <div id="foe-list" class="foe-list"></div>

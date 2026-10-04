@@ -41,7 +41,8 @@
   const routeFor=variant=>Object.values(CHAPTER_ROUTES).find(f=>f.variant===variant);
   const chapterUnlocked=g=>g.wins.echo>0&&Object.keys(CHALLENGE_GOALS).every(k=>g.challengeMarks.includes(k));
   const availableParts=g=>Object.keys(PARTS).filter(id=>!PARTS[id].chapter||chapterUnlocked(g)||g.parts.includes(id));
-  const partCondition=id=>PARTS[id].chapter?'境界の庭の初クリア':FOES.find(f=>f.id===PARTS[id].foe).name+'の初勝';
+  const legacyPartCondition=id=>PARTS[id].chapter?'境界の庭の初クリア':FOES.find(f=>f.id===PARTS[id].foe).name+'の初勝';
+  const partCondition=id=>id==='arms'||id==='trail'?'巨機に勝つと獲得':'水庭の大牙に勝つと獲得';
   const encounterFor=b=>b.variant==='rematch'?REMATCH:b.foe==='gate'?routeFor(b.variant):FOES.find(f=>f.id===b.foe);
   const clamp=(v,a,b)=>Math.max(a,Math.min(b,Number.isFinite(v)?Math.floor(v):a));
   const fresh=()=>({trialStarterParts:[],xp:{power:0,guard:0,focus:0},slots:3,condition:null,wins:{rock:0,spark:0,echo:0},rematchWins:0,chapterWins:{shield:0,wind:0},chapterRoute:'shield',challengeGoal:'speed',challengeMarks:[],records:{},notes:{},attempts:0,battle:null,result:null,scouted:false,parts:[],equipped:[],locomotion:'hover',goal:'armor',goalParts:['armor','crown']});
@@ -94,9 +95,10 @@
     return m;
   }
   function ensure(state){
-    const raw=state.gameplay,g=fresh();
+    const raw=state.gameplay,g=fresh();g.autoProgress={wins:{rex:0,robot:0},parts:[],claims:[],paid:[],last:null};
     if(raw&&typeof raw==='object'){
       for(const k of Object.keys(DRILLS))g.xp[k]=clamp(raw.xp?.[k],0,12);
+      if(raw.autoProgress){const p=raw.autoProgress;g.autoProgress.wins={rex:clamp(p.wins?.rex,0,100000),robot:clamp(p.wins?.robot,0,100000)};g.autoProgress.parts=Array.isArray(p.parts)?[...new Set(p.parts)].filter(validPart):[];g.autoProgress.claims=Array.isArray(p.claims)?[...new Set(p.claims)].filter(id=>typeof id==='string'&&id.length<=80).slice(0,256):[];g.autoProgress.paid=Array.isArray(p.paid)?p.paid.filter(r=>Array.isArray(r)&&r.length===2&&r.every(Number.isSafeInteger)&&r[0]>=1&&r[1]>=r[0]).map(r=>[...r]):[];const r=p.last;if(r&&typeof r.id==='string'&&r.id.length<=80)g.autoProgress.last={id:r.id,enemy:r.enemy==='robot'?'robot':'rex',parts:Array.isArray(r.parts)?r.parts.filter(validPart):[],xp:r.xp==='focus'?'focus':'power',time:clamp(r.time,0,Date.now()+1000)};}
       for(const f of FOES)g.wins[f.id]=clamp(raw.wins?.[f.id],0,100000);
       g.rematchWins=clamp(raw.rematchWins,0,100000);for(const route of Object.keys(CHAPTER_ROUTES))g.chapterWins[route]=clamp(raw.chapterWins?.[route],0,100000);g.chapterRoute=Object.hasOwn(CHAPTER_ROUTES,raw.chapterRoute)?raw.chapterRoute:"shield";
       g.challengeGoal=Object.hasOwn(CHALLENGE_GOALS,raw.challengeGoal)?raw.challengeGoal:'speed';g.challengeMarks=Array.isArray(raw.challengeMarks)?[...new Set(raw.challengeMarks)].filter(k=>Object.hasOwn(CHALLENGE_GOALS,k)):[];
@@ -105,7 +107,7 @@
       g.trialStarterParts=Array.isArray(raw.trialStarterParts)?[...new Set(raw.trialStarterParts)].filter(id=>['armor','arms'].includes(id)):[];
       // Trial starter modules are explicit loaned equipment; they never fabricate victories.
       // Wins are the source of truth for ownership, including older v0.3 draft saves.
-      g.parts=Object.keys(PARTS).filter(id=>g.trialStarterParts.includes(id)||(PARTS[id].chapter?Object.values(g.chapterWins).some(n=>n>0):g.wins[PARTS[id].foe]>0));
+      g.parts=Object.keys(PARTS).filter(id=>g.trialStarterParts.includes(id)||g.autoProgress.parts.includes(id)||(PARTS[id].chapter?Object.values(g.chapterWins).some(n=>n>0):g.wins[PARTS[id].foe]>0));
       g.equipped=Array.isArray(raw.equipped)?[...new Set(raw.equipped)].filter(id=>g.parts.includes(id)):[];
       g.locomotion=raw.locomotion==='legs'?'legs':'hover';
       g.goal=Object.hasOwn(GOALS,raw.goal)||raw.goal==='custom'?raw.goal:'armor';

@@ -9,7 +9,7 @@
   function preset(p,name){
     const parts={warrior:['armor','arms'],princess:['crown','dress','trail'],mage:['magic','crown','trail'],all:Object.keys(C.PARTS),bare:[]}[name];
     if(!parts)return false;p.parts=[...parts];
-    if(name==='warrior'){Object.assign(p.appearance,{hue:270,tone:'black',eyeColor:'#ff415b',eyes:'hollow',mouth:'none'});p.weapon='sword';p.locomotion='hover';}
+    if(name==='warrior'){Object.assign(p.appearance,{hue:270,tone:'black',eyeColor:'#ffffff',eyes:'hollow',mouth:'none'});p.weapon='sword';p.locomotion='hover';}
     if(name==='mage')p.weapon='thunder';return true;
   }
   function look(p){return {...clone(p.appearance),parts:[...p.parts],locomotion:p.locomotion,weapon:p.weapon};}

@@ -48,7 +48,7 @@
       if (!Number.isFinite(raw.traits[key]) || raw.traits[key] < 0) throw new Error('invalid-traits');
       state.traits[key] = clamp(Math.floor(raw.traits[key]),0,100000);
     }
-    state.id = clean(raw.id,80) || state.id;
+    state.id = clean(raw.id,80) || state.id;state.saveRevision=Number.isSafeInteger(raw.saveRevision)&&raw.saveRevision>=0?raw.saveRevision:0;
     state.actions = clamp(Math.floor(raw.actions),0,300000);
     state.updatedAt = Number(raw.updatedAt) || state.createdAt;
     state.energy = clamp(Number(raw.energy) || 72,0,100);
