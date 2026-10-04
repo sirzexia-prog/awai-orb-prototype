@@ -1,0 +1,56 @@
+{
+  "status": "normal integration balance proposal; not user-fixed numbers, connection review v15 retains original flat proposal",
+  "sourceDocument": "1TS5twC_O5R60_osHKWAYF6lMfrAC7FyuDZJzyduTPUY",
+  "ruleVersion": "partbreak-core-1",
+  "duelTimeAimSeconds": [
+    6,
+    12
+  ],
+  "monotonousLoopReviewSeconds": 15,
+  "groupDurability": 2,
+  "attackBudget": 1,
+  "normalTiming": {
+    "windup": 0.4,
+    "strike": 0.25,
+    "return": 0.35
+  },
+  "coreTiming": {
+    "windup": 0.7,
+    "strike": 0.2,
+    "return": 0.28
+  },
+  "finaleTiming": {
+    "windup": 0.28,
+    "strike": 0.18,
+    "return": 0.18
+  },
+  "endAnimationSeconds": 0.4,
+  "impactStopSeconds": 0.06,
+  "automaticGuardLeadSeconds": 0.18,
+  "groupOrder": [
+    "dedicated-defense",
+    "weapon-defense"
+  ],
+  "confirmedRules": {
+    "symmetricCoreExtractDefeat": true,
+    "coreHasHitPoints": false,
+    "endOnlyAtActualCoreContact": true,
+    "noInventoryLossOrPaidRepair": true,
+    "coreTargetVisibleBeforeContact": true,
+    "defaultDefenseIsAutomatic": true,
+    "noBiologicalNewEnemy": true
+  },
+  "projectileSpeed": 900,
+  "projectileGapSeconds": 0.055,
+  "projectileLifetimeSeconds": 0.8,
+  "normalGrowth": {
+    "referenceStat": 2,
+    "durabilityPerGuard": 0.1,
+    "budgetPerPower": 0.1,
+    "minimumDurability": 1.6,
+    "maximumDurability": 2.5,
+    "minimumAttackBudget": 0.7,
+    "maximumAttackBudget": 1.5,
+    "scope": "player structure durability and attack total budget from locked sortie stats; never core HP; 3 gun rounds split the same budget"
+  }
+}

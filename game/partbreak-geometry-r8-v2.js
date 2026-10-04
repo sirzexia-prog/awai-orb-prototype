@@ -1,0 +1,30 @@
+(function(root){'use strict';
+const transform=(m,x,y)=>({x:m[0]*x+m[2]*y+m[4],y:m[1]*x+m[3]*y+m[5]});
+const matrix=(position,pivot,angle=0)=>{const c=Math.cos(angle),s=Math.sin(angle);return [c,s,-s,c,position.x-c*pivot[0]+s*pivot[1],position.y-s*pivot[0]-c*pivot[1]]};
+function canvas(width,height){const c=document.createElement('canvas');c.width=width;c.height=height;return c}
+async function loadImage(url,{transparent=true,threshold=128,expectedSize=null}={}){
+ const image=new Image();image.src=url;await image.decode();if(expectedSize&&(image.width!==expectedSize[0]||image.height!==expectedSize[1]))throw Error('共通canvasのサイズが違います: '+url);
+ const c=canvas(image.width,image.height),ctx=c.getContext('2d',{willReadFrequently:true});ctx.drawImage(image,0,0);const rgba=ctx.getImageData(0,0,c.width,c.height).data;let zero=0,body=0,left=c.width,top=c.height,right=0,bottom=0,minAlpha=255,maxAlpha=0;
+ for(let y=0;y<c.height;y++)for(let x=0;x<c.width;x++){const a=rgba[(y*c.width+x)*4+3];minAlpha=Math.min(minAlpha,a);maxAlpha=Math.max(maxAlpha,a);if(a===0)zero++;if(a>=threshold){body++;left=Math.min(left,x);top=Math.min(top,y);right=Math.max(right,x+1);bottom=Math.max(bottom,y+1);}}
+ if(transparent&&zero===0)throw Error('独立透過素材ではありません（RGB参照・焼込み背景は描画素材にしません）: '+url);if(!body)throw Error('不透明な構造面がありません: '+url);
+ return {image,url,width:c.width,height:c.height,bodyBounds:[left,top,right,bottom],alpha:{zero,body,min:minAlpha,max:maxAlpha},threshold};
+}
+function drawParts(ctx,parts){for(const p of parts){if(p.active===false)continue;ctx.save();ctx.transform(...p.matrix);ctx.imageSmoothingEnabled=false;ctx.drawImage(p.asset.image,0,0);ctx.restore();}}
+function bounds(surface){const corners=[];for(const p of surface.parts){if(p.active===false)continue;const b=p.asset.bodyBounds;for(const q of [[b[0],b[1]],[b[2],b[1]],[b[2],b[3]],[b[0],b[3]]])corners.push(transform(p.matrix,...q));}if(!corners.length)return null;return {left:Math.floor(Math.min(...corners.map(p=>p.x))),top:Math.floor(Math.min(...corners.map(p=>p.y))),right:Math.ceil(Math.max(...corners.map(p=>p.x))),bottom:Math.ceil(Math.max(...corners.map(p=>p.y)))}}
+function create({width=800,height=520,threshold=128}={}){
+ let frame=0,cache=new Map();
+ function beginFrame(){frame++;cache.clear();}
+ function clip(r){const out={left:Math.max(0,Math.floor(r.left)),top:Math.max(0,Math.floor(r.top)),right:Math.min(width,Math.ceil(r.right)),bottom:Math.min(height,Math.ceil(r.bottom))};return out.right>out.left&&out.bottom>out.top?out:null;}
+ function mask(surface,region){const r=clip(region);if(!r)return null;const key=surface.id+'|'+[r.left,r.top,r.right,r.bottom].join(',')+'|'+surface.parts.filter(p=>p.active!==false).map(p=>(p.asset.key||p.asset.url)+':'+(p.asset.revision||0)+':'+p.matrix.join(',')).join('|');if(cache.has(key))return cache.get(key);const c=canvas(r.right-r.left,r.bottom-r.top),ctx=c.getContext('2d',{willReadFrequently:true});ctx.translate(-r.left,-r.top);drawParts(ctx,surface.parts);const pixels=ctx.getImageData(0,0,c.width,c.height).data,result={...r,width:c.width,height:c.height,pixels,frame};cache.set(key,result);return result;}
+ function alpha(m,x,y){x=Math.floor(x)-m.left;y=Math.floor(y)-m.top;if(x<0||y<0||x>=m.width||y>=m.height)return 0;return m.pixels[(y*m.width+x)*4+3];}
+ function ray({origin,target,surfaces}){
+  const dx=target.x-origin.x,dy=target.y-origin.y,length=Math.hypot(dx,dy);if(!length)return null;const region={left:Math.min(origin.x,target.x)-2,top:Math.min(origin.y,target.y)-2,right:Math.max(origin.x,target.x)+3,bottom:Math.max(origin.y,target.y)+3},hits=[];
+  for(const surface of surfaces){if(surface.active===false)continue;const m=mask(surface,region);if(!m)continue;for(let d=0;d<=length;d+=.5){const x=origin.x+dx*d/length,y=origin.y+dy*d/length;if(alpha(m,x,y)>=threshold){hits.push({surfaceId:surface.id,kind:surface.kind,actorId:surface.actorId,groupId:surface.groupId||null,distance:d,point:{x:Math.floor(x)+.5,y:Math.floor(y)+.5},alpha:alpha(m,x,y)});break;}}}
+  hits.sort((a,b)=>Math.abs(a.distance-b.distance)<.001?((a.kind==='core'?1:0)-(b.kind==='core'?1:0)||a.surfaceId.localeCompare(b.surfaceId)):a.distance-b.distance);return hits[0]||null;
+ }
+ function overlap(a,b){const ba=bounds(a),bb=bounds(b);if(!ba||!bb)return {pixels:0,point:null};const region=clip({left:Math.max(ba.left,bb.left)-1,top:Math.max(ba.top,bb.top)-1,right:Math.min(ba.right,bb.right)+1,bottom:Math.min(ba.bottom,bb.bottom)+1});if(!region)return {pixels:0,point:null};const ma=mask(a,region),mb=mask(b,region);let n=0,sx=0,sy=0;for(let y=region.top;y<region.bottom;y++)for(let x=region.left;x<region.right;x++)if(alpha(ma,x,y)>=threshold&&alpha(mb,x,y)>=threshold){n++;sx+=x+.5;sy+=y+.5;}return {pixels:n,point:n?{x:sx/n,y:sy/n}:null};}
+ function firstOverlap(weapon,surfaces,origin,target){const dx=target.x-origin.x,dy=target.y-origin.y,length=Math.hypot(dx,dy),hits=[];for(const s of surfaces){if(s.active===false)continue;const o=overlap(weapon,s);if(!o.pixels)continue;const distance=((o.point.x-origin.x)*dx+(o.point.y-origin.y)*dy)/(length||1);hits.push({...o,distance,surfaceId:s.id,kind:s.kind,actorId:s.actorId,groupId:s.groupId||null});}hits.sort((a,b)=>Math.abs(a.distance-b.distance)<.001?((a.kind==='core'?1:0)-(b.kind==='core'?1:0)||a.surfaceId.localeCompare(b.surfaceId)):a.distance-b.distance);return hits[0]||null;}
+ return {beginFrame,mask,alpha,ray,overlap,firstOverlap,bounds,drawParts,frame:()=>frame};
+}
+root.AwaiPartbreakGeometryR8=Object.freeze({loadImage,create,drawParts,bounds,matrix,transform});
+})(globalThis);
