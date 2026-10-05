@@ -1,0 +1,17 @@
+(function(root){'use strict';
+const names=['core-back','support-shoulder','support-arm','attack-shoulder','attack-hand-hilt','attack-blade','back-cloth'];
+function inside(x,y,p){let c=false;for(let i=0,j=p.length-1;i<p.length;j=i++){const a=p[i],b=p[j];if((a[1]>y)!==(b[1]>y)&&x<(b[0]-a[0])*(y-a[1])/(b[1]-a[1])+a[0])c=!c;}return c;}
+function plainGuardEdge(){return 'Right guard silhouette/glow edge previously fell through visible-region polygons into cloth; all original pixels retained and reassigned to D shoulder/arm, no body/cloth/core pixels erased';}
+async function load(geometry){const image=new Image();image.src='assets/adopted-intake/approved-sheet.png';await image.decode();const c=document.createElement('canvas');c.width=152;c.height=170;const x=c.getContext('2d',{willReadFrequently:true});x.imageSmoothingEnabled=false;x.drawImage(image,420,36,304,340,0,0,152,170);const data=x.getImageData(0,0,152,170),layers=Object.fromEntries(names.map(n=>[n,new Uint8ClampedArray(512*512*4)]));let retained=0,assigned=0,reassignedGuardEdge=0;
+ const regions={
+  'support-shoulder':[[610,92],[670,89],[723,145],[723,212],[654,219],[611,171]],
+  'support-arm':[[629,207],[720,205],[724,328],[676,345],[629,290]],
+  'attack-shoulder':[[425,101],[505,91],[548,150],[542,212],[481,228],[425,210]],
+  'attack-hand-hilt':[[418,207],[489,202],[519,245],[503,285],[421,293]],
+  'attack-blade':[[419,282],[505,273],[565,305],[501,357],[418,379]]};
+ for(let py=0;py<170;py++)for(let px=0;px<152;px++){const i=(py*152+px)*4,r=data.data[i],g=data.data[i+1],b=data.data[i+2];if(Math.max(r,g,b)-Math.min(r,g,b)<38&&r-g<9&&b-r<35)continue;retained++;const sx=420+px*2,sy=36+py*2;let name='back-cloth';if(((sx-588)/24)**2+((sy-216)/25)**2<=1)name='core-back';else if(inside(sx,sy,regions['support-arm']))name='support-arm';else if(inside(sx,sy,regions['support-shoulder']))name='support-shoulder';else if(inside(sx,sy,regions['attack-hand-hilt']))name='attack-hand-hilt';else if(inside(sx,sy,regions['attack-shoulder']))name='attack-shoulder';else if(inside(sx,sy,regions['attack-blade'])&&!(r>b*1.3&&r>g*1.8))name='attack-blade';if(name==='back-cloth'&&sx>=680&&sx<724&&sy>=92&&sy<376&&!(r>b*1.3&&r>g*1.8)){name=sy<207?'support-shoulder':'support-arm';reassignedGuardEdge++;}const at=((py+166)*512+px+172)*4;layers[name].set([r,g,b,255],at);assigned++;}
+ const assets={};for(const name of names){const frame=document.createElement('canvas');frame.width=frame.height=512;frame.getContext('2d').putImageData(new ImageData(layers[name],512,512),0,0);const asset=await geometry.loadImage(frame.toDataURL('image/png'),{expectedSize:[512,512]});asset.key='player/'+name;assets[asset.key]=asset;}
+ return {assets,registration:{shoulder:[204.5,228.5],elbow:[193.5,263.5],wrist:[192.5,277],grip:[198,288],tip:[175,334]},proof:{source:'assets/adopted-intake/approved-sheet.png',sourceCrop:[420,36,304,340],conversion:'whole image 2:1 nearest, source RGB retained, existing neutral panel key only',retainedPixels:retained,assignedPixels:assigned,reassignedGuardEdgePixels:reassignedGuardEdge,guardEdgeSourceRegion:[680,92,724,376],preservedRedCloth:true,guardEdgeCorrection:plainGuardEdge(),duplicateOwnershipPixels:0,sourceDirection:'existing back-view only; yaw unresolved',generatedArtwork:false,wholeActorScaleOnly:true,partition:'visible source regions; no invented hidden surfaces'}};
+}
+root.AwaiPartbreakBackRigR8=Object.freeze({load});
+})(globalThis);
