@@ -1,0 +1,15 @@
+(function(root){'use strict';
+ const styles={bold:{label:'豪快',detail:'必殺を早めに狙う・守りは遅め',guardLead:.12},technical:{label:'技巧',detail:'部位を崩して必殺・標準の守り',guardLead:.18},guard:{label:'守備',detail:'部位攻撃を優先・早めに守る',guardLead:.30}};
+ const valid=v=>Object.hasOwn(styles,v)?v:'technical';
+ function key(scope,id){return 'awai.sword-plan.v1:'+scope+':'+id;}
+ function read({scope,sourceId,preview=false}){try{return valid((preview?sessionStorage:localStorage).getItem(key(scope,sourceId)));}catch{return 'technical';}}
+ function write({scope,sourceId,preview=false},value){const selected=valid(value);(preview?sessionStorage:localStorage).setItem(key(scope,sourceId),selected);return selected;}
+ function installHome(){if(!document.getElementById('home-view'))return;const params=new URLSearchParams(location.search),trial=params.get('trial')==='1',slot=trial&&/^[a-z0-9-]{8,48}$/.test(params.get('slot')||'')?params.get('slot'):null,suffix=trial?(slot?'.trial.'+slot:'.trial'):'',scope=AwaiEngine.STORAGE_KEY+suffix,storage={getItem:k=>localStorage.getItem(k+suffix)},loaded=AwaiSaveGuard.load(storage);if(loaded.warning)return;const context={scope,sourceId:loaded.state.id},panels=[];
+  for(const [id,host] of [['sword-plan-home',document.getElementById('home-fight')],['sword-plan-custom',document.querySelector('#custom-view .custom-links')]]){if(!host)continue;const panel=document.createElement('fieldset');panel.className='sword-plan';panel.id=id;const legend=document.createElement('legend');legend.textContent='大剣の戦い方';panel.append(legend);const row=document.createElement('div');row.className='sword-plan-options';for(const [value,style] of Object.entries(styles)){const button=document.createElement('button');button.type='button';button.dataset.swordPlan=value;button.setAttribute('aria-pressed','false');const title=document.createElement('strong');title.textContent=style.label;const detail=document.createElement('span');detail.textContent=style.detail;button.append(title,detail);button.addEventListener('click',()=>{try{write(currentContext(),value);update();note.textContent='選んだ方針で次の大剣戦を見守ります。';}catch{note.textContent='方針を保存できませんでした。もう一度選んでください。';}});row.append(button);}panel.append(row);const note=document.createElement('p');note.className='sword-plan-note';note.textContent='出撃前に選択。攻撃と守りはオート。機砲・雷の設定は変わりません。';panel.append(note);host.before(panel);panels.push(panel);}
+  function currentContext(){const latest=AwaiSaveGuard.load(storage);return {scope,sourceId:latest.restored?latest.state.id:context.sourceId};}
+  function update(){const chosen=read(currentContext());for(const panel of panels)for(const b of panel.querySelectorAll('[data-sword-plan]')){const on=b.dataset.swordPlan===chosen;b.setAttribute('aria-pressed',String(on));b.classList.toggle('selected',on);}}
+  update();
+ }
+ root.AwaiSwordPlanR8=Object.freeze({styles,valid,read,write,key});
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',installHome,{once:true});else installHome();
+})(globalThis);
