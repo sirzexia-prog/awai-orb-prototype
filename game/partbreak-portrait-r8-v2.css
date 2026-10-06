@@ -1,0 +1,2 @@
+@import url('partbreak-portrait-r8-v1.css');
+#battle-hud{position:relative}#battle-guard-result{position:absolute;left:12px;right:12px;top:-24px;margin:0;padding:2px 0;font-size:13px;line-height:18px;color:#baffdf;background:#171820;white-space:nowrap}#battle-guard-result[hidden]{display:none}
