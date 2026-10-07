@@ -1,0 +1,189 @@
+{
+  "version": 4,
+  "status": "13pose strongerFX finishing candidate; all previous12 PNG unchanged",
+  "canvas": [
+    1670,
+    941
+  ],
+  "duration_ms": 1520,
+  "future_frames": [
+    "F0",
+    "F1",
+    "F1b",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "O1",
+    "F8",
+    "F9",
+    "F10"
+  ],
+  "future_durations_ms": [
+    160,
+    140,
+    120,
+    140,
+    220,
+    60,
+    40,
+    40,
+    50,
+    110,
+    130,
+    150,
+    160
+  ],
+  "placeholder_keys": [
+    {
+      "key": "F0",
+      "from_ms": 0,
+      "duration_ms": 160
+    },
+    {
+      "key": "F1",
+      "from_ms": 160,
+      "duration_ms": 140
+    },
+    {
+      "key": "F1b",
+      "from_ms": 300,
+      "duration_ms": 120
+    },
+    {
+      "key": "F2",
+      "from_ms": 420,
+      "duration_ms": 140
+    },
+    {
+      "key": "F3",
+      "from_ms": 560,
+      "duration_ms": 220
+    },
+    {
+      "key": "F4",
+      "from_ms": 780,
+      "duration_ms": 60
+    },
+    {
+      "key": "F5",
+      "from_ms": 840,
+      "duration_ms": 40
+    },
+    {
+      "key": "F6",
+      "from_ms": 880,
+      "duration_ms": 40
+    },
+    {
+      "key": "F7",
+      "from_ms": 920,
+      "duration_ms": 50
+    },
+    {
+      "key": "O1",
+      "from_ms": 970,
+      "duration_ms": 110
+    },
+    {
+      "key": "F8",
+      "from_ms": 1080,
+      "duration_ms": 130
+    },
+    {
+      "key": "F9",
+      "from_ms": 1210,
+      "duration_ms": 150
+    },
+    {
+      "key": "F10",
+      "from_ms": 1360,
+      "duration_ms": 160
+    }
+  ],
+  "timing": {
+    "trace_start_ms": 780,
+    "trace_complete_ms": 890,
+    "amplify_delay_ms": 100,
+    "open_complete_ms": 960,
+    "shear_rise_ms": 120,
+    "close_start_ms": 1110,
+    "closed_ms": 1250
+  },
+  "path": [
+    [
+      120,
+      360
+    ],
+    [
+      250,
+      325
+    ],
+    [
+      400,
+      220
+    ],
+    [
+      620,
+      180
+    ],
+    [
+      840,
+      220
+    ],
+    [
+      1060,
+      300
+    ],
+    [
+      1260,
+      380
+    ],
+    [
+      1450,
+      420
+    ],
+    [
+      1660,
+      460
+    ]
+  ],
+  "aperture_max_px": 44,
+  "rim_width_px": 3,
+  "depth_offset_px": 10,
+  "guide_shear_px": [
+    16,
+    9
+  ],
+  "guide_region": [
+    1150,
+    380,
+    1670,
+    560
+  ],
+  "guide_is_debug_only": true,
+  "hit_or_reward_semantics": false,
+  "art_adjustment": "blade membrane+silhouette aura+65ms previous blade energy residual; violet-blue void; brightening sweep tip; 44px pulse opening, actual body remains readable",
+  "blade_energy": {
+    "F3_charge": [
+      0.15,
+      0.75
+    ],
+    "F4": 0.85,
+    "F5": 1,
+    "F6": 1,
+    "F7": 1,
+    "O1": 0.8,
+    "F8_fade": 0.35,
+    "F9_fade": 0,
+    "F10": 0
+  },
+  "rift_rim": {
+    "white_core_px": 3,
+    "cyan_band_px": 8,
+    "blue_halo_px": 18,
+    "halo_alpha": 0.28
+  }
+}

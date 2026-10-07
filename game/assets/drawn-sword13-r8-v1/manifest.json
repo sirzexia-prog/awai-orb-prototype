@@ -1,0 +1,6044 @@
+{
+  "version": 1,
+  "canvas": [
+    1670,
+    941
+  ],
+  "duration_ms": 1520,
+  "order": [
+    "F0",
+    "F1",
+    "F1b",
+    "F2",
+    "F3",
+    "F4",
+    "F5",
+    "F6",
+    "F7",
+    "O1",
+    "F8",
+    "F9",
+    "F10"
+  ],
+  "durations_ms": [
+    160,
+    140,
+    120,
+    140,
+    220,
+    60,
+    40,
+    40,
+    50,
+    110,
+    130,
+    150,
+    160
+  ],
+  "frames": [
+    {
+      "key": "F0",
+      "core": [
+        604,
+        480
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F0-core-back.png",
+          "offset": [
+            493,
+            385
+          ],
+          "size": [
+            217,
+            204
+          ],
+          "pixels": 28383,
+          "sha256": "7fa32a66052ab7f1c539c5b272af74df8b9bca94a6909871dce55b144a023892"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F0-support-shoulder.png",
+          "offset": [
+            257,
+            263
+          ],
+          "size": [
+            314,
+            263
+          ],
+          "pixels": 51106,
+          "sha256": "db1d027fd82dfa99d4a4ea3a851139362adcf9ceca7d261c53775877cbd67268"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F0-support-arm.png",
+          "offset": [
+            203,
+            461
+          ],
+          "size": [
+            212,
+            332
+          ],
+          "pixels": 49842,
+          "sha256": "22c81905dba88497e5817b4da49acc7b7d7ce5e79278aa0915337ac918204f8f"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F0-attack-shoulder.png",
+          "offset": [
+            647,
+            269
+          ],
+          "size": [
+            320,
+            227
+          ],
+          "pixels": 50716,
+          "sha256": "52b3f21f49f17333c33d6b3a5ec748f2874f9527513e017d649fa9210c10b2fa"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F0-attack-upper-arm.png",
+          "offset": [
+            713,
+            469
+          ],
+          "size": [
+            257,
+            164
+          ],
+          "pixels": 20858,
+          "sha256": "5966f9a9faa3a744b3262f7f2404687cab1e14bec83011564156891101b24099"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F0-attack-forearm.png",
+          "offset": [
+            824,
+            591
+          ],
+          "size": [
+            155,
+            111
+          ],
+          "pixels": 7589,
+          "sha256": "0527dfbd03318d9cd2a93bf4baf94008a2b4c71e5d779b1c4141f1e7330b7c62"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F0-attack-hand-hilt.png",
+          "offset": [
+            851,
+            623
+          ],
+          "size": [
+            231,
+            194
+          ],
+          "pixels": 24008,
+          "sha256": "2c875eb2fa455035d18eb46510019374cde5e05dd1e0e694e319179146085b31"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F0-attack-blade.png",
+          "offset": [
+            1009,
+            672
+          ],
+          "size": [
+            725,
+            369
+          ],
+          "pixels": 83281,
+          "sha256": "dc2ab0147c504bc8858f395d3e9fca20b45f6a0f80c6d40827f7210fbc196036",
+          "materialBounds": [
+            0,
+            0,
+            629,
+            269
+          ]
+        }
+      },
+      "source_sha256": "92f8e433cc4d8ec52b22d9ada62efb97ac9a22ec38fc669ccb2872a47b37cad4",
+      "blade_tip_completion": {
+        "key": "F0",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "92f8e433cc4d8ec52b22d9ada62efb97ac9a22ec38fc669ccb2872a47b37cad4",
+        "old_mask_sha256": "cb7b9840fe3192e5984b3c03b0a240e7341c5cc1ba12cbe4d07c2b2a5a923814",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          480
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "y",
+        "outward_sign": 1,
+        "seam_coordinate": 941,
+        "seam_range": [
+          1356.0,
+          1638.0
+        ],
+        "centerline_slope_outward": 2.365588344240027,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1410,
+        "donor_longitudinal_scale": 0.2867860673965035,
+        "donor_normal_scale_at_seam": 2.473684210526316,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 15735,
+        "new_mask_offset": [
+          1009,
+          672
+        ],
+        "new_mask_size": [
+          725,
+          369
+        ],
+        "legacy_materialBounds": [
+          0,
+          0,
+          629,
+          269
+        ],
+        "mask_sha256": "dc2ab0147c504bc8858f395d3e9fca20b45f6a0f80c6d40827f7210fbc196036",
+        "extension_image_sha256": "f2474d70113bec5e262699c29aaa79e813a68631c75e302c5e08a21a851e353f",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "F1",
+      "core": [
+        604,
+        489
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F1-core-back.png",
+          "offset": [
+            493,
+            395
+          ],
+          "size": [
+            217,
+            218
+          ],
+          "pixels": 30811,
+          "sha256": "902968216ff5635c468dd0202e0e2b1c0fdba9f92c2589d887a26ec1879dbd16"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F1-support-shoulder.png",
+          "offset": [
+            221,
+            266
+          ],
+          "size": [
+            347,
+            284
+          ],
+          "pixels": 60878,
+          "sha256": "55c85a8da6f6e3719e9684242b2adefc8f17e7bd619c5ad38572f4dc41ceed54"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F1-support-arm.png",
+          "offset": [
+            167,
+            470
+          ],
+          "size": [
+            233,
+            365
+          ],
+          "pixels": 59083,
+          "sha256": "fbcfcc344e7ff6ffbaeed965e5f4a3e8ead2e73fe81e1c2516f263543307b73a"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F1-attack-shoulder.png",
+          "offset": [
+            644,
+            266
+          ],
+          "size": [
+            248,
+            266
+          ],
+          "pixels": 44217,
+          "sha256": "25e5cd694794e07175789c91db6d06d731aa94b9a71a189e0759e32ef4427c18"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F1-attack-upper-arm.png",
+          "offset": [
+            857,
+            349
+          ],
+          "size": [
+            179,
+            129
+          ],
+          "pixels": 7125,
+          "sha256": "db5ca0641fb6a20533a5d7b311abaf47d3fa8613a20c977652449b14052f1d29"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F1-attack-forearm.png",
+          "offset": [
+            872,
+            229
+          ],
+          "size": [
+            215,
+            209
+          ],
+          "pixels": 28199,
+          "sha256": "63512edcbf27c7deea7103cd403e88bb8d9fe34c081fd1f0252fb3de9361dc49"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F1-attack-hand-hilt.png",
+          "offset": [
+            680,
+            125
+          ],
+          "size": [
+            266,
+            183
+          ],
+          "pixels": 23026,
+          "sha256": "bdb940b774c6f4fc3253f7972e6ceef0eff9e75f167cd73f2c9b2066a6aaf753"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F1-attack-blade.png",
+          "offset": [
+            899,
+            -132
+          ],
+          "size": [
+            553,
+            403
+          ],
+          "pixels": 62390,
+          "sha256": "9869895939855f28ab0e113b0f3405c53dff5f7e966381ba907a832f71364bd8",
+          "materialBounds": [
+            0,
+            132,
+            448,
+            403
+          ]
+        }
+      },
+      "source_sha256": "a8661ca20fa94c575b675fa0b33056479e5c1222a4734b84528f00e7008e3f9f",
+      "blade_tip_completion": {
+        "key": "F1",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "a8661ca20fa94c575b675fa0b33056479e5c1222a4734b84528f00e7008e3f9f",
+        "old_mask_sha256": "6dd61b0cf0aeb5a212081afc50d05faf2d2bab6684624759e146ea8669d98490",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          489
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "y",
+        "outward_sign": -1,
+        "seam_coordinate": 0,
+        "seam_range": [
+          1113.0,
+          1347.0
+        ],
+        "centerline_slope_outward": 1.6877639214717863,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1329,
+        "donor_longitudinal_scale": 0.30537622210981513,
+        "donor_normal_scale_at_seam": 1.95,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 16839,
+        "new_mask_offset": [
+          899,
+          -132
+        ],
+        "new_mask_size": [
+          553,
+          403
+        ],
+        "legacy_materialBounds": [
+          0,
+          132,
+          448,
+          403
+        ],
+        "mask_sha256": "9869895939855f28ab0e113b0f3405c53dff5f7e966381ba907a832f71364bd8",
+        "extension_image_sha256": "9ff254d1abd38f20aae4819b02d8805d75f2f030a14e795a3ee7ae895d7ccd61",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "F1b",
+      "core": [
+        604,
+        489
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-core-back.png",
+          "offset": [
+            493,
+            393
+          ],
+          "size": [
+            217,
+            223
+          ],
+          "pixels": 31871,
+          "sha256": "be6e924bb0c953e1a594704d6ba09081a611c57f3feb520a21ce7b8b1b2766d9"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-support-shoulder.png",
+          "offset": [
+            224,
+            263
+          ],
+          "size": [
+            344,
+            290
+          ],
+          "pixels": 62337,
+          "sha256": "6476cb21d8c772dfdce98fa8d033a8b4501cacc46c1c59c26c7052a57a706d0a"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-support-arm.png",
+          "offset": [
+            164,
+            478
+          ],
+          "size": [
+            236,
+            360
+          ],
+          "pixels": 59832,
+          "sha256": "8cfc2ad214f74614837345ae24abc11a7d5bdc1d41a054cb823902c3452c5fc4"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-attack-shoulder.png",
+          "offset": [
+            608,
+            272
+          ],
+          "size": [
+            277,
+            260
+          ],
+          "pixels": 37293,
+          "sha256": "5a08661c5428e2dac2d9642fa00a30b711626f0c0b4e931559bbaa84d358d0a2"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-attack-upper-arm.png",
+          "offset": [
+            855,
+            378
+          ],
+          "size": [
+            85,
+            112
+          ],
+          "pixels": 3920,
+          "sha256": "9c6c920cfd0d0481b97084ddd0c28a522a1740f6249a0d539cbc67f570475659"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-attack-forearm.png",
+          "offset": [
+            654,
+            269
+          ],
+          "size": [
+            334,
+            178
+          ],
+          "pixels": 20983,
+          "sha256": "ab6fa7247b2aa666647892614207d12fab7376614d4830cb158fbf2c741fff43"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-attack-hand-hilt.png",
+          "offset": [
+            578,
+            155
+          ],
+          "size": [
+            310,
+            145
+          ],
+          "pixels": 22110,
+          "sha256": "ffc56d0bc7df0ff11c70c2856206973048b883ad5a6144295f5acf14cf42dfa2"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F1b-attack-blade.png",
+          "offset": [
+            18,
+            -120
+          ],
+          "size": [
+            664,
+            371
+          ],
+          "pixels": 78499,
+          "sha256": "0626f77ef6b4d8399dc8c776f71728be46c82daa05b4ae643ae7bd08333792bc",
+          "materialBounds": [
+            90,
+            120,
+            664,
+            371
+          ]
+        }
+      },
+      "source_sha256": "27a888155afda1d2c6fbcec9bb77a5047e66b679ce1bb00d6f98c1fafb5ab9ef",
+      "blade_tip_completion": {
+        "key": "F1b",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "27a888155afda1d2c6fbcec9bb77a5047e66b679ce1bb00d6f98c1fafb5ab9ef",
+        "old_mask_sha256": "21590a3be00eb1dccfbdaf453feeb04625a0925a68c507cb2859ca78c3556639",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          489
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "y",
+        "outward_sign": -1,
+        "seam_coordinate": 0,
+        "seam_range": [
+          108.0,
+          387.0
+        ],
+        "centerline_slope_outward": -1.9051240893937509,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1431,
+        "donor_longitudinal_scale": 0.36397229193007846,
+        "donor_normal_scale_at_seam": 2.5135135135135136,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 18333,
+        "new_mask_offset": [
+          18,
+          -120
+        ],
+        "new_mask_size": [
+          664,
+          371
+        ],
+        "legacy_materialBounds": [
+          90,
+          120,
+          664,
+          371
+        ],
+        "mask_sha256": "0626f77ef6b4d8399dc8c776f71728be46c82daa05b4ae643ae7bd08333792bc",
+        "extension_image_sha256": "d20fe5d1eac3357a40e7c86d9deec20cf3ca2dbebcf80e6b2b8279bb53081700",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "F2",
+      "core": [
+        604,
+        498
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F2-core-back.png",
+          "offset": [
+            493,
+            399
+          ],
+          "size": [
+            217,
+            229
+          ],
+          "pixels": 32719,
+          "sha256": "c5a73464e70d4c89e8b7dff75c50d64ca05550911b6fea5f0d5c31f430093c1f"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F2-support-shoulder.png",
+          "offset": [
+            206,
+            263
+          ],
+          "size": [
+            340,
+            305
+          ],
+          "pixels": 71947,
+          "sha256": "4365967f38d25fcc91f89ae7b4a79c7631980777435fdb583e8deb3a712b23db"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F2-support-arm.png",
+          "offset": [
+            119,
+            500
+          ],
+          "size": [
+            245,
+            362
+          ],
+          "pixels": 61880,
+          "sha256": "ac8eeef13455a7a6007f3bc1692f83139fc149a1730f797aacc7ffc3231c72bc"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F2-attack-shoulder.png",
+          "offset": [
+            544,
+            236
+          ],
+          "size": [
+            312,
+            302
+          ],
+          "pixels": 53704,
+          "sha256": "85a360277ce5e23bf4b98f8eab542e1897c8c489960251f4a3e23f44d9419cb3"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F2-attack-hand-hilt.png",
+          "offset": [
+            197,
+            379
+          ],
+          "size": [
+            44,
+            63
+          ],
+          "pixels": 1728,
+          "sha256": "098b485a876a539ab3268fe324885439a6b127d649e4284101a32f25eb99bbf1"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F2-attack-blade.png",
+          "offset": [
+            116,
+            335
+          ],
+          "size": [
+            152,
+            53
+          ],
+          "pixels": 4660,
+          "sha256": "04107278d15e564c0f349f3f73a787c518747860e32089dd6e89a830a988b946"
+        }
+      },
+      "source_sha256": "bca9c6d62a2b8e9e00728f6dfc10c3bee8adbe301d054848f9704f21e5dc95fc"
+    },
+    {
+      "key": "F3",
+      "core": [
+        604,
+        508
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F3-core-back.png",
+          "offset": [
+            493,
+            409
+          ],
+          "size": [
+            214,
+            225
+          ],
+          "pixels": 32014,
+          "sha256": "42679355a36abd66679ac41eebaf37b7d6d361242bb2f04f59da5ac1d28ba8c9"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F3-support-shoulder.png",
+          "offset": [
+            164,
+            275
+          ],
+          "size": [
+            382,
+            329
+          ],
+          "pixels": 86127,
+          "sha256": "0f6bd7a4430d7dec7cb2242968b29d591383235afefda5a743f6e42e56f40284"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F3-support-arm.png",
+          "offset": [
+            65,
+            533
+          ],
+          "size": [
+            272,
+            362
+          ],
+          "pixels": 65614,
+          "sha256": "71fcb01589bd6645f55979a22e1845ff5bccbacd4e33c8b7b5f44a1a3993e6cb"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F3-attack-shoulder.png",
+          "offset": [
+            544,
+            230
+          ],
+          "size": [
+            315,
+            266
+          ],
+          "pixels": 54006,
+          "sha256": "77eb1204e9f45d56392eb9d3d6ffcd647d458fe1485c44ad16f8fd7ec41e1806"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F3-attack-hand-hilt.png",
+          "offset": [
+            158,
+            409
+          ],
+          "size": [
+            56,
+            67
+          ],
+          "pixels": 2160,
+          "sha256": "ea79208c5ff48e23fc1d66f17a5d4b7d2d4728030cbb53398c6684f209597908"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F3-attack-blade.png",
+          "offset": [
+            -21,
+            357
+          ],
+          "size": [
+            247,
+            69
+          ],
+          "pixels": 11917,
+          "sha256": "b38040a4f06a6c9dd7b1257b0fa05dd320a33fa0779b3cf4d876f7eadbf89c49",
+          "materialBounds": [
+            21,
+            0,
+            247,
+            69
+          ]
+        }
+      },
+      "source_sha256": "be2ce88781e7a194bde7b93cd9e118328c0f19b21556e9dd80b27f45ba3ecf74",
+      "blade_boundary_restoration": {
+        "key": "F3",
+        "raw_sha256": "4500bbf9bbcd20f886d9ebea8abb834b76bb3eec0921ec3b3ccf7fb15a15f54c",
+        "source_affine": [
+          0.9,
+          0,
+          0,
+          0.9,
+          -192.5,
+          64.3
+        ],
+        "original_mask_inside1670_exact": true,
+        "new_outside_opaque_pixels": 225,
+        "offset": [
+          -21,
+          357
+        ],
+        "size": [
+          247,
+          69
+        ],
+        "sha256": "b38040a4f06a6c9dd7b1257b0fa05dd320a33fa0779b3cf4d876f7eadbf89c49",
+        "tip_reconstructed_from_existing_raw_only": true,
+        "no_new_paint": true
+      }
+    },
+    {
+      "key": "F4",
+      "core": [
+        604,
+        508
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F4-core-back.png",
+          "offset": [
+            493,
+            409
+          ],
+          "size": [
+            217,
+            228
+          ],
+          "pixels": 32737,
+          "sha256": "be850fd59bd80bbcec3c55fb52cf24b3f695cec545ecce027d4ea7d3861c66ef"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F4-support-shoulder.png",
+          "offset": [
+            167,
+            272
+          ],
+          "size": [
+            379,
+            332
+          ],
+          "pixels": 85125,
+          "sha256": "d6f2f40813002a2dce7fe0f94f8286947d5b8c1bddd1e18a32c3e047326e18e2"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F4-support-arm.png",
+          "offset": [
+            65,
+            533
+          ],
+          "size": [
+            272,
+            362
+          ],
+          "pixels": 64847,
+          "sha256": "ecfa3e3a8f7531c692f3e936b55a55eb403ee3122c862843e279dff3c628c3ec"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F4-attack-shoulder.png",
+          "offset": [
+            544,
+            236
+          ],
+          "size": [
+            327,
+            290
+          ],
+          "pixels": 55692,
+          "sha256": "8db650a5dfe526891751d1635b8cf3986fa98f3b80af431cc32e4259ee0b1a6a"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F4-attack-hand-hilt.png",
+          "offset": [
+            187,
+            381
+          ],
+          "size": [
+            44,
+            72
+          ],
+          "pixels": 1986,
+          "sha256": "ffff2f7a7b61964a76e7a2996de2d719d983298a95aa8ca31443a3821053a33b"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F4-attack-blade.png",
+          "offset": [
+            119,
+            338
+          ],
+          "size": [
+            150,
+            53
+          ],
+          "pixels": 4638,
+          "sha256": "e9ab71571ebaa5ac4eae63214fadc4b35a853b7938ce4e858c75650c08ae22ef"
+        }
+      },
+      "source_sha256": "67548e655f2e4db67c91a86971ee60da10af2a4226402e69c09c851d12488337"
+    },
+    {
+      "key": "F5",
+      "core": [
+        604,
+        508
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F5-core-back.png",
+          "offset": [
+            493,
+            409
+          ],
+          "size": [
+            217,
+            234
+          ],
+          "pixels": 34640,
+          "sha256": "595772317f739e5d152b21ef024b5240e1be9fd4dac3c3c6f6eefe07c42cecfc"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F5-support-shoulder.png",
+          "offset": [
+            137,
+            236
+          ],
+          "size": [
+            409,
+            341
+          ],
+          "pixels": 97300,
+          "sha256": "1bfeaad1951c4dfdd5abb0dbb8586a1e564edbd4350e44400629ae836e28df7f"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F5-support-arm.png",
+          "offset": [
+            38,
+            494
+          ],
+          "size": [
+            281,
+            374
+          ],
+          "pixels": 71512,
+          "sha256": "22487349bcf49c86d97a77d7690ae2688da4d732cb62fc2073e8a0c13d90d360"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F5-attack-shoulder.png",
+          "offset": [
+            544,
+            224
+          ],
+          "size": [
+            365,
+            320
+          ],
+          "pixels": 69014,
+          "sha256": "9195694718bbe67a5ac88429144eb51e11d50ee7c955b2212bdfb72ceb7b6e70"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F5-attack-upper-arm.png",
+          "offset": [
+            867,
+            414
+          ],
+          "size": [
+            55,
+            109
+          ],
+          "pixels": 3033,
+          "sha256": "a89a0283aa145b993c5e5990325742cc09f007859e350625292519c06dfb2e5f"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F5-attack-forearm.png",
+          "offset": [
+            894,
+            325
+          ],
+          "size": [
+            160,
+            201
+          ],
+          "pixels": 21625,
+          "sha256": "a29efda7fc8228d039209c5e985766329d27f30467c09eea856a6f9ee5856525"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F5-attack-blade.png",
+          "offset": [
+            835,
+            254
+          ],
+          "size": [
+            135,
+            83
+          ],
+          "pixels": 5051,
+          "sha256": "9b34ddac577850a109eaba2e216ce53b4e748abdd3ae8ff34155c14e0250fc01"
+        }
+      },
+      "source_sha256": "8e27fa5812251ed6553ab7062fe2a0376e2b9d8e0c4d6e4c362e9e1558022450"
+    },
+    {
+      "key": "F6",
+      "core": [
+        604,
+        508
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F6-core-back.png",
+          "offset": [
+            493,
+            412
+          ],
+          "size": [
+            217,
+            219
+          ],
+          "pixels": 32112,
+          "sha256": "e2fa0a6868a7a0338b19cbd86235ee4394805aadc307dae2476c420c1fb27db5"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F6-support-shoulder.png",
+          "offset": [
+            182,
+            266
+          ],
+          "size": [
+            386,
+            311
+          ],
+          "pixels": 78493,
+          "sha256": "aac19ff536a88d3efbcbb9f0b6006d634d7bf24da484696724de81097779bd12"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F6-support-arm.png",
+          "offset": [
+            95,
+            511
+          ],
+          "size": [
+            257,
+            330
+          ],
+          "pixels": 58305,
+          "sha256": "242fbbef1356ce87dc23836465266a8d4e5fb95c7575f12341fdf2b2462318ac"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F6-attack-shoulder.png",
+          "offset": [
+            605,
+            242
+          ],
+          "size": [
+            335,
+            314
+          ],
+          "pixels": 68096,
+          "sha256": "00fdb816b00746881e624006869a93f20f1256446cd53678bd73ecb8505465da"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F6-attack-upper-arm.png",
+          "offset": [
+            938,
+            359
+          ],
+          "size": [
+            68,
+            239
+          ],
+          "pixels": 11187,
+          "sha256": "e5d36d1060db8039a00a9abb9b745d0a5dc9a34e0cc094f2a6c5689f0f7e3d17"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F6-attack-forearm.png",
+          "offset": [
+            1004,
+            425
+          ],
+          "size": [
+            37,
+            176
+          ],
+          "pixels": 6021,
+          "sha256": "7634cfcd73bdde688bcf84b0189e45448e0cb0ef09729268bb186266a758dd8e"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F6-attack-hand-hilt.png",
+          "offset": [
+            1039,
+            410
+          ],
+          "size": [
+            238,
+            218
+          ],
+          "pixels": 34735,
+          "sha256": "3728a9995c07b5a832d695cbe6ea541305f2da8e928e0f81e00808bf990f9d29"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F6-attack-blade.png",
+          "offset": [
+            1243,
+            387
+          ],
+          "size": [
+            683,
+            228
+          ],
+          "pixels": 84722,
+          "sha256": "5e10758ddc59b19f2a23244e8706d8ac971b12bfddc1c23c318be52fcf9f1ebf",
+          "materialBounds": [
+            0,
+            0,
+            427,
+            228
+          ]
+        }
+      },
+      "source_sha256": "83859b54df1bc15cb76e8a2a0898b18cb838e82b8da17efbcb51ef244da04762",
+      "blade_tip_completion": {
+        "key": "F6",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "83859b54df1bc15cb76e8a2a0898b18cb838e82b8da17efbcb51ef244da04762",
+        "old_mask_sha256": "b263ce67f43589adf4bfe915173a989e58360e883ecad996ce0bc49f559dc068",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          508
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "x",
+        "outward_sign": 1,
+        "seam_coordinate": 1670,
+        "seam_range": [
+          387.0,
+          540.0
+        ],
+        "centerline_slope_outward": -0.1437649307214519,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1347,
+        "donor_longitudinal_scale": 0.6186395656710888,
+        "donor_normal_scale_at_seam": 1.3076923076923077,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 21582,
+        "new_mask_offset": [
+          1243,
+          387
+        ],
+        "new_mask_size": [
+          683,
+          228
+        ],
+        "legacy_materialBounds": [
+          0,
+          0,
+          427,
+          228
+        ],
+        "mask_sha256": "5e10758ddc59b19f2a23244e8706d8ac971b12bfddc1c23c318be52fcf9f1ebf",
+        "extension_image_sha256": "101a05985b2f381b9dc4f46e7a84edf0c82c0906951e535a8ed5663a8308f354",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "F7",
+      "core": [
+        604,
+        508
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F7-core-back.png",
+          "offset": [
+            493,
+            410
+          ],
+          "size": [
+            217,
+            221
+          ],
+          "pixels": 32772,
+          "sha256": "47ab28649b7370713be07a4278836fd72579959a95afaa37746121821b75a71d"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F7-support-shoulder.png",
+          "offset": [
+            206,
+            239
+          ],
+          "size": [
+            383,
+            302
+          ],
+          "pixels": 71207,
+          "sha256": "29cac88042762189ad5258a231cb156c2b5fbde9bb001c07a5d58bd0107da184"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F7-support-arm.png",
+          "offset": [
+            116,
+            456
+          ],
+          "size": [
+            251,
+            343
+          ],
+          "pixels": 59203,
+          "sha256": "3f3e3521ef62b674cbe237b7aed1eabc2f7650ab93aad9aecb2fc83686768d27"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F7-attack-shoulder.png",
+          "offset": [
+            625,
+            233
+          ],
+          "size": [
+            372,
+            323
+          ],
+          "pixels": 78864,
+          "sha256": "a70a98bb6834a65871e86d527c72936df1ecc7c529519090632643e48ee588fc"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F7-attack-upper-arm.png",
+          "offset": [
+            995,
+            296
+          ],
+          "size": [
+            106,
+            194
+          ],
+          "pixels": 15627,
+          "sha256": "0739feef342ab4a1654c0ea475da6f1bbeb98cadd0f4918598f330e7145a1bdc"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F7-attack-forearm.png",
+          "offset": [
+            1099,
+            335
+          ],
+          "size": [
+            82,
+            152
+          ],
+          "pixels": 11079,
+          "sha256": "c85da098f711c1d3255bcd07ca037fe0d7fba6145b59c454914df9f374f06be1"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F7-attack-hand-hilt.png",
+          "offset": [
+            1179,
+            314
+          ],
+          "size": [
+            165,
+            203
+          ],
+          "pixels": 19943,
+          "sha256": "a5bc6597b3eb8ba67bd97b6374e867611944b927278d4f4e10f044aa41d1ca9c"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F7-attack-blade.png",
+          "offset": [
+            1303,
+            345
+          ],
+          "size": [
+            623,
+            177
+          ],
+          "pixels": 68839,
+          "sha256": "583676ea3eee852fc99283f233a7209e9132942c5942372f3dc80593cb8d86a7",
+          "materialBounds": [
+            0,
+            0,
+            367,
+            177
+          ]
+        }
+      },
+      "source_sha256": "53eb4deaa77fc9a0ce6152da83be0627f06f1b0cc5a825b75305833f815f42e8",
+      "blade_tip_completion": {
+        "key": "F7",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "53eb4deaa77fc9a0ce6152da83be0627f06f1b0cc5a825b75305833f815f42e8",
+        "old_mask_sha256": "affc14e2c04e4dc817eb89a16cc5d94f2d57dec3e9d56ac3797b074846ecd504",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          508
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "x",
+        "outward_sign": 1,
+        "seam_coordinate": 1670,
+        "seam_range": [
+          384.0,
+          519.0
+        ],
+        "centerline_slope_outward": 0.10771619684663167,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1380,
+        "donor_longitudinal_scale": 0.6749468380417496,
+        "donor_normal_scale_at_seam": 1.1842105263157894,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 19143,
+        "new_mask_offset": [
+          1303,
+          345
+        ],
+        "new_mask_size": [
+          623,
+          177
+        ],
+        "legacy_materialBounds": [
+          0,
+          0,
+          367,
+          177
+        ],
+        "mask_sha256": "583676ea3eee852fc99283f233a7209e9132942c5942372f3dc80593cb8d86a7",
+        "extension_image_sha256": "40d4b378c594e68c305e8b544fcd5fec5cb73fe9987d7359384d94044dfab399",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "O1",
+      "core": [
+        604,
+        508
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/O1-core-back.png",
+          "offset": [
+            488,
+            413
+          ],
+          "size": [
+            222,
+            218
+          ],
+          "pixels": 31515,
+          "sha256": "30ed948e98552d5faef726f3e5c1dd039b060543bbeec7b482e9e8809ee06987"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/O1-support-shoulder.png",
+          "offset": [
+            200,
+            257
+          ],
+          "size": [
+            356,
+            296
+          ],
+          "pixels": 69638,
+          "sha256": "84589b61cce119cfa1241fbf0f0bd79b9762cee2e1ddb1daf4bc089f952dfafe"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/O1-support-arm.png",
+          "offset": [
+            110,
+            467
+          ],
+          "size": [
+            251,
+            368
+          ],
+          "pixels": 64919,
+          "sha256": "29bd2bbac29e06a804c7b37d9e9452b2c5069255502451919b4634e5f888eb8b"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/O1-attack-shoulder.png",
+          "offset": [
+            623,
+            281
+          ],
+          "size": [
+            322,
+            266
+          ],
+          "pixels": 59831,
+          "sha256": "fde0e59064915fecc9069e1655faefc0f48a9cbf58743d7918a9707bdaad2c67"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/O1-attack-upper-arm.png",
+          "offset": [
+            943,
+            407
+          ],
+          "size": [
+            118,
+            173
+          ],
+          "pixels": 16611,
+          "sha256": "d9c866c2752acc70a8b6b4311da1ee47b1df4beecc1d4af79941e71e2d694b10"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/O1-attack-forearm.png",
+          "offset": [
+            1059,
+            434
+          ],
+          "size": [
+            72,
+            173
+          ],
+          "pixels": 8631,
+          "sha256": "5d1dac60953bdeaf8d637c14123ecd499217385f3776cd93258e0497de8017c5"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/O1-attack-hand-hilt.png",
+          "offset": [
+            1129,
+            461
+          ],
+          "size": [
+            145,
+            197
+          ],
+          "pixels": 17589,
+          "sha256": "078fcee5408e593485526fd157eef483e8188f26e97cb4050bba72848624a230"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/O1-attack-blade.png",
+          "offset": [
+            1217,
+            510
+          ],
+          "size": [
+            694,
+            312
+          ],
+          "pixels": 83409,
+          "sha256": "2752df5e58812f340e31173357a50032b4213833626ee4db4478b5daa8186185",
+          "materialBounds": [
+            0,
+            0,
+            453,
+            294
+          ]
+        }
+      },
+      "source_sha256": "1aa88cac23e87fe674757baf2fa332397db22d6d868b49fb0385b451c03ae600",
+      "blade_tip_completion": {
+        "key": "O1",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "1aa88cac23e87fe674757baf2fa332397db22d6d868b49fb0385b451c03ae600",
+        "old_mask_sha256": "e52c6a2ef69537aa39eba5b930ac0e3b5402330e53935b3b120dfa1972df71a3",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          508
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "x",
+        "outward_sign": 1,
+        "seam_coordinate": 1670,
+        "seam_range": [
+          654.0,
+          804.0
+        ],
+        "centerline_slope_outward": 0.3826325848064984,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1389,
+        "donor_longitudinal_scale": 0.6492802603950594,
+        "donor_normal_scale_at_seam": 1.3157894736842106,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 20013,
+        "new_mask_offset": [
+          1217,
+          510
+        ],
+        "new_mask_size": [
+          694,
+          312
+        ],
+        "legacy_materialBounds": [
+          0,
+          0,
+          453,
+          294
+        ],
+        "mask_sha256": "2752df5e58812f340e31173357a50032b4213833626ee4db4478b5daa8186185",
+        "extension_image_sha256": "1c8df30e3e784703fa503d12424147d3258da16d3ecc1685c9f7295144cfda66",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "F8",
+      "core": [
+        604,
+        480
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F8-core-back.png",
+          "offset": [
+            493,
+            386
+          ],
+          "size": [
+            217,
+            206
+          ],
+          "pixels": 28103,
+          "sha256": "4e712d1e0609a2a4cf92b3a7510608f8024f1e1c33795799acc55d4f2f90b838"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F8-support-shoulder.png",
+          "offset": [
+            248,
+            254
+          ],
+          "size": [
+            320,
+            272
+          ],
+          "pixels": 55705,
+          "sha256": "5a4d33142e3a981129fa629e8fc67c597d37dc2c41fc68ac6384f145f2c1662a"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F8-support-arm.png",
+          "offset": [
+            176,
+            455
+          ],
+          "size": [
+            224,
+            320
+          ],
+          "pixels": 50362,
+          "sha256": "5de96dc2bda66bf56010f5e720bdab0f8fee2654034f8426b001404ab4e1b6dd"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F8-attack-shoulder.png",
+          "offset": [
+            647,
+            287
+          ],
+          "size": [
+            326,
+            218
+          ],
+          "pixels": 48793,
+          "sha256": "64c18de447eecb1142ab470924b84b3940b5ac422b66c68c3fe699984c2124c0"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F8-attack-upper-arm.png",
+          "offset": [
+            710,
+            473
+          ],
+          "size": [
+            272,
+            166
+          ],
+          "pixels": 23037,
+          "sha256": "9b23edf59aa5f0c9046ce5c3f4af6067fb4f09e8664d440a133b56ffdbc743b3"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F8-attack-forearm.png",
+          "offset": [
+            812,
+            594
+          ],
+          "size": [
+            187,
+            88
+          ],
+          "pixels": 6791,
+          "sha256": "e2be9f66193f5b51c957cb2cc22cbb1f498f99f05fb0c2e30db443eb0672a711"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F8-attack-hand-hilt.png",
+          "offset": [
+            887,
+            575
+          ],
+          "size": [
+            204,
+            194
+          ],
+          "pixels": 18184,
+          "sha256": "cb975afa8e06aba6d94eb30d81e3b68ce52f7519f371ffa2021f0bb4b0a14c1a"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F8-attack-blade.png",
+          "offset": [
+            1031,
+            618
+          ],
+          "size": [
+            733,
+            255
+          ],
+          "pixels": 75412,
+          "sha256": "8e31cb01957ee0390f412b1782c29b7bc57777d6b0225371d2cae8ad9f9a7933",
+          "materialBounds": [
+            0,
+            0,
+            639,
+            255
+          ]
+        }
+      },
+      "source_sha256": "92a5191c5572a741612835f57853b39ac174bd247038d4a07a4889209fa62158",
+      "blade_boundary_restoration": {
+        "key": "F8",
+        "raw_sha256": "1c10ce9ee26b20e0ba641b00f19c40f428da7e2ee9be13bbc99395992a52124e",
+        "source_affine": [
+          1,
+          0,
+          0,
+          1,
+          124,
+          -5
+        ],
+        "original_mask_inside1670_exact": true,
+        "new_outside_opaque_pixels": 3738,
+        "offset": [
+          1031,
+          618
+        ],
+        "size": [
+          733,
+          255
+        ],
+        "sha256": "8e31cb01957ee0390f412b1782c29b7bc57777d6b0225371d2cae8ad9f9a7933",
+        "tip_reconstructed_from_existing_raw_only": true,
+        "no_new_paint": true
+      }
+    },
+    {
+      "key": "F9",
+      "core": [
+        604,
+        480
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F9-core-back.png",
+          "offset": [
+            493,
+            387
+          ],
+          "size": [
+            217,
+            205
+          ],
+          "pixels": 27806,
+          "sha256": "5018efa298c44065a87999910c69d1340dde41a098d4c8487d5aeb99f7ddc2e8"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F9-support-shoulder.png",
+          "offset": [
+            248,
+            254
+          ],
+          "size": [
+            317,
+            272
+          ],
+          "pixels": 54167,
+          "sha256": "8ba95fca2473a3e6bf4ef6c60d90d418a5d2efaba8c46413efd3dd53f67cec9c"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F9-support-arm.png",
+          "offset": [
+            182,
+            461
+          ],
+          "size": [
+            212,
+            314
+          ],
+          "pixels": 48183,
+          "sha256": "21eeeb498e3d5c38680e45d1c4e9eee9d8f38f4aaf501606f393cde587099825"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F9-attack-shoulder.png",
+          "offset": [
+            647,
+            290
+          ],
+          "size": [
+            317,
+            215
+          ],
+          "pixels": 47181,
+          "sha256": "a578cf77d5584802840ce3bb4cdf6ba588da05a7124b239524bfdf1392632671"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F9-attack-upper-arm.png",
+          "offset": [
+            716,
+            475
+          ],
+          "size": [
+            266,
+            165
+          ],
+          "pixels": 22363,
+          "sha256": "bc18f6bde23961396f23433a3929ad292e9eb718d136680edf3b138243cbcc29"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F9-attack-forearm.png",
+          "offset": [
+            824,
+            596
+          ],
+          "size": [
+            182,
+            83
+          ],
+          "pixels": 6504,
+          "sha256": "b9958c83abe67b21c82b420aa706592972947e1fafcaf39183ad4cca2a0d51a5"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F9-attack-hand-hilt.png",
+          "offset": [
+            892,
+            569
+          ],
+          "size": [
+            207,
+            197
+          ],
+          "pixels": 17910,
+          "sha256": "ad4a38658cec7e9d3603ae4de1a90452d396e55cc868b7e7afe522227c098d80"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F9-attack-blade.png",
+          "offset": [
+            1042,
+            609
+          ],
+          "size": [
+            872,
+            297
+          ],
+          "pixels": 86026,
+          "sha256": "5f46d8b81ed9c4e635450ae32f57c258ae461bb704b5d5560aadd8a3261dc26d",
+          "materialBounds": [
+            0,
+            0,
+            628,
+            270
+          ]
+        }
+      },
+      "source_sha256": "8e9ffd1b29597068af837cf349df98631bbc8131c3901afca3c2332c115a718e",
+      "blade_tip_completion": {
+        "key": "F9",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "8e9ffd1b29597068af837cf349df98631bbc8131c3901afca3c2332c115a718e",
+        "old_mask_sha256": "f2d5d6f0c9c07f27d1b5aa87e51cef96681ccf534771ac3715a36a233dfb9154",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          480
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "x",
+        "outward_sign": 1,
+        "seam_coordinate": 1670,
+        "seam_range": [
+          792.0,
+          879.0
+        ],
+        "centerline_slope_outward": 0.2854515050167235,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1383,
+        "donor_longitudinal_scale": 0.6579304562952515,
+        "donor_normal_scale_at_seam": 0.7631578947368421,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 11940,
+        "new_mask_offset": [
+          1042,
+          609
+        ],
+        "new_mask_size": [
+          872,
+          297
+        ],
+        "legacy_materialBounds": [
+          0,
+          0,
+          628,
+          270
+        ],
+        "mask_sha256": "5f46d8b81ed9c4e635450ae32f57c258ae461bb704b5d5560aadd8a3261dc26d",
+        "extension_image_sha256": "63534217b06a5992d1906ef154d2aca5ff6c2af3bfc024d44e551a3434f10534",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    },
+    {
+      "key": "F10",
+      "core": [
+        604,
+        480
+      ],
+      "parts": {
+        "core-back": {
+          "url": "assets/drawn-sword13-r8-v1/F10-core-back.png",
+          "offset": [
+            493,
+            386
+          ],
+          "size": [
+            217,
+            203
+          ],
+          "pixels": 27419,
+          "sha256": "64bc8002c8ce7482fa04738f5fcabdc0cb80d13c23ec023ca5b99e189c44e537"
+        },
+        "support-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F10-support-shoulder.png",
+          "offset": [
+            254,
+            257
+          ],
+          "size": [
+            311,
+            269
+          ],
+          "pixels": 53532,
+          "sha256": "052fc08f43633d0f71b635cdc274a79dccd08b49e2a78b1f09b45a1a8e4a2206"
+        },
+        "support-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F10-support-arm.png",
+          "offset": [
+            179,
+            461
+          ],
+          "size": [
+            218,
+            311
+          ],
+          "pixels": 49034,
+          "sha256": "795e87c65205f90932c467cb4c466c83c26ac336e2c2d4ef60ac50557868f2a8"
+        },
+        "attack-shoulder": {
+          "url": "assets/drawn-sword13-r8-v1/F10-attack-shoulder.png",
+          "offset": [
+            650,
+            287
+          ],
+          "size": [
+            317,
+            218
+          ],
+          "pixels": 47549,
+          "sha256": "c7a831af4b53d128d06279c5ab046d8fe7272271c41347032c3f41e77bad4bd4"
+        },
+        "attack-upper-arm": {
+          "url": "assets/drawn-sword13-r8-v1/F10-attack-upper-arm.png",
+          "offset": [
+            713,
+            475
+          ],
+          "size": [
+            269,
+            170
+          ],
+          "pixels": 23483,
+          "sha256": "6ddf42ae2112867a2e9ef5298255de5bd820e4a4a66312096c8c9a7670fbd767"
+        },
+        "attack-forearm": {
+          "url": "assets/drawn-sword13-r8-v1/F10-attack-forearm.png",
+          "offset": [
+            830,
+            608
+          ],
+          "size": [
+            177,
+            90
+          ],
+          "pixels": 7428,
+          "sha256": "5964927f422c721c79d5e4c83abf5801971f64c20538b810dab2bdedec20bf98"
+        },
+        "attack-hand-hilt": {
+          "url": "assets/drawn-sword13-r8-v1/F10-attack-hand-hilt.png",
+          "offset": [
+            887,
+            602
+          ],
+          "size": [
+            206,
+            185
+          ],
+          "pixels": 17959,
+          "sha256": "a675f7532521568171b5a86f09b1a8cc6ef3b24e874c9ebcea29c9b2f102bf59"
+        },
+        "attack-blade": {
+          "url": "assets/drawn-sword13-r8-v1/F10-attack-blade.png",
+          "offset": [
+            1037,
+            643
+          ],
+          "size": [
+            874,
+            359
+          ],
+          "pixels": 87435,
+          "sha256": "936f1a6a8f54ed55ec7965387fda411544efbb1c4f323352ec7956ff2ada845d",
+          "materialBounds": [
+            0,
+            0,
+            633,
+            298
+          ]
+        }
+      },
+      "source_sha256": "5512e7124c0b48f012d028b931171cccca038a7ef08d35cedee200e26b6ea0ad",
+      "blade_tip_completion": {
+        "key": "F10",
+        "status": "visual comparison pending; not automatic acceptance",
+        "old_normalized_sha256": "5512e7124c0b48f012d028b931171cccca038a7ef08d35cedee200e26b6ea0ad",
+        "old_mask_sha256": "875379dced3646c442cb57454535e04f5b70dce367a3789347a34002b342cb82",
+        "existing_original_region_rgba_exact": true,
+        "existing_mask_pixels_physical_positions_exact": true,
+        "canvas": [
+          2304,
+          1344
+        ],
+        "origin": [
+          -192,
+          -192
+        ],
+        "logical_source_origin": [
+          0,
+          0
+        ],
+        "logical_core": [
+          604,
+          480
+        ],
+        "whole_actor_transform_unchanged": true,
+        "axis": "x",
+        "outward_sign": 1,
+        "seam_coordinate": 1670,
+        "seam_range": [
+          868.555414639969,
+          957.8839037927844
+        ],
+        "centerline_slope_outward": 0.3605532511712568,
+        "estimated_new_tail_axial_length": 260,
+        "donor_join_x": 1314,
+        "donor_longitudinal_scale": 0.5447384681853157,
+        "donor_normal_scale_at_seam": 0.7262478792911825,
+        "tip_narrowing_on_added_side_only": true,
+        "blue_core_thinning_on_added_side_only": true,
+        "added_opaque_pixels": 12381,
+        "new_mask_offset": [
+          1037,
+          643
+        ],
+        "new_mask_size": [
+          874,
+          359
+        ],
+        "legacy_materialBounds": [
+          0,
+          0,
+          633,
+          298
+        ],
+        "mask_sha256": "936f1a6a8f54ed55ec7965387fda411544efbb1c4f323352ec7956ff2ada845d",
+        "extension_image_sha256": "bb6b1239be0d4e27f5853ec6ca2d8e1206123fddde6bbc48f56a7d88959a464c",
+        "new_mask_original_image_edges_moved_outside": true
+      }
+    }
+  ],
+  "blade_polygons": {
+    "F0": [
+      [
+        1447.2727272727273,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        934.0,
+        941
+      ]
+    ],
+    "F1": [
+      [
+        843.3333333333334,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        270
+      ],
+      [
+        963.3333333333334,
+        270
+      ]
+    ],
+    "F1b": [
+      [
+        751.2820512820513,
+        0
+      ],
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        250
+      ],
+      [
+        639.1025641025641,
+        250
+      ]
+    ],
+    "F2": [
+      [
+        111,
+        336
+      ],
+      [
+        268,
+        336
+      ],
+      [
+        256,
+        355
+      ],
+      [
+        227,
+        375
+      ],
+      [
+        204,
+        387
+      ]
+    ],
+    "F3": [
+      [
+        0,
+        354
+      ],
+      [
+        226,
+        356
+      ],
+      [
+        215,
+        394
+      ],
+      [
+        189,
+        424
+      ],
+      [
+        0,
+        410
+      ]
+    ],
+    "F4": [
+      [
+        111,
+        341
+      ],
+      [
+        267,
+        339
+      ],
+      [
+        254,
+        358
+      ],
+      [
+        228,
+        382
+      ],
+      [
+        203,
+        389
+      ]
+    ],
+    "F5": [
+      [
+        824,
+        248
+      ],
+      [
+        985,
+        246
+      ],
+      [
+        939,
+        316
+      ],
+      [
+        922,
+        335
+      ],
+      [
+        911,
+        333
+      ],
+      [
+        903,
+        313
+      ],
+      [
+        870,
+        296
+      ],
+      [
+        843,
+        279
+      ]
+    ],
+    "F6": [
+      [
+        1353.2850241545893,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        1185.086956521739,
+        941
+      ]
+    ],
+    "F7": [
+      [
+        1436.7791411042945,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        1182.7668711656443,
+        941
+      ]
+    ],
+    "O1": [
+      [
+        1493.0915492957747,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        1088.8591549295775,
+        941
+      ]
+    ],
+    "F8": [
+      [
+        1370.909090909091,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        943.1818181818182,
+        941
+      ]
+    ],
+    "F9": [
+      [
+        1352.5,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        960.4166666666666,
+        941
+      ]
+    ],
+    "F10": [
+      [
+        1359.1666666666667,
+        0
+      ],
+      [
+        1670,
+        0
+      ],
+      [
+        1670,
+        941
+      ],
+      [
+        967.0833333333334,
+        941
+      ]
+    ]
+  },
+  "ownership_status": "pose-specific anatomical seam partition; all 13 source-aligned mask sheets for independent review; no default distal hand bucket",
+  "collision": "same cropped visible RGBA as drawn layers; no old blade or wave collider",
+  "rotation": 0,
+  "semantic_revision": 2,
+  "semantic_regions": {
+    "F0": {
+      "support-arm": [
+        [
+          0,
+          487
+        ],
+        [
+          265,
+          456
+        ],
+        [
+          354,
+          478
+        ],
+        [
+          418,
+          551
+        ],
+        [
+          1670,
+          551
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          0,
+          493
+        ],
+        [
+          791,
+          493
+        ],
+        [
+          865,
+          470
+        ],
+        [
+          979,
+          508
+        ],
+        [
+          1670,
+          508
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          0,
+          632
+        ],
+        [
+          825,
+          632
+        ],
+        [
+          872,
+          605
+        ],
+        [
+          970,
+          591
+        ],
+        [
+          1670,
+          591
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          0,
+          745
+        ],
+        [
+          836,
+          745
+        ],
+        [
+          861,
+          677
+        ],
+        [
+          928,
+          646
+        ],
+        [
+          979,
+          648
+        ],
+        [
+          989,
+          627
+        ],
+        [
+          1028,
+          619
+        ],
+        [
+          1081,
+          686
+        ],
+        [
+          1670,
+          686
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1447.2727272727273,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          934.0,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          382
+        ],
+        [
+          642,
+          388
+        ],
+        [
+          682,
+          416
+        ],
+        [
+          708,
+          472
+        ],
+        [
+          707,
+          517
+        ],
+        [
+          680,
+          552
+        ],
+        [
+          640,
+          576
+        ],
+        [
+          630,
+          599
+        ],
+        [
+          604,
+          620
+        ],
+        [
+          576,
+          604
+        ],
+        [
+          562,
+          572
+        ],
+        [
+          534,
+          559
+        ],
+        [
+          505,
+          523
+        ],
+        [
+          494,
+          471
+        ],
+        [
+          508,
+          420
+        ],
+        [
+          558,
+          388
+        ]
+      ]
+    },
+    "F1": {
+      "support-arm": [
+        [
+          0,
+          506
+        ],
+        [
+          256,
+          471
+        ],
+        [
+          330,
+          490
+        ],
+        [
+          398,
+          553
+        ],
+        [
+          1670,
+          553
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          871,
+          350
+        ],
+        [
+          1670,
+          350
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          860,
+          941
+        ],
+        [
+          858,
+          463
+        ],
+        [
+          891,
+          414
+        ]
+      ],
+      "attack-forearm": [
+        [
+          854,
+          214
+        ],
+        [
+          1670,
+          214
+        ],
+        [
+          1670,
+          406
+        ],
+        [
+          1036,
+          429
+        ],
+        [
+          939,
+          436
+        ],
+        [
+          889,
+          352
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          670,
+          146
+        ],
+        [
+          926,
+          146
+        ],
+        [
+          960,
+          215
+        ],
+        [
+          885,
+          279
+        ],
+        [
+          833,
+          306
+        ],
+        [
+          774,
+          285
+        ],
+        [
+          727,
+          297
+        ],
+        [
+          670,
+          260
+        ]
+      ],
+      "attack-blade": [
+        [
+          843.3333333333334,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          270
+        ],
+        [
+          963.3333333333334,
+          270
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          391
+        ],
+        [
+          642,
+          397
+        ],
+        [
+          682,
+          425
+        ],
+        [
+          708,
+          481
+        ],
+        [
+          707,
+          526
+        ],
+        [
+          680,
+          561
+        ],
+        [
+          640,
+          585
+        ],
+        [
+          630,
+          608
+        ],
+        [
+          604,
+          629
+        ],
+        [
+          576,
+          613
+        ],
+        [
+          562,
+          581
+        ],
+        [
+          534,
+          568
+        ],
+        [
+          505,
+          532
+        ],
+        [
+          494,
+          480
+        ],
+        [
+          508,
+          429
+        ],
+        [
+          558,
+          397
+        ]
+      ]
+    },
+    "F1b": {
+      "support-arm": [
+        [
+          0,
+          505
+        ],
+        [
+          251,
+          476
+        ],
+        [
+          326,
+          488
+        ],
+        [
+          399,
+          548
+        ],
+        [
+          1670,
+          548
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          871,
+          351
+        ],
+        [
+          1670,
+          351
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          857,
+          941
+        ],
+        [
+          856,
+          458
+        ],
+        [
+          884,
+          409
+        ]
+      ],
+      "attack-forearm": [
+        [
+          715,
+          258
+        ],
+        [
+          823,
+          249
+        ],
+        [
+          914,
+          271
+        ],
+        [
+          1030,
+          348
+        ],
+        [
+          1030,
+          451
+        ],
+        [
+          914,
+          444
+        ],
+        [
+          862,
+          351
+        ],
+        [
+          738,
+          319
+        ],
+        [
+          664,
+          314
+        ],
+        [
+          653,
+          278
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          577,
+          152
+        ],
+        [
+          760,
+          152
+        ],
+        [
+          879,
+          215
+        ],
+        [
+          886,
+          297
+        ],
+        [
+          827,
+          297
+        ],
+        [
+          776,
+          286
+        ],
+        [
+          704,
+          298
+        ],
+        [
+          640,
+          278
+        ],
+        [
+          574,
+          249
+        ]
+      ],
+      "attack-blade": [
+        [
+          751.2820512820513,
+          0
+        ],
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          250
+        ],
+        [
+          639.1025641025641,
+          250
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          391
+        ],
+        [
+          642,
+          397
+        ],
+        [
+          682,
+          425
+        ],
+        [
+          708,
+          481
+        ],
+        [
+          707,
+          526
+        ],
+        [
+          680,
+          561
+        ],
+        [
+          640,
+          585
+        ],
+        [
+          630,
+          608
+        ],
+        [
+          604,
+          629
+        ],
+        [
+          576,
+          613
+        ],
+        [
+          562,
+          581
+        ],
+        [
+          534,
+          568
+        ],
+        [
+          505,
+          532
+        ],
+        [
+          494,
+          480
+        ],
+        [
+          508,
+          429
+        ],
+        [
+          558,
+          397
+        ]
+      ]
+    },
+    "F2": {
+      "support-arm": [
+        [
+          0,
+          541
+        ],
+        [
+          221,
+          509
+        ],
+        [
+          295,
+          526
+        ],
+        [
+          365,
+          586
+        ],
+        [
+          1670,
+          586
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [],
+      "attack-forearm": [],
+      "attack-hand-hilt": [
+        [
+          190,
+          374
+        ],
+        [
+          237,
+          382
+        ],
+        [
+          239,
+          420
+        ],
+        [
+          213,
+          440
+        ],
+        [
+          185,
+          431
+        ]
+      ],
+      "attack-blade": [
+        [
+          111,
+          336
+        ],
+        [
+          268,
+          336
+        ],
+        [
+          256,
+          355
+        ],
+        [
+          227,
+          375
+        ],
+        [
+          204,
+          387
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          400
+        ],
+        [
+          642,
+          406
+        ],
+        [
+          682,
+          434
+        ],
+        [
+          708,
+          490
+        ],
+        [
+          707,
+          535
+        ],
+        [
+          680,
+          570
+        ],
+        [
+          640,
+          594
+        ],
+        [
+          630,
+          617
+        ],
+        [
+          604,
+          638
+        ],
+        [
+          576,
+          622
+        ],
+        [
+          562,
+          590
+        ],
+        [
+          534,
+          577
+        ],
+        [
+          505,
+          541
+        ],
+        [
+          494,
+          489
+        ],
+        [
+          508,
+          438
+        ],
+        [
+          558,
+          406
+        ]
+      ]
+    },
+    "F3": {
+      "support-arm": [
+        [
+          0,
+          574
+        ],
+        [
+          189,
+          540
+        ],
+        [
+          265,
+          566
+        ],
+        [
+          342,
+          627
+        ],
+        [
+          1670,
+          627
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [],
+      "attack-forearm": [],
+      "attack-hand-hilt": [
+        [
+          160,
+          413
+        ],
+        [
+          205,
+          410
+        ],
+        [
+          212,
+          451
+        ],
+        [
+          192,
+          474
+        ],
+        [
+          158,
+          455
+        ]
+      ],
+      "attack-blade": [
+        [
+          0,
+          354
+        ],
+        [
+          226,
+          356
+        ],
+        [
+          215,
+          394
+        ],
+        [
+          189,
+          424
+        ],
+        [
+          0,
+          410
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          410
+        ],
+        [
+          642,
+          416
+        ],
+        [
+          682,
+          444
+        ],
+        [
+          708,
+          500
+        ],
+        [
+          707,
+          545
+        ],
+        [
+          680,
+          580
+        ],
+        [
+          640,
+          604
+        ],
+        [
+          630,
+          627
+        ],
+        [
+          604,
+          648
+        ],
+        [
+          576,
+          632
+        ],
+        [
+          562,
+          600
+        ],
+        [
+          534,
+          587
+        ],
+        [
+          505,
+          551
+        ],
+        [
+          494,
+          499
+        ],
+        [
+          508,
+          448
+        ],
+        [
+          558,
+          416
+        ]
+      ]
+    },
+    "F4": {
+      "support-arm": [
+        [
+          0,
+          572
+        ],
+        [
+          186,
+          540
+        ],
+        [
+          262,
+          568
+        ],
+        [
+          337,
+          626
+        ],
+        [
+          1670,
+          626
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [],
+      "attack-forearm": [],
+      "attack-hand-hilt": [
+        [
+          188,
+          382
+        ],
+        [
+          228,
+          385
+        ],
+        [
+          229,
+          419
+        ],
+        [
+          210,
+          451
+        ],
+        [
+          189,
+          431
+        ]
+      ],
+      "attack-blade": [
+        [
+          111,
+          341
+        ],
+        [
+          267,
+          339
+        ],
+        [
+          254,
+          358
+        ],
+        [
+          228,
+          382
+        ],
+        [
+          203,
+          389
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          410
+        ],
+        [
+          642,
+          416
+        ],
+        [
+          682,
+          444
+        ],
+        [
+          708,
+          500
+        ],
+        [
+          707,
+          545
+        ],
+        [
+          680,
+          580
+        ],
+        [
+          640,
+          604
+        ],
+        [
+          630,
+          627
+        ],
+        [
+          604,
+          648
+        ],
+        [
+          576,
+          632
+        ],
+        [
+          562,
+          600
+        ],
+        [
+          534,
+          587
+        ],
+        [
+          505,
+          551
+        ],
+        [
+          494,
+          499
+        ],
+        [
+          508,
+          448
+        ],
+        [
+          558,
+          416
+        ]
+      ]
+    },
+    "F5": {
+      "support-arm": [
+        [
+          0,
+          539
+        ],
+        [
+          164,
+          505
+        ],
+        [
+          260,
+          518
+        ],
+        [
+          325,
+          578
+        ],
+        [
+          1670,
+          578
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          868,
+          415
+        ],
+        [
+          1670,
+          415
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          869,
+          941
+        ],
+        [
+          863,
+          522
+        ],
+        [
+          888,
+          475
+        ]
+      ],
+      "attack-forearm": [
+        [
+          895,
+          326
+        ],
+        [
+          999,
+          330
+        ],
+        [
+          1061,
+          419
+        ],
+        [
+          1052,
+          506
+        ],
+        [
+          922,
+          529
+        ],
+        [
+          906,
+          441
+        ]
+      ],
+      "attack-hand-hilt": [],
+      "attack-blade": [
+        [
+          824,
+          248
+        ],
+        [
+          985,
+          246
+        ],
+        [
+          939,
+          316
+        ],
+        [
+          922,
+          335
+        ],
+        [
+          911,
+          333
+        ],
+        [
+          903,
+          313
+        ],
+        [
+          870,
+          296
+        ],
+        [
+          843,
+          279
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          410
+        ],
+        [
+          642,
+          416
+        ],
+        [
+          682,
+          444
+        ],
+        [
+          708,
+          500
+        ],
+        [
+          707,
+          545
+        ],
+        [
+          680,
+          580
+        ],
+        [
+          640,
+          604
+        ],
+        [
+          630,
+          627
+        ],
+        [
+          604,
+          648
+        ],
+        [
+          576,
+          632
+        ],
+        [
+          562,
+          600
+        ],
+        [
+          534,
+          587
+        ],
+        [
+          505,
+          551
+        ],
+        [
+          494,
+          499
+        ],
+        [
+          508,
+          448
+        ],
+        [
+          558,
+          416
+        ]
+      ]
+    },
+    "F6": {
+      "support-arm": [
+        [
+          0,
+          542
+        ],
+        [
+          187,
+          512
+        ],
+        [
+          269,
+          528
+        ],
+        [
+          348,
+          596
+        ],
+        [
+          1670,
+          596
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          939,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          939,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          1005,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1005,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          1040,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1040,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1353.2850241545893,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1185.086956521739,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          410
+        ],
+        [
+          642,
+          416
+        ],
+        [
+          682,
+          444
+        ],
+        [
+          708,
+          500
+        ],
+        [
+          707,
+          545
+        ],
+        [
+          680,
+          580
+        ],
+        [
+          640,
+          604
+        ],
+        [
+          630,
+          627
+        ],
+        [
+          604,
+          648
+        ],
+        [
+          576,
+          632
+        ],
+        [
+          562,
+          600
+        ],
+        [
+          534,
+          587
+        ],
+        [
+          505,
+          551
+        ],
+        [
+          494,
+          499
+        ],
+        [
+          508,
+          448
+        ],
+        [
+          558,
+          416
+        ]
+      ]
+    },
+    "F7": {
+      "support-arm": [
+        [
+          0,
+          501
+        ],
+        [
+          241,
+          457
+        ],
+        [
+          309,
+          486
+        ],
+        [
+          375,
+          552
+        ],
+        [
+          1670,
+          552
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          996,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          996,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          1100,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1100,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          1180,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1180,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1436.7791411042945,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1182.7668711656443,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          410
+        ],
+        [
+          642,
+          416
+        ],
+        [
+          682,
+          444
+        ],
+        [
+          708,
+          500
+        ],
+        [
+          707,
+          545
+        ],
+        [
+          680,
+          580
+        ],
+        [
+          640,
+          604
+        ],
+        [
+          630,
+          627
+        ],
+        [
+          604,
+          648
+        ],
+        [
+          576,
+          632
+        ],
+        [
+          562,
+          600
+        ],
+        [
+          534,
+          587
+        ],
+        [
+          505,
+          551
+        ],
+        [
+          494,
+          499
+        ],
+        [
+          508,
+          448
+        ],
+        [
+          558,
+          416
+        ]
+      ]
+    },
+    "O1": {
+      "support-arm": [
+        [
+          0,
+          501
+        ],
+        [
+          227,
+          466
+        ],
+        [
+          307,
+          485
+        ],
+        [
+          375,
+          552
+        ],
+        [
+          1670,
+          552
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          944,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          944,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          1060,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1060,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          1130,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1130,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1493.0915492957747,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          1088.8591549295775,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          410
+        ],
+        [
+          642,
+          416
+        ],
+        [
+          682,
+          444
+        ],
+        [
+          708,
+          500
+        ],
+        [
+          707,
+          545
+        ],
+        [
+          680,
+          580
+        ],
+        [
+          640,
+          604
+        ],
+        [
+          630,
+          627
+        ],
+        [
+          604,
+          648
+        ],
+        [
+          576,
+          632
+        ],
+        [
+          562,
+          600
+        ],
+        [
+          534,
+          587
+        ],
+        [
+          505,
+          551
+        ],
+        [
+          494,
+          499
+        ],
+        [
+          508,
+          448
+        ],
+        [
+          558,
+          416
+        ]
+      ]
+    },
+    "F8": {
+      "support-arm": [
+        [
+          0,
+          496
+        ],
+        [
+          267,
+          457
+        ],
+        [
+          340,
+          484
+        ],
+        [
+          402,
+          547
+        ],
+        [
+          1670,
+          547
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          0,
+          503
+        ],
+        [
+          794,
+          503
+        ],
+        [
+          860,
+          474
+        ],
+        [
+          979,
+          513
+        ],
+        [
+          1670,
+          513
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          0,
+          638
+        ],
+        [
+          821,
+          638
+        ],
+        [
+          884,
+          610
+        ],
+        [
+          978,
+          594
+        ],
+        [
+          1670,
+          594
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          0,
+          741
+        ],
+        [
+          854,
+          741
+        ],
+        [
+          897,
+          664
+        ],
+        [
+          969,
+          642
+        ],
+        [
+          996,
+          602
+        ],
+        [
+          1020,
+          574
+        ],
+        [
+          1088,
+          623
+        ],
+        [
+          1670,
+          623
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1370.909090909091,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          943.1818181818182,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          382
+        ],
+        [
+          642,
+          388
+        ],
+        [
+          682,
+          416
+        ],
+        [
+          708,
+          472
+        ],
+        [
+          707,
+          517
+        ],
+        [
+          680,
+          552
+        ],
+        [
+          640,
+          576
+        ],
+        [
+          630,
+          599
+        ],
+        [
+          604,
+          620
+        ],
+        [
+          576,
+          604
+        ],
+        [
+          562,
+          572
+        ],
+        [
+          534,
+          559
+        ],
+        [
+          505,
+          523
+        ],
+        [
+          494,
+          471
+        ],
+        [
+          508,
+          420
+        ],
+        [
+          558,
+          388
+        ]
+      ]
+    },
+    "F9": {
+      "support-arm": [
+        [
+          0,
+          497
+        ],
+        [
+          266,
+          462
+        ],
+        [
+          344,
+          485
+        ],
+        [
+          403,
+          548
+        ],
+        [
+          1670,
+          548
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          0,
+          504
+        ],
+        [
+          795,
+          504
+        ],
+        [
+          860,
+          476
+        ],
+        [
+          979,
+          514
+        ],
+        [
+          1670,
+          514
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          0,
+          640
+        ],
+        [
+          823,
+          640
+        ],
+        [
+          886,
+          612
+        ],
+        [
+          980,
+          597
+        ],
+        [
+          1670,
+          597
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          0,
+          743
+        ],
+        [
+          854,
+          743
+        ],
+        [
+          899,
+          667
+        ],
+        [
+          972,
+          643
+        ],
+        [
+          999,
+          604
+        ],
+        [
+          1025,
+          574
+        ],
+        [
+          1090,
+          621
+        ],
+        [
+          1670,
+          621
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1352.5,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          960.4166666666666,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          382
+        ],
+        [
+          642,
+          388
+        ],
+        [
+          682,
+          416
+        ],
+        [
+          708,
+          472
+        ],
+        [
+          707,
+          517
+        ],
+        [
+          680,
+          552
+        ],
+        [
+          640,
+          576
+        ],
+        [
+          630,
+          599
+        ],
+        [
+          604,
+          620
+        ],
+        [
+          576,
+          604
+        ],
+        [
+          562,
+          572
+        ],
+        [
+          534,
+          559
+        ],
+        [
+          505,
+          523
+        ],
+        [
+          494,
+          471
+        ],
+        [
+          508,
+          420
+        ],
+        [
+          558,
+          388
+        ]
+      ]
+    },
+    "F10": {
+      "support-arm": [
+        [
+          0,
+          496
+        ],
+        [
+          266,
+          462
+        ],
+        [
+          344,
+          485
+        ],
+        [
+          403,
+          548
+        ],
+        [
+          1670,
+          548
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-upper-arm": [
+        [
+          0,
+          504
+        ],
+        [
+          795,
+          504
+        ],
+        [
+          860,
+          476
+        ],
+        [
+          979,
+          514
+        ],
+        [
+          1670,
+          514
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-forearm": [
+        [
+          0,
+          647
+        ],
+        [
+          823,
+          647
+        ],
+        [
+          886,
+          622
+        ],
+        [
+          980,
+          609
+        ],
+        [
+          1670,
+          609
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-hand-hilt": [
+        [
+          0,
+          764
+        ],
+        [
+          852,
+          764
+        ],
+        [
+          895,
+          685
+        ],
+        [
+          971,
+          666
+        ],
+        [
+          996,
+          632
+        ],
+        [
+          1025,
+          608
+        ],
+        [
+          1090,
+          659
+        ],
+        [
+          1670,
+          659
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          0,
+          941
+        ]
+      ],
+      "attack-blade": [
+        [
+          1359.1666666666667,
+          0
+        ],
+        [
+          1670,
+          0
+        ],
+        [
+          1670,
+          941
+        ],
+        [
+          967.0833333333334,
+          941
+        ]
+      ],
+      "core-back": [
+        [
+          592,
+          382
+        ],
+        [
+          642,
+          388
+        ],
+        [
+          682,
+          416
+        ],
+        [
+          708,
+          472
+        ],
+        [
+          707,
+          517
+        ],
+        [
+          680,
+          552
+        ],
+        [
+          640,
+          576
+        ],
+        [
+          630,
+          599
+        ],
+        [
+          604,
+          620
+        ],
+        [
+          576,
+          604
+        ],
+        [
+          562,
+          572
+        ],
+        [
+          534,
+          559
+        ],
+        [
+          505,
+          523
+        ],
+        [
+          494,
+          471
+        ],
+        [
+          508,
+          420
+        ],
+        [
+          558,
+          388
+        ]
+      ]
+    }
+  },
+  "prior_semantic_revision": {
+    "version": 1,
+    "parts": {
+      "drawn13/F0/core-back": {
+        "offset": [
+          499,
+          369
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          219
+        ],
+        "logicalId": "core-back",
+        "frame": "F0"
+      },
+      "drawn13/F0/support-shoulder": {
+        "offset": [
+          221,
+          263
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          299,
+          252
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F0"
+      },
+      "drawn13/F0/support-arm": {
+        "offset": [
+          203,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          238,
+          278
+        ],
+        "logicalId": "support-arm",
+        "frame": "F0"
+      },
+      "drawn13/F0/attack-shoulder": {
+        "offset": [
+          519,
+          269
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          441,
+          151
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F0"
+      },
+      "drawn13/F0/attack-upper-arm": {
+        "offset": [
+          695,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          230,
+          325
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F0"
+      },
+      "drawn13/F0/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          397
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F0"
+      },
+      "drawn13/F0/attack-hand-hilt": {
+        "offset": [
+          1039,
+          638
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          599,
+          303
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F0"
+      },
+      "drawn13/F0/attack-blade": {
+        "offset": [
+          1024,
+          689
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          608,
+          248
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F0"
+      },
+      "drawn13/F1/core-back": {
+        "offset": [
+          499,
+          375
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          237
+        ],
+        "logicalId": "core-back",
+        "frame": "F1"
+      },
+      "drawn13/F1/support-shoulder": {
+        "offset": [
+          200,
+          266
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          320,
+          249
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F1"
+      },
+      "drawn13/F1/support-arm": {
+        "offset": [
+          167,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          298,
+          320
+        ],
+        "logicalId": "support-arm",
+        "frame": "F1"
+      },
+      "drawn13/F1/attack-shoulder": {
+        "offset": [
+          519,
+          0
+        ],
+        "bodyBounds": [
+          1,
+          0,
+          701,
+          420
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F1"
+      },
+      "drawn13/F1/attack-upper-arm": {
+        "offset": [
+          690,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          235,
+          112
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F1"
+      },
+      "drawn13/F1/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          114,
+          52
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F1"
+      },
+      "drawn13/F1/attack-blade": {
+        "offset": [
+          878,
+          0
+        ],
+        "bodyBounds": [
+          1,
+          0,
+          469,
+          266
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F1"
+      },
+      "drawn13/F1b/core-back": {
+        "offset": [
+          499,
+          365
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          248
+        ],
+        "logicalId": "core-back",
+        "frame": "F1b"
+      },
+      "drawn13/F1b/support-shoulder": {
+        "offset": [
+          200,
+          123
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          320,
+          392
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F1b"
+      },
+      "drawn13/F1b/support-arm": {
+        "offset": [
+          164,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          339,
+          323
+        ],
+        "logicalId": "support-arm",
+        "frame": "F1b"
+      },
+      "drawn13/F1b/attack-shoulder": {
+        "offset": [
+          519,
+          203
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          468,
+          217
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F1b"
+      },
+      "drawn13/F1b/attack-upper-arm": {
+        "offset": [
+          593,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          332,
+          196
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F1b"
+      },
+      "drawn13/F1b/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          24,
+          46
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F1b"
+      },
+      "drawn13/F1b/attack-blade": {
+        "offset": [
+          107,
+          0
+        ],
+        "bodyBounds": [
+          1,
+          0,
+          644,
+          291
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F1b"
+      },
+      "drawn13/F2/core-back": {
+        "offset": [
+          499,
+          373
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          249
+        ],
+        "logicalId": "core-back",
+        "frame": "F2"
+      },
+      "drawn13/F2/support-shoulder": {
+        "offset": [
+          116,
+          263
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          404,
+          252
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F2"
+      },
+      "drawn13/F2/support-arm": {
+        "offset": [
+          119,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          387,
+          347
+        ],
+        "logicalId": "support-arm",
+        "frame": "F2"
+      },
+      "drawn13/F2/attack-shoulder": {
+        "offset": [
+          519,
+          236
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          336,
+          184
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F2"
+      },
+      "drawn13/F2/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          324,
+          208
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F2"
+      },
+      "drawn13/F2/attack-blade": {
+        "offset": [
+          224,
+          335
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          127,
+          76
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F2"
+      },
+      "drawn13/F3/core-back": {
+        "offset": [
+          499,
+          383
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          209,
+          249
+        ],
+        "logicalId": "core-back",
+        "frame": "F3"
+      },
+      "drawn13/F3/support-shoulder": {
+        "offset": [
+          41,
+          275
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          479,
+          240
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F3"
+      },
+      "drawn13/F3/support-arm": {
+        "offset": [
+          65,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          455,
+          380
+        ],
+        "logicalId": "support-arm",
+        "frame": "F3"
+      },
+      "drawn13/F3/attack-shoulder": {
+        "offset": [
+          519,
+          230
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          339,
+          190
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F3"
+      },
+      "drawn13/F3/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          324,
+          214
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F3"
+      },
+      "drawn13/F3/attack-blade": {
+        "offset": [
+          0,
+          356
+        ],
+        "bodyBounds": [
+          0,
+          1,
+          210,
+          55
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F3"
+      },
+      "drawn13/F4/core-back": {
+        "offset": [
+          499,
+          383
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          249
+        ],
+        "logicalId": "core-back",
+        "frame": "F4"
+      },
+      "drawn13/F4/support-shoulder": {
+        "offset": [
+          161,
+          272
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          359,
+          243
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F4"
+      },
+      "drawn13/F4/support-arm": {
+        "offset": [
+          65,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          443,
+          380
+        ],
+        "logicalId": "support-arm",
+        "frame": "F4"
+      },
+      "drawn13/F4/attack-shoulder": {
+        "offset": [
+          519,
+          236
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          351,
+          184
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F4"
+      },
+      "drawn13/F4/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          351,
+          217
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F4"
+      },
+      "drawn13/F4/attack-blade": {
+        "offset": [
+          119,
+          341
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          112,
+          56
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F4"
+      },
+      "drawn13/F5/core-back": {
+        "offset": [
+          499,
+          383
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          249
+        ],
+        "logicalId": "core-back",
+        "frame": "F5"
+      },
+      "drawn13/F5/support-shoulder": {
+        "offset": [
+          119,
+          236
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          401,
+          279
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F5"
+      },
+      "drawn13/F5/support-arm": {
+        "offset": [
+          38,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          482,
+          353
+        ],
+        "logicalId": "support-arm",
+        "frame": "F5"
+      },
+      "drawn13/F5/attack-shoulder": {
+        "offset": [
+          519,
+          224
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          519,
+          196
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F5"
+      },
+      "drawn13/F5/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          406,
+          223
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F5"
+      },
+      "drawn13/F5/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          106
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F5"
+      },
+      "drawn13/F5/attack-hand-hilt": {
+        "offset": [
+          1039,
+          425
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          14,
+          70
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F5"
+      },
+      "drawn13/F5/attack-blade": {
+        "offset": [
+          852,
+          254
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          117,
+          50
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F5"
+      },
+      "drawn13/F6/core-back": {
+        "offset": [
+          499,
+          384
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          246
+        ],
+        "logicalId": "core-back",
+        "frame": "F6"
+      },
+      "drawn13/F6/support-shoulder": {
+        "offset": [
+          179,
+          266
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          341,
+          249
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F6"
+      },
+      "drawn13/F6/support-arm": {
+        "offset": [
+          95,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          409,
+          326
+        ],
+        "logicalId": "support-arm",
+        "frame": "F6"
+      },
+      "drawn13/F6/attack-shoulder": {
+        "offset": [
+          519,
+          242
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          453,
+          178
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F6"
+      },
+      "drawn13/F6/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          406,
+          127
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F6"
+      },
+      "drawn13/F6/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          181
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F6"
+      },
+      "drawn13/F6/attack-hand-hilt": {
+        "offset": [
+          1039,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          171,
+          184
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F6"
+      },
+      "drawn13/F6/attack-blade": {
+        "offset": [
+          1209,
+          386
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          461,
+          241
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F6"
+      },
+      "drawn13/F7/core-back": {
+        "offset": [
+          499,
+          387
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          243
+        ],
+        "logicalId": "core-back",
+        "frame": "F7"
+      },
+      "drawn13/F7/support-shoulder": {
+        "offset": [
+          173,
+          239
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          347,
+          276
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F7"
+      },
+      "drawn13/F7/support-arm": {
+        "offset": [
+          116,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          386,
+          284
+        ],
+        "logicalId": "support-arm",
+        "frame": "F7"
+      },
+      "drawn13/F7/attack-shoulder": {
+        "offset": [
+          519,
+          233
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          734,
+          187
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F7"
+      },
+      "drawn13/F7/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          406,
+          211
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F7"
+      },
+      "drawn13/F7/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          70
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F7"
+      },
+      "drawn13/F7/attack-hand-hilt": {
+        "offset": [
+          1039,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          227,
+          97
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F7"
+      },
+      "drawn13/F7/attack-blade": {
+        "offset": [
+          1242,
+          314
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          428,
+          208
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F7"
+      },
+      "drawn13/O1/core-back": {
+        "offset": [
+          499,
+          386
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          210,
+          244
+        ],
+        "logicalId": "core-back",
+        "frame": "O1"
+      },
+      "drawn13/O1/support-shoulder": {
+        "offset": [
+          152,
+          257
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          368,
+          258
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "O1"
+      },
+      "drawn13/O1/support-arm": {
+        "offset": [
+          110,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          394,
+          320
+        ],
+        "logicalId": "support-arm",
+        "frame": "O1"
+      },
+      "drawn13/O1/attack-shoulder": {
+        "offset": [
+          519,
+          281
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          501,
+          139
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "O1"
+      },
+      "drawn13/O1/attack-upper-arm": {
+        "offset": [
+          519,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          406,
+          127
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "O1"
+      },
+      "drawn13/O1/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          154
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "O1"
+      },
+      "drawn13/O1/attack-hand-hilt": {
+        "offset": [
+          1039,
+          428
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          126,
+          196
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "O1"
+      },
+      "drawn13/O1/attack-blade": {
+        "offset": [
+          1153,
+          461
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          517,
+          343
+        ],
+        "logicalId": "attack-blade",
+        "frame": "O1"
+      },
+      "drawn13/F8/core-back": {
+        "offset": [
+          500,
+          371
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          209,
+          220
+        ],
+        "logicalId": "core-back",
+        "frame": "F8"
+      },
+      "drawn13/F8/support-shoulder": {
+        "offset": [
+          191,
+          254
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          329,
+          261
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F8"
+      },
+      "drawn13/F8/support-arm": {
+        "offset": [
+          176,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          271,
+          260
+        ],
+        "logicalId": "support-arm",
+        "frame": "F8"
+      },
+      "drawn13/F8/attack-shoulder": {
+        "offset": [
+          519,
+          287
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          441,
+          133
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F8"
+      },
+      "drawn13/F8/attack-upper-arm": {
+        "offset": [
+          695,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          230,
+          280
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F8"
+      },
+      "drawn13/F8/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          349
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F8"
+      },
+      "drawn13/F8/attack-hand-hilt": {
+        "offset": [
+          1039,
+          581
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          631,
+          224
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F8"
+      },
+      "drawn13/F8/attack-blade": {
+        "offset": [
+          1025,
+          619
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          645,
+          254
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F8"
+      },
+      "drawn13/F9/core-back": {
+        "offset": [
+          500,
+          369
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          209,
+          222
+        ],
+        "logicalId": "core-back",
+        "frame": "F9"
+      },
+      "drawn13/F9/support-shoulder": {
+        "offset": [
+          197,
+          254
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          323,
+          261
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F9"
+      },
+      "drawn13/F9/support-arm": {
+        "offset": [
+          182,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          259,
+          260
+        ],
+        "logicalId": "support-arm",
+        "frame": "F9"
+      },
+      "drawn13/F9/attack-shoulder": {
+        "offset": [
+          519,
+          290
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          438,
+          130
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F9"
+      },
+      "drawn13/F9/attack-upper-arm": {
+        "offset": [
+          695,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          230,
+          274
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F9"
+      },
+      "drawn13/F9/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          346
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F9"
+      },
+      "drawn13/F9/attack-hand-hilt": {
+        "offset": [
+          1039,
+          569
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          587,
+          206
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F9"
+      },
+      "drawn13/F9/attack-blade": {
+        "offset": [
+          1036,
+          644
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          634,
+          235
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F9"
+      },
+      "drawn13/F10/core-back": {
+        "offset": [
+          500,
+          371
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          209,
+          217
+        ],
+        "logicalId": "core-back",
+        "frame": "F10"
+      },
+      "drawn13/F10/support-shoulder": {
+        "offset": [
+          194,
+          257
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          326,
+          258
+        ],
+        "logicalId": "support-shoulder",
+        "frame": "F10"
+      },
+      "drawn13/F10/support-arm": {
+        "offset": [
+          179,
+          514
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          265,
+          257
+        ],
+        "logicalId": "support-arm",
+        "frame": "F10"
+      },
+      "drawn13/F10/attack-shoulder": {
+        "offset": [
+          519,
+          287
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          438,
+          133
+        ],
+        "logicalId": "attack-shoulder",
+        "frame": "F10"
+      },
+      "drawn13/F10/attack-upper-arm": {
+        "offset": [
+          695,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          230,
+          295
+        ],
+        "logicalId": "attack-upper-arm",
+        "frame": "F10"
+      },
+      "drawn13/F10/attack-forearm": {
+        "offset": [
+          924,
+          419
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          116,
+          367
+        ],
+        "logicalId": "attack-forearm",
+        "frame": "F10"
+      },
+      "drawn13/F10/attack-hand-hilt": {
+        "offset": [
+          1039,
+          602
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          624,
+          339
+        ],
+        "logicalId": "attack-hand-hilt",
+        "frame": "F10"
+      },
+      "drawn13/F10/attack-blade": {
+        "offset": [
+          1041,
+          674
+        ],
+        "bodyBounds": [
+          1,
+          1,
+          629,
+          267
+        ],
+        "logicalId": "attack-blade",
+        "frame": "F10"
+      }
+    },
+    "purpose": "read-only mapping of unpublished candidate43 v1 local cut coordinates; original saved cut records retained"
+  }
+}
