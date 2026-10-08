@@ -53,5 +53,5 @@
     remembered=false;showRecord();setBusy(false);status.textContent='このブラウザの入場記録を消しました。次の入場にはパスワードが必要です。';input.focus();
   });
   continueButton.addEventListener('click',()=>{if(remembered)entry();});
-  load();
+  entry();
 })();
